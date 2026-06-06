@@ -1,0 +1,10 @@
+{
+  "page_number": 14,
+  "narration_text": "Now we'll see how fiber to the home, or FTTH, works in access networks. Notice that this is a passive network, known as a PON, and it's made up of several key components. Look at the diagram on your slide — notice how the optical network terminator, or ONT, connects to the line terminal, and how the splitter retransmits all the packets it receives. This setup allows multiple homes to share the same connection, making it more efficient. I want you to focus on how the splitter works, as it's crucial for understanding how data is distributed in this type of network. As we move forward, let's keep in mind how this architecture supports high-speed internet access.",
+  "word_count": 117,
+  "estimated_seconds": 54.0,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 5,
+  "has_visual_candidate": true
+}

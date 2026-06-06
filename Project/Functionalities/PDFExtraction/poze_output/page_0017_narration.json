@@ -1,0 +1,10 @@
+{
+  "page_number": 17,
+  "narration_text": "Now we'll see how access networks function within enterprise environments, such as companies and universities. Notice that these networks typically combine wired and wireless link technologies, connecting a mix of switches and routers. Let's think about this together - Ethernet provides wired access at various speeds, while WiFi offers wireless access through designated points. Look at the diagram on your slide — notice how the devices are interconnected, allowing data to flow between them. I want you to focus on the different access points and how they enable communication across the network. As we move forward, we'll explore the differences between switches and routers in more detail.",
+  "word_count": 107,
+  "estimated_seconds": 49.4,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 67,
+  "has_visual_candidate": true
+}

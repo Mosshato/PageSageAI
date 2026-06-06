@@ -1,0 +1,10 @@
+{
+  "page_number": 8,
+  "narration_text": "Now we'll see how protocols work in human interactions and computer networks. Think about a simple greeting, like saying hi, and how it's a protocol we follow every day. Look at the diagrams on the slide, notice how they illustrate a basic request and response, like asking for the time. This is similar to how a TCP connection is established. The formulas here represent the underlying calculations that ensure reliable data transfer. Take a moment to glance at the images, you'll see how each step in the process is crucial for a successful connection. As we explore these concepts further, let's keep in mind how protocols enable efficient communication, and we'll delve deeper into the specifics of network protocols on the next slide.",
+  "word_count": 123,
+  "estimated_seconds": 56.8,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 30,
+  "has_visual_candidate": true
+}

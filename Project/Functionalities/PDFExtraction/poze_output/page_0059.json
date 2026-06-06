@@ -1,0 +1,334 @@
+{
+  "page_number": 59,
+  "png_path": "poze_output\\page_0059.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Bad guys: packet interception",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        607,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "packet “sniffing”:",
+      "order": 2,
+      "bbox": [
+        87,
+        207,
+        320,
+        265
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪broadcast media (shared Ethernet, wireless) ▪promiscuous network interface reads/records all packets (e.g.,",
+      "order": 3,
+      "bbox": [
+        114,
+        272,
+        875,
+        397
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "including passwords!) passing by",
+      "order": 4,
+      "bbox": [
+        133,
+        401,
+        520,
+        453
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 5,
+      "bbox": [
+        480,
+        496,
+        541,
+        594
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        486,
+        505,
+        515,
+        550
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "C",
+      "order": 7,
+      "bbox": [
+        238,
+        509,
+        255,
+        558
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "src:B dest:A payload",
+      "order": 8,
+      "bbox": [
+        687,
+        723,
+        704,
+        772
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Wireshark is a (free) packet-sniffer",
+      "order": 9,
+      "bbox": [
+        531,
+        506,
+        549,
+        555
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Introduction: 1-61",
+      "order": 10,
+      "bbox": [
+        434,
+        687,
+        605,
+        720
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 11,
+      "bbox": [
+        285,
+        504,
+        291,
+        604
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 12,
+      "bbox": [
+        262,
+        504,
+        284,
+        604
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 13,
+      "bbox": [
+        285,
+        510,
+        289,
+        602
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 14,
+      "bbox": [
+        285,
+        557,
+        291,
+        565
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 15,
+      "bbox": [
+        274,
+        516,
+        285,
+        520
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 16,
+      "bbox": [
+        274,
+        529,
+        285,
+        534
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 17,
+      "bbox": [
+        273,
+        557,
+        285,
+        562
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 18,
+      "bbox": [
+        285,
+        544,
+        291,
+        553
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 19,
+      "bbox": [
+        273,
+        544,
+        285,
+        548
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 20,
+      "bbox": [
+        284,
+        504,
+        286,
+        604
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 21,
+      "bbox": [
+        285,
+        529,
+        291,
+        538
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 22,
+      "bbox": [
+        285,
+        514,
+        291,
+        525
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 23,
+      "bbox": [
+        262,
+        604,
+        285,
+        607
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 24,
+      "bbox": [
+        629,
+        696,
+        690,
+        796
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 25,
+      "bbox": [
+        634,
+        706,
+        663,
+        752
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 26,
+      "bbox": [
+        119,
+        820,
+        174,
+        917
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 27,
+      "bbox": [
+        332,
+        722,
+        411,
+        767
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Bad guys: packet interception packet “sniffing”: ▪broadcast media (shared Ethernet, wireless) ▪promiscuous network interface reads/records all packets (e.g., including passwords!) passing by A B C src:B dest:A payload Wireshark is a (free) packet-sniffer Introduction: 1-61"
+}

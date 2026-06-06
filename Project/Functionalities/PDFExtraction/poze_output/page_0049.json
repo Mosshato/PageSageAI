@@ -1,0 +1,82 @@
+{
+  "page_number": 49,
+  "png_path": "poze_output\\page_0049.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Caravan analogy",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        370,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "toll booth toll booth (aka router) ten-car caravan (aka 10-bit packet)",
+      "order": 2,
+      "bbox": [
+        205,
+        316,
+        711,
+        398
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "100 km 100 km",
+      "order": 3,
+      "bbox": [
+        483,
+        236,
+        789,
+        274
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 4,
+      "bbox": [
+        385,
+        194,
+        422,
+        308
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 5,
+      "bbox": [
+        624,
+        198,
+        662,
+        312
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-51",
+      "order": 6,
+      "bbox": [
+        75,
+        491,
+        920,
+        700
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Caravan analogy toll booth toll booth (aka router) ten-car caravan (aka 10-bit packet) 100 km 100 km ▪suppose cars now “propagate” at 1000 km/hr ▪and suppose toll booth now takes one min to service a car ▪Q: Will cars arrive to 2nd booth before all cars serviced at first booth? A: Yes! after 7 min, first car arrives at second booth; three cars still at first booth Introduction: 1-51"
+}

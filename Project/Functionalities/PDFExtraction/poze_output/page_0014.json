@@ -1,0 +1,70 @@
+{
+  "page_number": 14,
+  "png_path": "poze_output\\page_0014.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Access networks: cable-based access",
+      "order": 1,
+      "bbox": [
+        77,
+        62,
+        815,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪FTTH: fiber to the home",
+      "order": 2,
+      "bbox": [
+        85,
+        721,
+        392,
+        781
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• PON (passive) network shown; ONT – optical network terminator; OLT – line terminal • splitter retransmits all packets received from OLT",
+      "order": 3,
+      "bbox": [
+        123,
+        792,
+        1002,
+        904
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-16",
+      "order": 4,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 5,
+      "bbox": [
+        159,
+        169,
+        797,
+        662
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Access networks: cable-based access ▪FTTH: fiber to the home • PON (passive) network shown; ONT – optical network terminator; OLT – line terminal • splitter retransmits all packets received from OLT Introduction: 1-16"
+}

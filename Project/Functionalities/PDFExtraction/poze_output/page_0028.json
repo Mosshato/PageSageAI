@@ -1,0 +1,190 @@
+{
+  "page_number": 28,
+  "png_path": "poze_output\\page_0028.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Packet-switching: store-and-forward",
+      "order": 1,
+      "bbox": [
+        75,
+        76,
+        727,
+        157
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪packet transmission delay: takes L/R seconds to",
+      "order": 2,
+      "bbox": [
+        52,
+        580,
+        602,
+        635
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "transmit (push out) L-bit packet into link at R bps ▪store and forward: entire packet must arrive at",
+      "order": 3,
+      "bbox": [
+        52,
+        639,
+        611,
+        758
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "router before it can be transmitted on next link",
+      "order": 4,
+      "bbox": [
+        75,
+        762,
+        591,
+        810
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "source",
+      "order": 5,
+      "bbox": [
+        198,
+        400,
+        255,
+        437
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        258,
+        397,
+        346,
+        461
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 7,
+      "bbox": [
+        263,
+        375,
+        345,
+        456
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 8,
+      "bbox": [
+        263,
+        375,
+        345,
+        456
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 9,
+      "bbox": [
+        448,
+        394,
+        533,
+        444
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 10,
+      "bbox": [
+        444,
+        230,
+        534,
+        270
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 11,
+      "bbox": [
+        283,
+        181,
+        347,
+        277
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 12,
+      "bbox": [
+        272,
+        224,
+        363,
+        291
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 13,
+      "bbox": [
+        272,
+        224,
+        363,
+        291
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 14,
+      "bbox": [
+        613,
+        297,
+        735,
+        485
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 15,
+      "bbox": [
+        665,
+        316,
+        723,
+        401
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Packet-switching: store-and-forward ▪packet transmission delay: takes L/R seconds to transmit (push out) L-bit packet into link at R bps ▪store and forward: entire packet must arrive at router before it can be transmitted on next link source R bps destination 1 2 3 L bits per packet R bps One-hop numerical example: ▪L = 10 Kbits ▪R = 100 Mbps ▪one-hop transmission delay = 0.1 msec Introduction: 1-30"
+}

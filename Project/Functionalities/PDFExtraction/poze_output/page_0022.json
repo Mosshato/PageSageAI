@@ -1,0 +1,190 @@
+{
+  "page_number": 22,
+  "png_path": "poze_output\\page_0022.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Links: physical media",
+      "order": 1,
+      "bbox": [
+        77,
+        57,
+        546,
+        157
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Wireless radio",
+      "order": 2,
+      "bbox": [
+        85,
+        203,
+        277,
+        261
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪signal carried in various",
+      "order": 3,
+      "bbox": [
+        90,
+        271,
+        398,
+        331
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "“bands” in electromagnetic spectrum ▪no physical “wire” ▪broadcast, “half-duplex”",
+      "order": 4,
+      "bbox": [
+        90,
+        328,
+        443,
+        567
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "(sender to receiver) ▪propagation environment",
+      "order": 5,
+      "bbox": [
+        90,
+        565,
+        422,
+        670
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "effects:",
+      "order": 6,
+      "bbox": [
+        114,
+        668,
+        200,
+        720
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• reflection • obstruction by objects • Interference/noise",
+      "order": 7,
+      "bbox": [
+        118,
+        715,
+        402,
+        886
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Radio link types:",
+      "order": 8,
+      "bbox": [
+        528,
+        208,
+        751,
+        267
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪Wireless LAN (WiFi)",
+      "order": 9,
+      "bbox": [
+        533,
+        273,
+        789,
+        333
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• 10-100’s Mbps; 10’s of meters ▪wide-area (e.g., 4G/5G cellular)",
+      "order": 10,
+      "bbox": [
+        533,
+        339,
+        926,
+        455
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• 100’s Mbps (4G/5G) over ~10 Km ▪Bluetooth: cable replacement",
+      "order": 11,
+      "bbox": [
+        533,
+        461,
+        920,
+        576
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• short distances, limited rates ▪terrestrial microwave",
+      "order": 12,
+      "bbox": [
+        533,
+        582,
+        882,
+        698
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• point-to-point; 45 Mbps channels ▪satellite",
+      "order": 13,
+      "bbox": [
+        533,
+        704,
+        919,
+        819
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "formula",
+      "text": "• up to < 100 Mbps (Starlink) downlink • 270 msec end-end delay (geostationary)",
+      "order": 14,
+      "bbox": [
+        566,
+        825,
+        966,
+        932
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-24",
+      "order": 15,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Links: physical media Wireless radio ▪signal carried in various “bands” in electromagnetic spectrum ▪no physical “wire” ▪broadcast, “half-duplex” (sender to receiver) ▪propagation environment effects: • reflection • obstruction by objects • Interference/noise Radio link types: ▪Wireless LAN (WiFi) • 10-100’s Mbps; 10’s of meters ▪wide-area (e.g., 4G/5G cellular) • 100’s Mbps (4G/5G) over ~10 Km ▪Bluetooth: cable replacement • short distances, limited rates ▪terrestrial microwave • point-to-point; 45 Mbps channels ▪satellite • up to < 100 Mbps (Starlink) downlink • 270 msec end-end delay (geostationary) Introduction: 1-24"
+}

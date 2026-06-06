@@ -1,0 +1,10 @@
+{
+  "page_number": 39,
+  "narration_text": "Now we'll see how internet service providers interact with each other. Look at the diagrams on your slide — notice how they illustrate the connections between different networks. I want you to focus on the various access points and how they enable communication between these networks. Think of it like a highway system, where each ISP is a separate road, and the access points are the intersections that allow traffic to flow between them. But if one global ISP is viable, there will be competitors, which leads us to consider the implications of a single dominant provider. Let's think about this together, as we move forward to the next concept, where we'll explore the consequences of such a scenario.",
+  "word_count": 119,
+  "estimated_seconds": 54.9,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 38,
+  "has_visual_candidate": true
+}

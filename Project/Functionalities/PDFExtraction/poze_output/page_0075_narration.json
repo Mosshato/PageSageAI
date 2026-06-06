@@ -1,0 +1,10 @@
+{
+  "page_number": 75,
+  "narration_text": "Now we'll see how the ISO/OSI reference model is structured, notice that it has seven layers, and let's think about this together, the presentation and session layers are particularly interesting because they allow applications to interpret the meaning of data and synchronize exchanges. These layers are responsible for tasks like encryption, compression, and recovery of data exchange. I want you to focus on the fact that the Internet protocol stack doesn't have these layers, so if applications need these services, they must be implemented within the application itself. This difference is key to understanding the trade-offs between the two models, and we'll explore this further as we move on to the next topic.",
+  "word_count": 113,
+  "estimated_seconds": 52.2,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 15,
+  "has_visual_candidate": false
+}

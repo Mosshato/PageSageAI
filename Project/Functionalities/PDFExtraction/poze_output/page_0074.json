@@ -1,0 +1,406 @@
+{
+  "page_number": 74,
+  "png_path": "poze_output\\page_0074.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "figure",
+      "text": "",
+      "order": 1,
+      "bbox": [
+        672,
+        653,
+        710,
+        797
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 2,
+      "bbox": [
+        708,
+        770,
+        787,
+        815
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 3,
+      "bbox": [
+        557,
+        625,
+        689,
+        809
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "network",
+      "order": 4,
+      "bbox": [
+        585,
+        660,
+        651,
+        697
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "link physical",
+      "order": 5,
+      "bbox": [
+        584,
+        704,
+        652,
+        785
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        231,
+        687,
+        352,
+        944
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "transport",
+      "order": 7,
+      "bbox": [
+        241,
+        714,
+        331,
+        751
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "network",
+      "order": 8,
+      "bbox": [
+        249,
+        758,
+        323,
+        795
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "link physical",
+      "order": 9,
+      "bbox": [
+        253,
+        802,
+        319,
+        839
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Encapsulation: an end-end view",
+      "order": 10,
+      "bbox": [
+        252,
+        846,
+        320,
+        927
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 11,
+      "bbox": [
+        306,
+        122,
+        428,
+        379
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Ht Hn M",
+      "order": 12,
+      "bbox": [
+        318,
+        147,
+        407,
+        184
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "segment Ht datagram",
+      "order": 13,
+      "bbox": [
+        325,
+        191,
+        400,
+        228
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "destination",
+      "order": 14,
+      "bbox": [
+        330,
+        235,
+        395,
+        272
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Ht Hn Hl M",
+      "order": 15,
+      "bbox": [
+        329,
+        279,
+        396,
+        360
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 16,
+      "bbox": [
+        681,
+        373,
+        734,
+        488
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 17,
+      "bbox": [
+        716,
+        471,
+        795,
+        499
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "M Ht Hn Hl M",
+      "order": 18,
+      "bbox": [
+        580,
+        78,
+        908,
+        248
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Ht Hn M",
+      "order": 19,
+      "bbox": [
+        330,
+        79,
+        405,
+        128
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 20,
+      "bbox": [
+        417,
+        140,
+        447,
+        372
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Ht Hn Hl M",
+      "order": 21,
+      "bbox": [
+        205,
+        245,
+        277,
+        279
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "router",
+      "order": 22,
+      "bbox": [
+        123,
+        192,
+        245,
+        274
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "switch",
+      "order": 23,
+      "bbox": [
+        234,
+        653,
+        335,
+        694
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "message M",
+      "order": 24,
+      "bbox": [
+        118,
+        852,
+        211,
+        886
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Ht M",
+      "order": 25,
+      "bbox": [
+        140,
+        808,
+        211,
+        843
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Hn frame",
+      "order": 26,
+      "bbox": [
+        165,
+        763,
+        210,
+        798
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "link physical",
+      "order": 27,
+      "bbox": [
+        198,
+        719,
+        210,
+        747
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 28,
+      "bbox": [
+        576,
+        362,
+        696,
+        481
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 29,
+      "bbox": [
+        439,
+        196,
+        505,
+        308
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 30,
+      "bbox": [
+        445,
+        206,
+        477,
+        257
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 31,
+      "bbox": [
+        342,
+        710,
+        372,
+        932
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 32,
+      "bbox": [
+        360,
+        761,
+        426,
+        874
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 33,
+      "bbox": [
+        366,
+        772,
+        398,
+        824
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "network link physical application transport network link physical application transport network link physical Encapsulation: an end-end view source Ht Hn M segment Ht datagram destination Ht Hn Hl M Ht Hn M Ht M M Ht Hn Hl M Ht Hn M Ht Hn M Ht Hn Hl M router switch message M Ht M Hn frame link physical Introduction: 1-76"
+}

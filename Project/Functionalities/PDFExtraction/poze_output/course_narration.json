@@ -1,0 +1,842 @@
+[
+  {
+    "page_number": 1,
+    "narration_text": "Now we'll see how computer networks play a vital role in our daily lives, from simple communication to complex data exchange. Notice that networks are all around us, from the internet we use to access information, to the local networks in our homes and offices. Let's think about this together, considering how networks enable devices to communicate with each other, much like how we use roads to travel between cities. I want you to focus on the concept of interconnected devices, as this is the foundation of computer networks. As we delve into this introductory course, we'll explore the basics of computer networks, and by the end of it, we'll have a solid understanding of how they function, which will prepare us to dive into the specifics of network architecture and protocols in the next section.",
+    "word_count": 136,
+    "estimated_seconds": 62.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 5,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 2,
+    "narration_text": "Now we'll see the big picture of what this course is about, getting a feel for the key concepts. Notice that we're just scratching the surface here, with more depth and detail to come later. Let's think about this together, looking at the diagram on your slide, notice how it outlines the different components of the internet, from the edge to the core. Look at the image on the slide, observe how it illustrates the relationship between hosts, access networks, and physical media. As we explore these concepts, we'll see how they all fit together, and now let's move on to understanding what the internet is and how it works.",
+    "word_count": 110,
+    "estimated_seconds": 50.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 10,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 3,
+    "narration_text": "Now we'll take a closer look at the internet's infrastructure. I want you to focus on the different types of networks that make up the internet, such as mobile, home, and enterprise networks. Look at the diagram on your slide — notice how the nodes at each level are connected, and how data flows through these connections. This visual representation should help you understand how packets of data are forwarded through packet switches, like routers and switches. As we examine this diagram, think about how these networks interact with each other and with datacenter and content provider networks. Let's think about this together, and then we'll explore how communication links enable data transfer between these networks.",
+    "word_count": 116,
+    "estimated_seconds": 53.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 161,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 4,
+    "narration_text": "Now we'll see some examples of internet-connected devices that might seem unusual at first, but are actually quite interesting. Look at the images on the slide, notice the variety of devices, from internet phones to IP picture frames, and even a device called Tweet-a-watt that monitors energy use. Take a closer look at the images, you'll see a mix of everyday objects and specialized devices, all connected to the internet in some way. I want you to focus on how these devices are all part of a larger trend towards greater connectivity. As we explore these examples, let's think about the implications of this trend, and how it's changing the way we live and interact with technology, which will lead us to our next topic.",
+    "word_count": 125,
+    "estimated_seconds": 57.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 28,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 5,
+    "narration_text": "Now we'll see how the internet can be viewed as a network of networks. Notice that it's composed of various interconnected ISPs, as well as mobile networks, home networks, and enterprise networks. Let's think about this together, considering how datacenter networks and content provider networks also play a role. Look at the diagram on your slide — notice how the different networks are interconnected, and think about how protocols control the sending and receiving of messages across these networks. I want you to focus on how protocols like HTTP, TCP, and IP enable communication between devices. As we explore this further, we'll see how these concepts come together to form the foundation of the internet.",
+    "word_count": 115,
+    "estimated_seconds": 53.1,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 118,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 6,
+    "narration_text": "Now we'll see how the internet provides services to various applications, such as web, streaming video, and email. Notice that these services are supported by different types of networks, including mobile, home, enterprise, and datacenter networks. Look at the diagram on your slide — notice how the various networks and services are interconnected, with protocols like HTTP and Skype enabling communication between them. I want you to focus on how these networks work together to provide the services we use every day. As we examine this diagram, think about how the complexity of these networks allows for the seamless delivery of various services, and let's consider how this complexity is managed in the next part of our discussion.",
+    "word_count": 118,
+    "estimated_seconds": 54.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 119,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 7,
+    "narration_text": "Now we'll see how protocols work in different contexts. Notice that we already use protocols in our daily human interactions, like asking what's the time or introducing ourselves. Let's think about this together, when we communicate, there are unwritten rules that govern our behavior. Similarly, in computer networks, devices communicate with each other using specific protocols that define the format and order of messages. I want you to focus on how these protocols enable efficient communication between devices. As we explore this topic further, we'll delve into the specifics of network protocols and how they shape the internet as we know it.",
+    "word_count": 102,
+    "estimated_seconds": 47.1,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 18,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 8,
+    "narration_text": "Now we'll see how protocols work in human interactions and computer networks. Think about a simple greeting, like saying hi, and how it's a protocol we follow every day. Look at the diagrams on the slide, notice how they illustrate a basic request and response, like asking for the time. This is similar to how a TCP connection is established. The formulas here represent the underlying calculations that ensure reliable data transfer. Take a moment to glance at the images, you'll see how each step in the process is crucial for a successful connection. As we explore these concepts further, let's keep in mind how protocols enable efficient communication, and we'll delve deeper into the specifics of network protocols on the next slide.",
+    "word_count": 123,
+    "estimated_seconds": 56.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 30,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 9,
+    "narration_text": "Now we'll see how the various components of the internet come together to form a complex system. Notice that we have the network edge, where hosts and access networks reside, and the network core, which is responsible for switching and routing data. Let's think about this together, the internet is like a large transportation system, with physical media serving as the roads, and packet switching acting as the traffic management system. I want you to focus on how these different parts work together to enable communication between devices. As we delve deeper, we'll explore the performance and security aspects of the internet, and how protocol layers and service models fit into the overall structure, which will lead us to a better understanding of the internet's underlying architecture.",
+    "word_count": 127,
+    "estimated_seconds": 58.6,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 5,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 10,
+    "narration_text": "Now we'll take a closer look at the structure of the internet, and I want you to focus on the different types of networks that make it up. Notice that we have mobile networks, home networks, enterprise networks, and datacenter networks, each with its own unique characteristics. Look at the diagram on your slide — notice how the nodes at each level are connected, and how data flows between them. This complex network of networks allows us to access information and communicate with each other from anywhere in the world. As we examine this structure, let's think about how it enables us to use the internet in our daily lives, and we'll explore this idea further as we move on to the next topic.",
+    "word_count": 124,
+    "estimated_seconds": 57.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 116,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 11,
+    "narration_text": "Now we'll take a closer look at the structure of the internet, and I want you to focus on the different types of networks that make it up. Notice that we have mobile networks, home networks, enterprise networks, and datacenter networks, each with its own unique characteristics. Look at the diagram on your slide — notice how the nodes at each level are connected, and think about how data flows through these networks. As you observe the image, consider how these different networks interact with each other to provide the services we use every day. Let's think about this together, and then we'll explore how these networks are connected to the network edge.",
+    "word_count": 113,
+    "estimated_seconds": 52.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 116,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 12,
+    "narration_text": "Now we'll take a closer look at the structure of the internet. Notice that it's composed of several key components, including the network edge, access networks, and the network core. Let's think about this together, considering how these parts interact. I want you to focus on the diagram on your slide, look at the image and notice how the different networks are interconnected. Observe how the hosts, which can be clients or servers, are often located in data centers. As you examine the diagram, consider how the network core, made up of interconnected routers, enables communication between these various networks. This complex network of networks is what allows us to access and share information online, and we'll explore this idea further as we move on to the next topic.",
+    "word_count": 129,
+    "estimated_seconds": 59.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 121,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 13,
+    "narration_text": "Now we'll explore the various types of networks that make up our internet infrastructure. Notice that we have mobile networks, home networks, enterprise networks, and datacenter networks, each serving a specific purpose. Look at the diagram on your slide — notice how the different networks are interconnected, with end systems connecting to edge routers. I want you to focus on the diversity of these networks and how they're linked together. As we delve deeper into this topic, let's think about this together and consider how these networks enable us to access and share information seamlessly, which will lead us to discuss the importance of network architecture in our next topic.",
+    "word_count": 110,
+    "estimated_seconds": 50.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 116,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 14,
+    "narration_text": "Now we'll see how fiber to the home, or FTTH, works in access networks. Notice that this is a passive network, known as a PON, and it's made up of several key components. Look at the diagram on your slide — notice how the optical network terminator, or ONT, connects to the line terminal, and how the splitter retransmits all the packets it receives. This setup allows multiple homes to share the same connection, making it more efficient. I want you to focus on how the splitter works, as it's crucial for understanding how data is distributed in this type of network. As we move forward, let's keep in mind how this architecture supports high-speed internet access.",
+    "word_count": 117,
+    "estimated_seconds": 54.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 5,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 15,
+    "narration_text": "Now we'll see how home networks connect to the headend or central office. Notice that these connections can be wired or wireless. Look at the diagram on your slide — notice how the wireless and wired devices are often combined in a single box, such as a WiFi wireless access point or a wired Ethernet router. I want you to focus on the different devices and how they interact with each other. You'll see various images on the slide, each showing a different aspect of home networks, so take a moment to observe the different components and how they fit together. As we move forward, let's keep in mind how these connections enable our online activities.",
+    "word_count": 116,
+    "estimated_seconds": 53.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 28,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 16,
+    "narration_text": "Now we'll see how wireless access networks connect end systems to routers via a base station, also known as an access point. Notice that wireless local area networks, or WLANs, typically operate within or around a building, with a range of about 100 feet. Let's take a look at the diagram on your slide, notice how the access point acts as a central hub, allowing devices to connect to the network. I want you to focus on the different transmission rates, such as 11, 54, and 450 megabits per second, and think about how these rates impact network performance. As we move forward, we'll explore how these concepts apply to real-world scenarios.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 33,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 17,
+    "narration_text": "Now we'll see how access networks function within enterprise environments, such as companies and universities. Notice that these networks typically combine wired and wireless link technologies, connecting a mix of switches and routers. Let's think about this together - Ethernet provides wired access at various speeds, while WiFi offers wireless access through designated points. Look at the diagram on your slide — notice how the devices are interconnected, allowing data to flow between them. I want you to focus on the different access points and how they enable communication across the network. As we move forward, we'll explore the differences between switches and routers in more detail.",
+    "word_count": 107,
+    "estimated_seconds": 49.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 67,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 18,
+    "narration_text": "Now we'll see how data center networks operate, with high-bandwidth links connecting hundreds to thousands of servers together, and to the Internet. Notice that these networks have to support a wide range of applications, from mobile networks to home networks, enterprise networks, and content provider networks. Look at the diagram on your slide — notice how the nodes at each level are interconnected, allowing for efficient data transfer. I want you to focus on the scale and complexity of these networks, and how they're designed to meet the demands of massive data exchange. As we examine this diagram, think about the challenges of designing such a network, and we'll explore some of these challenges in more detail on the next slide.",
+    "word_count": 121,
+    "estimated_seconds": 55.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 119,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 19,
+    "narration_text": "Now we'll see how a host sends packets of data, a crucial process in computer networks. Notice that the host breaks down application messages into smaller chunks, known as packets, and transmits them into the access network at a certain rate. Let's think about this together, considering the link transmission rate, which determines how fast data is sent. Look at the diagram on your slide, notice how the packets are represented, and observe the relationship between the packet length and transmission rate. I want you to focus on the image and see how it illustrates the concept of packets being transmitted. This process is fundamental to understanding network communication, and we'll build on this idea as we move forward.",
+    "word_count": 119,
+    "estimated_seconds": 54.9,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 16,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 20,
+    "narration_text": "Now we'll see how physical media enables communication between devices. Notice that signals can propagate through solid media like copper, fiber, or coax, which are known as guided media, or freely through the air, as in the case of radio waves, which are unguided. Let's think about this together, considering the example of twisted pair, which consists of two insulated copper wires. Look at the diagram on the slide — notice how the twisted pair is structured, and observe the images showing different categories of twisted pair cables. I want you to focus on the categories, such as Category 5 and Category 6, and their respective speeds. This will help us understand the importance of physical media in determining network performance, which we'll explore further in the next topic.",
+    "word_count": 129,
+    "estimated_seconds": 59.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 11,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 21,
+    "narration_text": "Now we'll see how coaxial cables work, notice that they have two concentric copper conductors, allowing for bidirectional and broadband communication. Look at the image on the slide, observe how the inner and outer conductors are arranged, this design enables multiple frequency channels to coexist on the same cable, achieving speeds of hundreds of megabits per second per channel. I want you to focus on the diagram, see how this setup enables high-speed point-to-point transmission with low error rates. Let's think about this together, the use of repeaters and the cable's design make it immune to electromagnetic noise, now this understanding of coaxial cables will help us transition to the next topic, exploring even faster transmission methods.",
+    "word_count": 117,
+    "estimated_seconds": 54.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 12,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 22,
+    "narration_text": "Now we'll see how wireless radio links work, notice that they use various bands in the electromagnetic spectrum to carry signals without physical wires. This allows for broadcast and half-duplex communication, but the environment can affect signal propagation, with issues like reflection, obstruction, and interference. Let's think about this together, considering the different types of radio links, such as Wireless LAN, wide-area networks, and Bluetooth, each with its own range and data rate limitations. The delay and data rate of these links are crucial, for instance, satellite links can have significant delays, and this is what we'll explore further in the next section.",
+    "word_count": 103,
+    "estimated_seconds": 47.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 15,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 23,
+    "narration_text": "Now we'll see how all these concepts fit together, let's think about this together, considering the network as a whole system. Notice that the network edge and core work together to enable communication. I want you to focus on the image on the slide, look at the diagram on your slide, notice how the different components interact, the hosts, access networks, and physical media all play a role. Observe how the network core uses packet and circuit switching to manage data transmission. This visual representation helps illustrate the complex relationships between these elements, and as we move forward, we'll delve deeper into the specifics of protocol layers and service models, setting the stage for our next topic.",
+    "word_count": 117,
+    "estimated_seconds": 54.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 24,
+    "narration_text": "Now we'll see how the network core operates, essentially a mesh of interconnected routers that facilitate packet-switching. Notice that hosts break application-layer messages into packets, and the network forwards these packets from one router to the next, across links on the path from source to destination. Look at the diagram on your slide — notice how the nodes at each level are interconnected, allowing data to be transmitted efficiently. This structure is crucial for various types of networks, including mobile, home, enterprise, datacenter, and content provider networks. I want you to focus on how this structure enables efficient data transmission, and let's think about this together as we move on to the next concept.",
+    "word_count": 114,
+    "estimated_seconds": 52.6,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 118,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 25,
+    "narration_text": "Now we'll see how two key network-core functions work together. Notice that when a packet arrives, its header contains a destination address. Let's think about this together, as it's crucial for routing. Look at the diagram on your slide — notice how the nodes at each level are connected, and observe the flow of packets through the network. You should see how each node uses the destination address to forward the packet to the next hop. I want you to focus on how this process enables efficient data transfer. As we analyze this diagram, we can see the importance of these network-core functions in ensuring reliable communication, which will lead us to explore more advanced routing techniques in the next section.",
+    "word_count": 121,
+    "estimated_seconds": 55.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 16,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 26,
+    "narration_text": "Now we'll see how the concepts we've discussed so far come together in a visual representation. Look at the diagram on your slide — notice how the various components interact with each other, and observe the flow of information from one stage to the next. As you examine this illustration, consider how each element contributes to the overall process, and think about how changes to one part might affect the entire system. Take a moment to appreciate the complexity and interconnectedness of this model. I want you to focus on the relationships between these components, and let's think about this together to understand the underlying dynamics. This visual representation will help us transition to the next topic, where we'll delve into the specifics of system optimization.",
+    "word_count": 126,
+    "estimated_seconds": 58.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 2,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 27,
+    "narration_text": "Now we'll examine the visual representations on this slide, so take a moment to look at the images in front of you. Notice how each diagram illustrates a different aspect of our topic, with various shapes and lines connecting them. I want you to focus on the patterns and relationships depicted here, as they are crucial to understanding the underlying concepts. Look at the diagram on your slide — notice how the elements are arranged and interact with each other. This visual representation helps to clarify the complex interactions at play, and by studying these images, we can gain a deeper understanding of the subject matter. As we move forward, let's keep these visualizations in mind to better grasp the principles that will be discussed next.",
+    "word_count": 126,
+    "estimated_seconds": 58.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 5,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 28,
+    "narration_text": "Now we'll see how packet-switching works in a store-and-forward approach. Notice that the entire packet must arrive at a router before it can be transmitted on the next link. Let's think about this together, it's like sending a package, you need to receive the whole package before you can forward it to the next destination. Look at the diagram on your slide, notice how the packets are being transmitted and stored at each router, this process introduces a delay, which is determined by the packet length and the transmission rate. I want you to focus on how this delay affects the overall transmission time, and we'll explore this further in the next slide.",
+    "word_count": 113,
+    "estimated_seconds": 52.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 15,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 29,
+    "narration_text": "Now we'll see how packet-switching leads to queueing, which occurs when packets arrive faster than they can be transmitted. Look at the diagram on your slide — notice how the packets are waiting in line to be sent over the output link, with a rate of 1.5 megabits per second. This expression tells us how quickly the queue grows, and it's essential to understand this concept to manage network traffic effectively. The formula represents the rate at which packets are added to the queue, and it's crucial in determining the minimum time required to transmit all the packets. I want you to focus on the relationship between the arrival rate and the transmission rate, as this will help us understand how to optimize network performance, which we'll explore further in the next section.",
+    "word_count": 133,
+    "estimated_seconds": 61.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 22,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 30,
+    "narration_text": "Now we'll see how packet queuing works in the context of packet-switching. Notice that when the arrival rate exceeds the transmission rate, packets will start to queue, waiting for their turn to be transmitted over the output link. Look at the diagram on your slide, you'll see a representation of how this queuing happens. The formula on the slide represents the queue of packets waiting for transmission, essentially telling us how the queue grows over time. I want you to focus on the fact that if the queue becomes too large, packets can be dropped, which is a critical issue in network design. Let's think about this together, considering the implications of packet loss on our network's performance, and we'll explore ways to mitigate this issue on the next slide.",
+    "word_count": 130,
+    "estimated_seconds": 60.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 20,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 31,
+    "narration_text": "Now we'll see an alternative to packet switching, which is circuit switching. Notice that in circuit switching, end-end resources are allocated and reserved for a call between the source and destination. Look at the diagram on your slide, observe how each link has multiple circuits, and notice how a call gets a specific circuit in each link. This means dedicated resources are allocated, with no sharing, resulting in guaranteed performance. As you can see, if a circuit segment is not used by a call, it remains idle, highlighting the lack of sharing. Let's think about this together, and consider how this approach differs from packet switching, which we'll explore further in the next slide.",
+    "word_count": 114,
+    "estimated_seconds": 52.6,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 19,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 32,
+    "narration_text": "Now we'll see how circuit switching works with Frequency Division Multiplexing and Time Division Multiplexing. Notice that with FDM, the available frequency band is divided into narrower bands, each allocated to a specific user, allowing them to transmit at the maximum rate of that band. On the other hand, TDM divides time into slots, allocating each call its own slot, enabling transmission at the maximum rate of the wider frequency band, but only during its assigned time slot. Let's think about this together, considering how these methods efficiently manage resources. I want you to focus on how these concepts apply to real-world scenarios, and we'll explore more examples on the next slide.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 16,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 33,
+    "narration_text": "Now we'll see how packet switching and circuit switching impact network usage. Let's think about this together, considering a 1 Gb/s link where each user requires 100 Mb/s when active, which is only about 10% of the time. Look at the diagrams on your slide, notice how the links are utilized under both switching methods. Observe the difference in resource allocation, and think about how this affects the number of users that can be supported. As you examine these visuals, consider the efficiency of packet switching in handling multiple users. This comparison is crucial, and it will help us understand the benefits of packet switching, which we'll explore further in the next section.",
+    "word_count": 113,
+    "estimated_seconds": 52.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 12,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 34,
+    "narration_text": "Now we'll see how packet switching handles different types of data. Notice that it's particularly great for bursty data, where we sometimes have a lot to send, but at other times not so much. This is because packet switching allows for resource sharing and is simpler, with no call setup required. However, this can also lead to congestion and packet loss. Let's think about this together, how can we provide a more reliable and circuit-like experience with packet switching. I want you to focus on the trade-offs here, as we'll be exploring various techniques to address these challenges in the next part of our discussion.",
+    "word_count": 105,
+    "estimated_seconds": 48.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 10,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 35,
+    "narration_text": "Now we'll see how the internet is structured as a network of networks. Notice that hosts connect to the internet via access points, and these access points are provided by Internet Service Providers, or ISPs. Let's think about this together, if any two hosts anywhere in the world want to send packets to each other, the ISPs must be interconnected. I want you to focus on the complexity of this network. Look at the diagram on your slide — notice how the different levels of networks, from mobile to datacenter networks, are interconnected. Observe how the various nodes and connections form a complex web. This complexity is driven by economics and national policies, and as we move forward, we'll explore how this structure enables communication between hosts across the globe.",
+    "word_count": 130,
+    "estimated_seconds": 60.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 113,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 36,
+    "narration_text": "Now we'll see how the internet is structured as a network of networks. Notice that with millions of access ISPs, connecting them together is a complex task. Let's think about this together, if each ISP is like a small town, we need a system to connect these towns to form a larger network. I want you to focus on how this is achieved through a hierarchical system of networks. This allows data to be routed efficiently between different ISPs and ultimately between users. As we delve deeper, we'll explore the specifics of this hierarchy and how it enables communication across the globe, setting the stage for our next topic, the role of backbone networks.",
+    "word_count": 114,
+    "estimated_seconds": 52.6,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 34,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 37,
+    "narration_text": "Now we'll see how the internet's structure as a network of networks poses a challenge. With millions of access ISPs, connecting each one directly to every other doesn't scale, as this would require an enormous number of connections. Think of it like trying to connect every city in the world with a direct road to every other city - it's just not feasible. This is represented by a growth rate that's proportional to the square of the number of networks, which tells us how quickly the number of connections would balloon. Let's think about this together, and consider how we can simplify this problem, which leads us to the concept of network hierarchy.",
+    "word_count": 113,
+    "estimated_seconds": 52.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 36,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 38,
+    "narration_text": "Now we'll see how the internet is structured as a network of networks. Look at the diagram on your slide — notice how the access ISPs are connected to the global transit ISPs, forming a complex web of relationships. I want you to focus on the economic agreements between customer and provider ISPs, and how this arrangement enables data to flow across the globe. As you observe the image, you'll see that each access ISP doesn't need to connect to every other ISP, but rather can rely on the global transit ISPs to facilitate communication. Let's think about this together, and consider how this structure allows the internet to function efficiently, which will lead us to our next topic, exploring the implications of this network structure.",
+    "word_count": 126,
+    "estimated_seconds": 58.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 36,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 39,
+    "narration_text": "Now we'll see how internet service providers interact with each other. Look at the diagrams on your slide — notice how they illustrate the connections between different networks. I want you to focus on the various access points and how they enable communication between these networks. Think of it like a highway system, where each ISP is a separate road, and the access points are the intersections that allow traffic to flow between them. But if one global ISP is viable, there will be competitors, which leads us to consider the implications of a single dominant provider. Let's think about this together, as we move forward to the next concept, where we'll explore the consequences of such a scenario.",
+    "word_count": 119,
+    "estimated_seconds": 54.9,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 38,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 40,
+    "narration_text": "Now we'll see how multiple internet service providers interact with each other. Look at the diagrams on your slide, notice how they're connected through various nodes and links, illustrating the concept of internet exchange points. These diagrams show how different ISPs can peer with each other, allowing data to be exchanged between their networks. I want you to focus on the complexity of these connections and how they enable global communication. As we can see, the presence of one viable ISP can lead to competition and the establishment of peering links, ultimately forming the backbone of the internet. Let's think about this together, as we move forward, we'll explore how these connections impact the overall structure of the internet.",
+    "word_count": 119,
+    "estimated_seconds": 54.9,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 50,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 41,
+    "narration_text": "Now we'll see how access networks and internet service providers interact. Look at the diagram on your slide — notice how the nodes at each level are connected, forming a complex network. I want you to focus on the regional networks that arise to connect access nets to ISPs, and how they enable communication between different parts of the network. Notice the role of internet exchange points, or IXPs, in facilitating this communication. Let's think about this together, considering how these components work together to provide internet access. As we examine this diagram, we can see the relationships between access nets, ISPs, and regional networks, setting the stage for our next topic.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 49,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 42,
+    "narration_text": "Now we'll see how content provider networks play a crucial role in bringing services and content close to end users. Look at the diagrams on your slide — notice how they illustrate the connections between different networks. You should observe how content providers like Google or Microsoft have their own networks, which interact with access networks and internet exchange points. Let's think about this together, considering how these interactions enable efficient data transfer. I want you to focus on the complexity of these interactions and how they ultimately affect our online experience. As we move forward, we'll explore regional ISP networks and their role in this ecosystem.",
+    "word_count": 107,
+    "estimated_seconds": 49.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 58,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 43,
+    "narration_text": "Now we'll see how the internet is structured as a network of networks. Notice that at the center, there are a small number of well-connected large networks, often referred to as tier-1 ISPs, such as Lumen or AT&T, which have national and international coverage. Let's think about this together, these large networks are like major highways that connect different regions. I want you to focus on how content providers like Google also have their own private networks, which can bypass these tier-1 ISPs. This complex structure allows for efficient data exchange, and as we move forward, we'll explore how these different networks interact with each other.",
+    "word_count": 106,
+    "estimated_seconds": 48.9,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 22,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 44,
+    "narration_text": "Now we'll see how all these concepts fit together, let's think about this together, considering the network as a whole. Notice that the internet has a core and an edge, with physical media connecting them. I want you to focus on the image on the slide, it illustrates the internet structure, look at the diagram on your slide — notice how the hosts and access networks are positioned at the edge, while the core is made up of packet and circuit switches. This visual representation should help you understand the relationships between these components. As we move forward, we'll delve deeper into each of these areas, and this diagram will serve as a reference point.",
+    "word_count": 115,
+    "estimated_seconds": 53.1,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 45,
+    "narration_text": "Now we'll see how packets are handled in a router, let's take a look at the diagram on the slide, notice how packets are queued in the buffer, waiting for their turn to be transmitted. The queue length grows when the arrival rate exceeds the output link capacity, and packet loss occurs when the buffer is full. I want you to focus on the image, observe how the packets are lined up, and think about what happens when the buffer is overloaded. This visual representation helps us understand the relationship between packet arrival rate and link capacity. As we analyze this further, we'll see how it affects network performance, and this concept will be crucial in understanding the next topic we'll be covering.",
+    "word_count": 123,
+    "estimated_seconds": 56.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 11,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 46,
+    "narration_text": "Now we'll see how nodal processing works in the context of network delays. Notice that the time it takes for a packet to be processed at a node is typically very short, less than a microsecond. This processing involves checking for bit errors and determining the output link. Look at the diagram on your slide — notice how the queueing delay is represented, which is the time a packet waits at the output link for transmission. This expression essentially tells us how the total delay at a node is calculated, taking into account processing, queueing, transmission, and propagation delays. I want you to focus on how these components interact to affect overall network performance, which we'll explore further in the next section.",
+    "word_count": 122,
+    "estimated_seconds": 56.3,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 17,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 47,
+    "narration_text": "Now we'll see how the different components contribute to the overall delay in a network. Notice that the total delay, dnodal, is broken down into several parts: processing, queueing, transmission, and propagation. Look at the diagrams on the slide and observe how each of these components affects the flow of data through a node. The formula represents the relationship between these components, essentially telling us how the total delay is calculated. I want you to focus on the images, notice how they illustrate the different stages of data transmission and how they impact the overall delay. This breakdown is crucial for understanding network performance, and it will help us optimize our network designs, which we'll explore further in the next section.",
+    "word_count": 121,
+    "estimated_seconds": 55.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 12,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 48,
+    "narration_text": "Now we'll see how the caravan analogy helps us understand packet transmission. Notice that each car represents a bit, and the caravan is essentially a packet. The toll booth services each car in 12 seconds, which is like the transmission time for a bit. Look at the diagram on the slide — notice how the caravan is lined up before the second toll booth, and think about the time it takes for the entire caravan to pass through the first toll booth and then propagate to the next one. This expression tells us how long it takes for the caravan to line up before the second toll booth, and it's essential to consider both the transmission time and the propagation time. Let's think about this together and see how it applies to our network models, which we'll explore further in the next slide.",
+    "word_count": 143,
+    "estimated_seconds": 66.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 19,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 49,
+    "narration_text": "Now we'll see how this caravan analogy helps us understand packet routing. Imagine a ten-car caravan traveling a hundred kilometers to its destination, but it has to pass through a toll booth, which represents a router. Look at the diagram on your slide — notice how the caravan is broken down into smaller parts, much like our data packets are divided into manageable bits. The toll booth, or router, examines each part and determines the best route forward. I want you to focus on the image and observe how the caravan's journey is similar to data transmission. As we analyze this further, let's think about this together and see how it applies to our discussion on packet routing, which we'll continue to explore in the next section.",
+    "word_count": 127,
+    "estimated_seconds": 58.6,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 50,
+    "narration_text": "Now we'll see how packet queueing delay is affected by the traffic intensity, which is essentially the ratio of the average packet arrival rate to the link bandwidth. Notice that as this ratio approaches one, the average queueing delay increases significantly. Look at the image on the slide, observe how the delay changes as the traffic intensity varies. This tells us that when the arrival rate of bits exceeds the service rate, the queue will keep growing, leading to an infinite delay. I want you to focus on the concept of traffic intensity and its impact on queueing delay, as this will be crucial in understanding network performance, and we'll explore more of this in the next section.",
+    "word_count": 118,
+    "estimated_seconds": 54.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 13,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 51,
+    "narration_text": "Now we'll see how the process of sending probes works, let's think about this together. Notice that the sender is transmitting three packets, each with a specific time-to-live value, which will reach a particular router on the path to the destination. Look at the diagram on your slide, observe how the packets are being sent and returned, and notice the time interval being measured. This process allows the sender to gauge the distance to each router. I want you to focus on the visual representation of this process, see how the packets are moving, and understand how this helps in determining the path. As we analyze this, keep in mind that this concept is crucial for understanding network topology, and we'll build on this idea in the next slide.",
+    "word_count": 129,
+    "estimated_seconds": 59.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 13,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 52,
+    "narration_text": "Now we'll see the results of a traceroute from gaia.cs.umass.edu to www.eurecom.fr. Notice that the delays vary significantly as the packets travel across different networks. Let's think about this together, what could be causing these variations in delay? I want you to focus on the trans-oceanic link, where the delay increases substantially. This is likely due to the longer distance the signal has to travel, as well as potential congestion on the link. As we analyze these results, we can start to understand the complexities of internet routing and how it affects network performance, which will be important for our next topic.",
+    "word_count": 102,
+    "estimated_seconds": 47.1,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 10,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 53,
+    "narration_text": "Now we'll see how a queue, or buffer, works in the context of a preceding link. Look at the image on the slide, notice how the packets waiting to be transmitted are stored in a buffer, essentially a waiting area. This buffer has a finite capacity, meaning it can only hold a certain number of packets before it becomes full. I want you to focus on the visual representation of this concept, observe how the packets are arranged and how the buffer operates. This will help you understand the relationship between the queue and the link, and how it affects the transmission process. Let's think about this together, and then we'll move on to explore how packet loss occurs when the buffer is full.",
+    "word_count": 124,
+    "estimated_seconds": 57.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 10,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 54,
+    "narration_text": "Now we'll see how throughput is measured, which is essentially the rate at which bits are being sent from a sender to a receiver. Notice that there are two types of throughput, instantaneous and average, and this distinction is crucial. Let's think about this together, consider a server sending a file to a client, the rate at which it sends this file can vary over time. Look at the diagram on your slide, notice how the bits are being transmitted, you should see a representation of the sender, the receiver, and the flow of bits between them. This visual representation should help you understand the concept of throughput, and as we move forward, keep in mind that throughput is a key factor in determining the performance of a network.",
+    "word_count": 129,
+    "estimated_seconds": 59.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 31,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 55,
+    "narration_text": "Now we'll see how throughput is visualized, let's take a look at the diagrams on the slide. Notice the various graphs and charts, each representing a different aspect of throughput. I want you to focus on the image in the center, observe how the curves intersect and the peaks and troughs are formed. This illustrates the relationship between throughput and other factors such as bandwidth and latency. As you can see, the diagrams show a clear correlation between these elements, and by analyzing these visual representations, we can gain a deeper understanding of how throughput is affected. This will be crucial in optimizing our systems, so let's keep this in mind as we move forward to discuss ways to improve throughput.",
+    "word_count": 121,
+    "estimated_seconds": 55.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 71,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 56,
+    "narration_text": "Now we'll see how throughput works in a network scenario, let's think about this together. We have ten connections that fairly share a backbone bottleneck link with a rate of R bits per second. Look at the diagram on your slide, notice how the links and nodes are arranged, and observe the bottleneck link in the middle. You should see that all the connections are sharing this one link, which means they're all competing for the same bandwidth. This is similar to a highway with multiple lanes merging into one, where the traffic has to slow down to accommodate all the cars. I want you to focus on how this bottleneck link affects the overall throughput of the network. As we move to the next slide, consider how this shared link impacts the performance of each individual connection.",
+    "word_count": 138,
+    "estimated_seconds": 63.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 69,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 57,
+    "narration_text": "Now we'll see how all these concepts fit together, let's think about this together, considering the network edge and the network core. Notice that the network edge consists of hosts and access networks, while the core is all about packet and circuit switching. Look at the diagram on your slide — notice how the different components are interconnected, and observe the physical media that enable communication between them. I want you to focus on how these elements work in harmony to provide the services we use every day. As we explore these concepts further, we'll delve into the intricacies of internet structure and performance, setting the stage for our next topic.",
+    "word_count": 111,
+    "estimated_seconds": 51.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 58,
+    "narration_text": "Now we'll see how the internet's original design has impacted its security. The internet wasn't built with security in mind, it was initially envisioned as a network where users trusted each other. As a result, the designers have been playing catch-up, trying to incorporate security into all layers of the internet protocol. Let's think about this together, if a system is designed without security considerations, it's much harder to add them later on. I want you to focus on the fact that we need to consider how attackers can exploit vulnerabilities in computer networks and how we can defend against these attacks. This will lead us to discuss ways to design more secure network architectures.",
+    "word_count": 115,
+    "estimated_seconds": 53.1,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 59,
+    "narration_text": "Now we'll see how packet interception works, particularly in broadcast media like shared Ethernet or wireless networks. Notice that a promiscuous network interface can read and record all packets passing by, including sensitive information like passwords. Look at the diagram on your slide — notice how the packets are being captured and displayed, giving us insight into the network traffic. This is essentially what packet sniffing is, and tools like Wireshark make it relatively easy to do. I want you to focus on the implications of this, as it has significant security implications. Let's think about this together, and then we'll explore how to protect against such attacks.",
+    "word_count": 108,
+    "estimated_seconds": 49.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 27,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 60,
+    "narration_text": "Now we'll see how attackers can create a fake identity by spoofing an IP address, essentially injecting a packet with a false source address. Look at the diagram on your slide, notice how the packet is labeled as coming from source B but is actually sent to destination A. This can be used to mislead the recipient about the true origin of the packet. I want you to focus on the payload and how it's affected by this spoofing. As we examine this concept further, let's think about the implications of IP spoofing on network security, and we'll explore ways to mitigate these types of attacks in the next section.",
+    "word_count": 110,
+    "estimated_seconds": 50.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 23,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 61,
+    "narration_text": "Now we'll see how denial of service attacks work by overwhelming a resource with bogus traffic, making the bandwidth unavailable to legitimate traffic. Look at the diagram on your slide, notice how the traffic is flooding the network, and think about how this would impact the system's performance. I want you to focus on the image and observe the bottleneck that's created when the traffic exceeds the network's capacity. This is essentially a denial of service attack, where the goal is to make the system unusable by overwhelming it with traffic. Let's think about this together and consider how we can prevent such attacks, which we'll explore further on the next slide.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 41,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 62,
+    "narration_text": "Now we'll see how multiple lines of defense work together to protect our networks. Notice that authentication is key, proving you are who you say you are, and this can be done through hardware identity, like a SIM card in cellular networks. Let's think about this together, how do we ensure confidentiality and integrity in traditional internet connections. We use encryption and digital signatures to prevent tampering. I want you to focus on how access restrictions, like password-protected VPNs, and firewalls act as specialized middleboxes to filter incoming packets. This multi-layered approach is crucial, and as we move forward, we'll explore how these concepts apply to real-world network security.",
+    "word_count": 109,
+    "estimated_seconds": 50.3,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 7,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 63,
+    "narration_text": "Now we'll see how the various components of the internet fit together. Notice that the internet has an edge, where hosts and access networks connect, and a core, where packet switching takes place. Look at the diagram on your slide — notice how the different layers and structures are interconnected, with physical media, such as cables or wireless links, forming the foundation. I want you to focus on how these elements work together to enable communication between devices. As we explore these concepts further, we'll see how they impact performance, security, and overall internet functionality, setting the stage for our deeper dive into protocol layers and service models.",
+    "word_count": 108,
+    "estimated_seconds": 49.8,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 64,
+    "narration_text": "Now we'll see that networks are complex systems, made up of many different components like hosts, routers, and links of various media, not to mention the applications and protocols that run on them, and the hardware and software that support everything. This complexity can be overwhelming, so let's think about this together, is there a way to organize the structure of a network in a way that makes sense, that helps us understand how all these pieces fit together. I want you to focus on the idea that breaking down the network into smaller parts can help, and that's exactly what we'll explore next.",
+    "word_count": 104,
+    "estimated_seconds": 48.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 8,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 65,
+    "narration_text": "Now we'll see how the organization of air travel can be broken down into a series of steps, involving many services. Think of it like a pipeline, where each stage builds on the previous one, from purchasing a ticket to checking baggage, loading gates, and finally taking off. Notice that this process isn't just about the person, but also their baggage, and how both are transferred from one point to another. I want you to focus on the end-to-end transfer of person plus baggage, and consider how all these steps work together to create a seamless travel experience. Let's think about this together, and then we'll explore how this system can be applied to other complex processes.",
+    "word_count": 117,
+    "estimated_seconds": 54.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 16,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 66,
+    "narration_text": "Now we'll see how the organization of air travel can be broken down into distinct layers, each providing a specific service. Notice that these layers, such as ticketing, baggage, and gate services, all rely on the services provided by the layer below them. Let's think about this together, considering how each layer implements its own internal actions to provide its service. I want you to focus on how this layered approach allows for a more organized and efficient system. As we delve deeper into this concept, we'll explore how these layers interact and depend on one another, setting the stage for our next topic, where we'll examine the specifics of layer implementation.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 19,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 67,
+    "narration_text": "Now we'll see why layering is essential in designing complex systems. Notice that having an explicit structure allows us to identify and understand the relationship between different components. This is similar to how we organize our daily tasks into categories, making it easier to manage and maintain them. Let's think about this together, when we have a layered system, changing one component's implementation is transparent to the rest of the system, much like changing a gate procedure in an airport doesn't affect the entire airport operation. I want you to focus on how this concept simplifies system maintenance and updates, which will be crucial as we move forward to the next topic.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 8,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 68,
+    "narration_text": "Now we'll see how the internet protocol stack is layered, notice that each layer has a specific function, from application to physical. Look at the diagram on your slide — notice how the layers are stacked on top of each other, with application at the top and physical at the bottom. This layering allows for a modular design, where each layer can be modified or updated without affecting the others. I want you to focus on how the protocols at each layer work together to enable communication over the internet. Let's think about this together, considering how protocols like HTTP and TCP interact. As we move forward, remember that understanding these layers is key to grasping how the internet works.",
+    "word_count": 120,
+    "estimated_seconds": 55.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 19,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 69,
+    "narration_text": "Now we'll see how the transport-layer protocol encapsulates data for transmission. Look at the diagram on your slide — notice how the layers are stacked, with the application layer at the top and the link layer at the bottom. I want you to focus on the transport layer, where the data is packaged into segments. Observe how each segment is assigned a sequence number and headers are added, allowing the receiving device to reassemble the data correctly. This process is crucial for ensuring reliable data transfer over the network. As we examine this diagram, let's think about this together, considering how these layers work in tandem to facilitate communication between devices, and we'll explore this further in the next slide.",
+    "word_count": 120,
+    "estimated_seconds": 55.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 29,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 70,
+    "narration_text": "Now we'll see how the transport-layer protocol works. Look at the diagram on your slide — notice how the transport-layer segment is created by combining the message M with the network-layer header Hn. This is essentially how data is packaged for transmission across the network. I want you to focus on the different layers involved in this process, from the application layer down to the link layer. Notice how each layer adds its own header to the data, allowing it to be routed and delivered correctly. Let's think about this together, considering how these layers work in tandem to ensure reliable data transfer. As we move forward, we'll explore how this process enables efficient communication over the internet.",
+    "word_count": 118,
+    "estimated_seconds": 54.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 32,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 71,
+    "narration_text": "Now we'll see how the transport layer interacts with the network layer. Look at the diagram on your slide — notice how the different components are connected, with the transport layer on top of the network layer. I want you to focus on the arrows representing the flow of data between these layers. Notice that the transport layer is responsible for ensuring reliable data transfer, while the network layer handles the actual routing of data. Let's think about this together, considering how these layers work in tandem to enable communication between devices. As we examine this relationship, keep in mind that this interaction is crucial for the functioning of the internet, and we'll explore this further in the next slide.",
+    "word_count": 120,
+    "estimated_seconds": 55.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 29,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 72,
+    "narration_text": "Now we'll see how encapsulation works in a more visual sense. Look at the image on the slide, it's a set of Matryoshka dolls, also known as stacking dolls. Notice how each doll fits inside the other, with the smallest one at the center. This is a great analogy for encapsulation, where we hide the internal details of an object and only expose the necessary information to the outside world. I want you to focus on how each doll is self-contained, yet still part of the larger whole. As we explore this concept further, let's think about how this idea of containment applies to our programming principles, and we'll see how it helps us write more organized and efficient code.",
+    "word_count": 120,
+    "estimated_seconds": 55.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 9,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 73,
+    "narration_text": "Now we'll see how the different layers of a network interact with each other. Look at the diagram on your slide — notice how the nodes at each level are connected, illustrating the flow of data from the physical layer up to the application layer. I want you to focus on the transport layer, where data is packaged into segments and assigned sequence numbers for reliable transmission. Notice the various images on the slide, each representing a different aspect of network communication, such as routing, switching, and protocol stacks. Let's think about this together, considering how these components work in tandem to enable efficient data transfer. As we examine these interactions, we'll gain a deeper understanding of network architecture, which will be crucial for our next topic.",
+    "word_count": 127,
+    "estimated_seconds": 58.6,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 33,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 74,
+    "narration_text": "Now we'll see how encapsulation works from an end-to-end perspective. Look at the diagram on your slide — notice how the nodes at each level encapsulate the data, adding their own headers as they move through the network. This process allows data to be transmitted efficiently, with each layer understanding its specific role. I want you to focus on the routers and switches, observing how they interact with the encapsulated data. Think about this as a package being shipped, with each stop adding its own label, and consider how this analogy applies to our network. As we examine this process, let's think about how it enables reliable communication across the network, which we'll explore further in the next section.",
+    "word_count": 119,
+    "estimated_seconds": 54.9,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 33,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 75,
+    "narration_text": "Now we'll see how the ISO/OSI reference model is structured, notice that it has seven layers, and let's think about this together, the presentation and session layers are particularly interesting because they allow applications to interpret the meaning of data and synchronize exchanges. These layers are responsible for tasks like encryption, compression, and recovery of data exchange. I want you to focus on the fact that the Internet protocol stack doesn't have these layers, so if applications need these services, they must be implemented within the application itself. This difference is key to understanding the trade-offs between the two models, and we'll explore this further as we move on to the next topic.",
+    "word_count": 113,
+    "estimated_seconds": 52.2,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 15,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 76,
+    "narration_text": "Now we'll see how the traditional seven OSI layers can be expanded upon. Notice that the image on your slide illustrates additional layers, providing a more detailed view of network communication. Look at the diagram on your slide — notice how the nodes at each level interact with those above and below, forming a complex hierarchy. This expansion helps us better understand the intricacies of data transmission and reception. I want you to focus on how these extra layers fit into the overall framework, as this will help clarify the flow of data between devices. As we examine this expanded model, let's think about this together and see how it prepares us to dive deeper into network architecture.",
+    "word_count": 118,
+    "estimated_seconds": 54.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 3,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 77,
+    "narration_text": "Now we'll take a step back and look at the big picture, considering all the material we've covered so far. We've explored the internet's overall structure, including the network edge, access networks, and the core, as well as key concepts like packet-switching and circuit-switching. This foundation will help us dive deeper into networking, understanding performance issues like loss, delay, and throughput. You now have a solid context and vocabulary to build upon, giving you a feel for how networking works. As we move forward, let's think about this together, applying these concepts to real-world scenarios, and that's where the next part of our journey begins.",
+    "word_count": 105,
+    "estimated_seconds": 48.5,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 7,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 78,
+    "narration_text": "Now we'll see how the various components of the internet come together. Notice that the internet can be thought of as having an edge, where our devices and access networks reside, and a core, where packet switching takes place. Look at the diagram on your slide — notice how the different layers and components are interconnected, with physical media, such as cables and wireless links, supporting the network. I want you to focus on how the image illustrates the relationship between the network edge and core, and how this structure enables data to be transmitted efficiently. As we move forward, let's keep in mind how these concepts fit into the broader context of internet architecture.",
+    "word_count": 115,
+    "estimated_seconds": 53.1,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 6,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 79,
+    "narration_text": "Now we'll see how packet-switching evolved over time, notice the key milestones listed here. Look at the diagram on your slide, observe how the timeline unfolds from 1961 to 1972, highlighting the work of Kleinrock, Baran, and the development of ARPAnet. I want you to focus on the transition from theoretical foundations to practical applications, like the first ARPAnet node becoming operational in 1969. This period laid the groundwork for modern networking, and as we move forward, we'll explore how these early principles paved the way for the internet as we know it today.",
+    "word_count": 94,
+    "estimated_seconds": 43.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 9,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 80,
+    "narration_text": "Now we'll see how the internet evolved over time. Notice that the 1970s were a pivotal period, with the introduction of ALOHAnet, a satellite network in Hawaii, and the development of Ethernet at Xerox PARC. Let's think about this together, the key principles that defined the internet's architecture, such as minimalism, autonomy, and a best-effort service model, were laid out by Cerf and Kahn. I want you to focus on how these principles allowed different networks to interconnect without requiring significant changes, which is still the foundation of the internet today. As we move forward, we'll explore how these principles continue to shape the internet's development.",
+    "word_count": 106,
+    "estimated_seconds": 48.9,
+    "target_seconds": 60,
+    "model_used": "llama-3.3-70b-versatile",
+    "blocks_used": 11,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 81,
+    "narration_text": "Now we'll see how the internet evolved over the next few years. In 1983, TCP/IP became the standard protocol for communication between different networks. This was also the year the smtp email protocol was developed, enabling email communication between users. Notice that this was a crucial period for the internet's growth, as it laid the foundation for the network's infrastructure.\n\nLet's take a look at the figure on your slide – you should see a graph showing the rapid growth of the internet during this period. Observe how the number of hosts connected to the network increased exponentially between 1983 and 1990. This indicates a significant proliferation of networks and the emergence of new protocols.\n\nBy the late 1980s, we had a confederation of networks, including CSnet, BITnet, NSFnet, and Minitel, with over 100,000 hosts connected. This marked a turning point in the internet's development, as it became a global network with a wide range of applications and users.",
+    "word_count": 159,
+    "estimated_seconds": 73.4,
+    "target_seconds": 60,
+    "model_used": "llama-3.1-8b-instant",
+    "blocks_used": 9,
+    "has_visual_candidate": true
+  },
+  {
+    "page_number": 82,
+    "narration_text": "Now we'll see how the Internet evolved from its early days to the global network we know today. Let's start with the 1990s, a pivotal time for the Internet's development. ARPAnet, one of the first networks, was established in the early 1990s. It was later decommissioned, but its impact had already paved the way for the next stage of the Internet's growth.\n\nIn 1991, the National Science Foundation lifted restrictions on the commercial use of NSFnet, allowing it to be decommissioned in 1995. Meanwhile, the World Wide Web began to take shape in the early 1990s. Notice that the concept of hypertext, which enables linking between web pages, dates back to the 1940s and 1960s. However, it wasn't until the 1990s that HTML, HTTP, and the web browser Mosaic, later Netscape, brought the Web to the masses. This marked the beginning of the Web's commercialization, which would lead to a surge in new applications and users.",
+    "word_count": 156,
+    "estimated_seconds": 72.0,
+    "target_seconds": 60,
+    "model_used": "llama-3.1-8b-instant",
+    "blocks_used": 10,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 83,
+    "narration_text": "Now we'll see how the Internet has evolved over time. Notice that the aggressive deployment of broadband home access in the 2000s, with speeds of 10 to 100's of megabits per second, marked a significant turning point. This was followed by the introduction of software-defined networking, or SDN, in 2008. With SDN, networks became more flexible and programmable.\n\nIncreasingly, high-speed wireless access became ubiquitous, with 4G and 5G networks, as well as WiFi, providing users with faster and more reliable connections. Large service providers like Google, Facebook, and Microsoft began creating their own networks to bypass the commercial Internet and deliver instant access to services like social media, search, and video content.",
+    "word_count": 112,
+    "estimated_seconds": 51.7,
+    "target_seconds": 60,
+    "model_used": "llama-3.1-8b-instant",
+    "blocks_used": 6,
+    "has_visual_candidate": false
+  },
+  {
+    "page_number": 84,
+    "narration_text": "Now that we've covered the fundamentals of computer networking, I want you to focus on the importance of acknowledging the work of others in our field. Notice that these slides have been made available to us by professors Kurose and Ross, who are the copyright holders of the material within. They've generously allowed us to use their work in this course, and we're grateful for their contribution.\n\nLet's take a moment to appreciate the effort that goes into creating educational resources like these slides. Edits and additions have been made by my colleague, Mario Reja, PhD, to tailor the material to our Computer Networking course at the Faculty of Informatics, UVT.\n\nLook at the image on your slide – it's the cover of the 9th edition of \"Computer Networking: A Top-Down Approach\" by Jim Kurose and Keith Ross, published by Pearson in 2025. Take a glance at the title and the authors' names – this is the book that these slides are based on. As we continue through the course, remember that the concepts we're learning are built on the foundation laid by pioneers in our field.",
+    "word_count": 187,
+    "estimated_seconds": 86.3,
+    "target_seconds": 60,
+    "model_used": "llama-3.1-8b-instant",
+    "blocks_used": 7,
+    "has_visual_candidate": true
+  }
+]

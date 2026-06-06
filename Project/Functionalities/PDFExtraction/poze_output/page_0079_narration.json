@@ -1,0 +1,10 @@
+{
+  "page_number": 79,
+  "narration_text": "Now we'll see how packet-switching evolved over time, notice the key milestones listed here. Look at the diagram on your slide, observe how the timeline unfolds from 1961 to 1972, highlighting the work of Kleinrock, Baran, and the development of ARPAnet. I want you to focus on the transition from theoretical foundations to practical applications, like the first ARPAnet node becoming operational in 1969. This period laid the groundwork for modern networking, and as we move forward, we'll explore how these early principles paved the way for the internet as we know it today.",
+  "word_count": 94,
+  "estimated_seconds": 43.4,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 9,
+  "has_visual_candidate": true
+}

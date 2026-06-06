@@ -1,0 +1,10 @@
+{
+  "page_number": 10,
+  "narration_text": "Now we'll take a closer look at the structure of the internet, and I want you to focus on the different types of networks that make it up. Notice that we have mobile networks, home networks, enterprise networks, and datacenter networks, each with its own unique characteristics. Look at the diagram on your slide — notice how the nodes at each level are connected, and how data flows between them. This complex network of networks allows us to access information and communicate with each other from anywhere in the world. As we examine this structure, let's think about how it enables us to use the internet in our daily lives, and we'll explore this idea further as we move on to the next topic.",
+  "word_count": 124,
+  "estimated_seconds": 57.2,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 116,
+  "has_visual_candidate": true
+}

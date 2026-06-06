@@ -1,0 +1,106 @@
+{
+  "page_number": 67,
+  "png_path": "poze_output\\page_0067.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Why layering?",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        329,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Approach to designing/discussing complex systems:",
+      "order": 2,
+      "bbox": [
+        82,
+        187,
+        868,
+        253
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪explicit structure allows identification,",
+      "order": 3,
+      "bbox": [
+        84,
+        284,
+        637,
+        352
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "relationship of system’s pieces",
+      "order": 4,
+      "bbox": [
+        113,
+        357,
+        524,
+        416
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• layered reference model for discussion ▪modularization eases maintenance,",
+      "order": 5,
+      "bbox": [
+        84,
+        422,
+        601,
+        564
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "updating of system",
+      "order": 6,
+      "bbox": [
+        113,
+        569,
+        371,
+        628
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• change in layer's service implementation: transparent to rest of system • e.g., change in gate procedure doesn’t affect rest of system",
+      "order": 7,
+      "bbox": [
+        118,
+        634,
+        641,
+        871
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-69",
+      "order": 8,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": false,
+  "raw_text": "Why layering? Approach to designing/discussing complex systems: ▪explicit structure allows identification, relationship of system’s pieces • layered reference model for discussion ▪modularization eases maintenance, updating of system • change in layer's service implementation: transparent to rest of system • e.g., change in gate procedure doesn’t affect rest of system Introduction: 1-69"
+}

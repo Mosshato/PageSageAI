@@ -1,0 +1,10 @@
+{
+  "page_number": 18,
+  "narration_text": "Now we'll see how data center networks operate, with high-bandwidth links connecting hundreds to thousands of servers together, and to the Internet. Notice that these networks have to support a wide range of applications, from mobile networks to home networks, enterprise networks, and content provider networks. Look at the diagram on your slide — notice how the nodes at each level are interconnected, allowing for efficient data transfer. I want you to focus on the scale and complexity of these networks, and how they're designed to meet the demands of massive data exchange. As we examine this diagram, think about the challenges of designing such a network, and we'll explore some of these challenges in more detail on the next slide.",
+  "word_count": 121,
+  "estimated_seconds": 55.8,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 119,
+  "has_visual_candidate": true
+}

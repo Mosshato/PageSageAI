@@ -1,0 +1,10 @@
+{
+  "page_number": 29,
+  "narration_text": "Now we'll see how packet-switching leads to queueing, which occurs when packets arrive faster than they can be transmitted. Look at the diagram on your slide — notice how the packets are waiting in line to be sent over the output link, with a rate of 1.5 megabits per second. This expression tells us how quickly the queue grows, and it's essential to understand this concept to manage network traffic effectively. The formula represents the rate at which packets are added to the queue, and it's crucial in determining the minimum time required to transmit all the packets. I want you to focus on the relationship between the arrival rate and the transmission rate, as this will help us understand how to optimize network performance, which we'll explore further in the next section.",
+  "word_count": 133,
+  "estimated_seconds": 61.4,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 22,
+  "has_visual_candidate": true
+}

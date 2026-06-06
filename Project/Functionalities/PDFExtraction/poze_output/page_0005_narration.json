@@ -1,0 +1,10 @@
+{
+  "page_number": 5,
+  "narration_text": "Now we'll see how the internet can be viewed as a network of networks. Notice that it's composed of various interconnected ISPs, as well as mobile networks, home networks, and enterprise networks. Let's think about this together, considering how datacenter networks and content provider networks also play a role. Look at the diagram on your slide — notice how the different networks are interconnected, and think about how protocols control the sending and receiving of messages across these networks. I want you to focus on how protocols like HTTP, TCP, and IP enable communication between devices. As we explore this further, we'll see how these concepts come together to form the foundation of the internet.",
+  "word_count": 115,
+  "estimated_seconds": 53.1,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 118,
+  "has_visual_candidate": true
+}

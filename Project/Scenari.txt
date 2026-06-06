@@ -1,0 +1,23 @@
+PDF parsing
+PyMuPDF + Claude Vision pentru pagini cu imagini
+
+Text rewrite
+Claude API (claude-sonnet)
+
+TTS
+ElevenLabs streaming sau Edge TTS (gratuit)
+
+RAG 
+pgvector în PostgreSQL existent + text-embedding-3-small
+
+Quiz gen
+Claude API cu structured JSON output
+
+Animații
+Manim în Docker container + Celery task
+
+Arhitectură
+Django monolith + FastAPI sidecar pentru AI + Celery
+
+
+

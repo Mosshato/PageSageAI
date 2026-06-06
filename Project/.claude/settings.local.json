@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"C:\\\\Facultate\\\\ANUL3_SEM2\\\\LICENTA\\\\Project\\\\FullstackApp\\\\AuthServer\\\\models\")",
+      "Bash(mkdir -p \"C:\\\\Facultate\\\\ANUL3_SEM2\\\\LICENTA\\\\Project\\\\FullstackApp\\\\AuthServer\\\\middleware\")",
+      "Bash(mkdir -p \"C:\\\\Facultate\\\\ANUL3_SEM2\\\\LICENTA\\\\Project\\\\FullstackApp\\\\AuthServer\\\\routes\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Facultate\\\\ANUL3_SEM2\\\\LICENTA\\\\Project\\\\FullstackApp\\\\Frontend\\\\frontend-app\\\\src\\\\context\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Facultate\\\\ANUL3_SEM2\\\\LICENTA\\\\Project\\\\FullstackApp\\\\Frontend\\\\frontend-app\\\\src\\\\components\")",
+      "PowerShell(Get-Item *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Facultate\\\\ANUL3_SEM2\\\\LICENTA\\\\Project\" -Recurse -File)",
+      "Bash(Select-Object -ExpandProperty FullName)"
+    ]
+  }
+}

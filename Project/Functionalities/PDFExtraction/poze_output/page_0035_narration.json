@@ -1,0 +1,10 @@
+{
+  "page_number": 35,
+  "narration_text": "Now we'll see how the internet is structured as a network of networks. Notice that hosts connect to the internet via access points, and these access points are provided by Internet Service Providers, or ISPs. Let's think about this together, if any two hosts anywhere in the world want to send packets to each other, the ISPs must be interconnected. I want you to focus on the complexity of this network. Look at the diagram on your slide — notice how the different levels of networks, from mobile to datacenter networks, are interconnected. Observe how the various nodes and connections form a complex web. This complexity is driven by economics and national policies, and as we move forward, we'll explore how this structure enables communication between hosts across the globe.",
+  "word_count": 130,
+  "estimated_seconds": 60.0,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 113,
+  "has_visual_candidate": true
+}

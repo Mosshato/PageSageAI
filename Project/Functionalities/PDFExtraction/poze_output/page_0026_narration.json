@@ -1,0 +1,10 @@
+{
+  "page_number": 26,
+  "narration_text": "Now we'll see how the concepts we've discussed so far come together in a visual representation. Look at the diagram on your slide — notice how the various components interact with each other, and observe the flow of information from one stage to the next. As you examine this illustration, consider how each element contributes to the overall process, and think about how changes to one part might affect the entire system. Take a moment to appreciate the complexity and interconnectedness of this model. I want you to focus on the relationships between these components, and let's think about this together to understand the underlying dynamics. This visual representation will help us transition to the next topic, where we'll delve into the specifics of system optimization.",
+  "word_count": 126,
+  "estimated_seconds": 58.2,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 2,
+  "has_visual_candidate": true
+}

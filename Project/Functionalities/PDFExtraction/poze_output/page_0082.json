@@ -1,0 +1,130 @@
+{
+  "page_number": 82,
+  "png_path": "poze_output\\page_0082.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Internet history",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        355,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪early 1990s: ARPAnet",
+      "order": 2,
+      "bbox": [
+        72,
+        306,
+        354,
+        366
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "decommissioned ▪1991: NSF lifts restrictions on",
+      "order": 3,
+      "bbox": [
+        72,
+        370,
+        448,
+        497
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "commercial use of NSFnet (decommissioned, 1995) ▪early 1990s: Web",
+      "order": 4,
+      "bbox": [
+        72,
+        501,
+        410,
+        683
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• hypertext [Bush 1945, Nelson 1960’s] • HTML, HTTP: Berners-Lee • 1994: Mosaic, later Netscape • late 1990s: commercialization of the Web",
+      "order": 5,
+      "bbox": [
+        100,
+        689,
+        480,
+        952
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "late 1990s – 2000s: ▪more killer apps: instant",
+      "order": 6,
+      "bbox": [
+        522,
+        315,
+        833,
+        442
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "messaging, P2P file sharing ▪network security to forefront ▪est. 50 million host, 100 million+",
+      "order": 7,
+      "bbox": [
+        522,
+        446,
+        932,
+        646
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "users ▪backbone links running at Gbps",
+      "order": 8,
+      "bbox": [
+        522,
+        650,
+        911,
+        777
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "1990, 2000s: commercialization, the Web, new applications",
+      "order": 9,
+      "bbox": [
+        68,
+        196,
+        870,
+        254
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-84",
+      "order": 10,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": false,
+  "raw_text": "Internet history ▪early 1990s: ARPAnet decommissioned ▪1991: NSF lifts restrictions on commercial use of NSFnet (decommissioned, 1995) ▪early 1990s: Web • hypertext [Bush 1945, Nelson 1960’s] • HTML, HTTP: Berners-Lee • 1994: Mosaic, later Netscape • late 1990s: commercialization of the Web late 1990s – 2000s: ▪more killer apps: instant messaging, P2P file sharing ▪network security to forefront ▪est. 50 million host, 100 million+ users ▪backbone links running at Gbps 1990, 2000s: commercialization, the Web, new applications Introduction: 1-84"
+}

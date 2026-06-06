@@ -1,0 +1,22 @@
+NON-FUNCTIONAL REQUIREMENTS
+============================
+
+PERFORMANCE
+-----------
+The system must respond to standard API requests within 2 seconds under normal load. AI pipeline operations (PDF processing, TTS, quiz generation) run as background threads to avoid blocking the user interface. Audio and image assets are served directly by Django's media handler, ensuring fast delivery. The React frontend minimizes re-renders using context caching for assignment data.
+
+SCALABILITY
+-----------
+The platform is designed to support multiple concurrent classes, teachers, and students. AI pipelines execute in daemon threads, allowing parallel processing of multiple courses simultaneously. The ChromaDB instance supports multiple course collections co-existing within the same database. The architecture can be extended to support task queues such as Celery for horizontal scaling in future deployments.
+
+SECURITY
+--------
+Authentication is handled via JWT tokens with short-lived access tokens (5 minutes) and daily refresh tokens. All protected endpoints require a valid Bearer token. Role-based access control separates student and teacher operations at the view level. CORS is restricted to the known frontend origin. File uploads are stored in controlled media directories, and user passwords are hashed by Django's authentication framework.
+
+RELIABILITY
+-----------
+AI pipelines are idempotent — each step checks for existing output before re-executing, allowing safe resumption after crashes. On server startup, any courses stuck in PROCESSING state are automatically resumed. Animation generation retries up to 3 times on failure. Pipeline errors are captured and stored in the database, allowing the UI to report meaningful status messages to users.
+
+MAINTAINABILITY
+---------------
+The codebase follows a clear separation of concerns: models, views, serializers, and pipeline modules are each in dedicated files. All AI logic is isolated in pipeline files making them independently testable and replaceable. Console output follows a consistent format per pipeline. The frontend uses a component-based architecture with shared context, making it straightforward to add new pages or modify existing flows.

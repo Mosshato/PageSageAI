@@ -1,0 +1,10 @@
+{
+  "page_number": 63,
+  "narration_text": "Now we'll see how the various components of the internet fit together. Notice that the internet has an edge, where hosts and access networks connect, and a core, where packet switching takes place. Look at the diagram on your slide — notice how the different layers and structures are interconnected, with physical media, such as cables or wireless links, forming the foundation. I want you to focus on how these elements work together to enable communication between devices. As we explore these concepts further, we'll see how they impact performance, security, and overall internet functionality, setting the stage for our deeper dive into protocol layers and service models.",
+  "word_count": 108,
+  "estimated_seconds": 49.8,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 6,
+  "has_visual_candidate": true
+}

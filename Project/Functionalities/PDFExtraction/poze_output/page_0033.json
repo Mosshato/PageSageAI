@@ -1,0 +1,154 @@
+{
+  "page_number": 33,
+  "png_path": "poze_output\\page_0033.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Packet switching versus circuit switching",
+      "order": 1,
+      "bbox": [
+        76,
+        62,
+        799,
+        144
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "example: ▪1 Gb/s link ▪each user:",
+      "order": 2,
+      "bbox": [
+        155,
+        199,
+        283,
+        358
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• 100 Mb/s when “active” • active 10% of time",
+      "order": 3,
+      "bbox": [
+        179,
+        368,
+        402,
+        452
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Q: how many users can use this network under circuit-switching and packet switching?",
+      "order": 4,
+      "bbox": [
+        81,
+        493,
+        956,
+        537
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "* Check out the online interactive exercises for more examples: http://gaia.cs.umass.edu/kurose_ross/interactive",
+      "order": 5,
+      "bbox": [
+        79,
+        914,
+        757,
+        942
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "N users 1 Gbps link",
+      "order": 6,
+      "bbox": [
+        476,
+        300,
+        793,
+        386
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 7,
+      "bbox": [
+        432,
+        208,
+        486,
+        290
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 8,
+      "bbox": [
+        455,
+        216,
+        481,
+        253
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 9,
+      "bbox": [
+        432,
+        368,
+        486,
+        450
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 10,
+      "bbox": [
+        456,
+        376,
+        481,
+        414
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 11,
+      "bbox": [
+        556,
+        324,
+        637,
+        370
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-35",
+      "order": 12,
+      "bbox": [
+        82,
+        587,
+        392,
+        647
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Packet switching versus circuit switching example: ▪1 Gb/s link ▪each user: • 100 Mb/s when “active” • active 10% of time Q: how many users can use this network under circuit-switching and packet switching? * Check out the online interactive exercises for more examples: http://gaia.cs.umass.edu/kurose_ross/interactive N users 1 Gbps link ▪circuit-switching: 10 users Q: how did we get value 0.0004? A: HW problem (for those with course in probability only) ▪packet switching: with 35 users, probability > 10 active at same time is less than .0004 * Introduction: 1-35"
+}

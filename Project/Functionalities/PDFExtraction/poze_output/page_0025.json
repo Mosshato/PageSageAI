@@ -1,0 +1,202 @@
+{
+  "page_number": 25,
+  "png_path": "poze_output\\page_0025.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Two key network-core functions",
+      "order": 1,
+      "bbox": [
+        75,
+        76,
+        651,
+        157
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "1",
+      "order": 2,
+      "bbox": [
+        463,
+        661,
+        473,
+        699
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "2 3",
+      "order": 3,
+      "bbox": [
+        437,
+        723,
+        467,
+        766
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "destination address in arriving packet’s header",
+      "order": 4,
+      "bbox": [
+        233,
+        894,
+        437,
+        958
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 5,
+      "bbox": [
+        521,
+        594,
+        568,
+        648
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        603,
+        642,
+        650,
+        697
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 7,
+      "bbox": [
+        576,
+        820,
+        620,
+        873
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 8,
+      "bbox": [
+        517,
+        770,
+        563,
+        842
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 9,
+      "bbox": [
+        465,
+        817,
+        510,
+        872
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 10,
+      "bbox": [
+        578,
+        706,
+        626,
+        732
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 11,
+      "bbox": [
+        548,
+        800,
+        596,
+        828
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 12,
+      "bbox": [
+        453,
+        794,
+        500,
+        820
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 13,
+      "bbox": [
+        502,
+        660,
+        550,
+        687
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 14,
+      "bbox": [
+        496,
+        747,
+        543,
+        775
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 15,
+      "bbox": [
+        418,
+        706,
+        465,
+        732
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 16,
+      "bbox": [
+        292,
+        583,
+        480,
+        692
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Two key network-core functions 1 2 3 destination address in arriving packet’s header routing algorithm header value output link 0100 0101 0111 1001 3 2 2 1 local forwarding table Forwarding: ▪aka “switching” ▪local action: move arriving packets from router’s input link to appropriate router output link local forwarding table Routing: ▪global action: determine source- destination paths taken by packets ▪routing algorithms routing algorithm Introduction: 1-27"
+}

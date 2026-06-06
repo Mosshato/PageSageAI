@@ -1,0 +1,214 @@
+{
+  "page_number": 46,
+  "png_path": "poze_output\\page_0046.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "figure",
+      "text": "",
+      "order": 1,
+      "bbox": [
+        276,
+        302,
+        400,
+        384
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "dproc: nodal processing",
+      "order": 2,
+      "bbox": [
+        75,
+        69,
+        543,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "▪check bit errors ▪determine output link ▪typically < microsecs",
+      "order": 3,
+      "bbox": [
+        145,
+        682,
+        409,
+        742
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "formula",
+      "text": "dqueue: queueing delay ▪time waiting at output link for",
+      "order": 4,
+      "bbox": [
+        150,
+        743,
+        391,
+        911
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "transmission ▪depends on congestion level of",
+      "order": 5,
+      "bbox": [
+        517,
+        672,
+        844,
+        784
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "router",
+      "order": 6,
+      "bbox": [
+        517,
+        788,
+        856,
+        891
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "propagation",
+      "order": 7,
+      "bbox": [
+        536,
+        895,
+        600,
+        939
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "nodal processing queueing",
+      "order": 8,
+      "bbox": [
+        448,
+        246,
+        571,
+        291
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "dnodal = dproc + dqueue + dtrans + dprop",
+      "order": 9,
+      "bbox": [
+        255,
+        404,
+        479,
+        491
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "formula",
+      "text": "A",
+      "order": 10,
+      "bbox": [
+        150,
+        531,
+        608,
+        603
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "B",
+      "order": 11,
+      "bbox": [
+        156,
+        230,
+        173,
+        282
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "transmission",
+      "order": 12,
+      "bbox": [
+        158,
+        369,
+        174,
+        421
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 13,
+      "bbox": [
+        157,
+        213,
+        222,
+        313
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 14,
+      "bbox": [
+        185,
+        224,
+        216,
+        269
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 15,
+      "bbox": [
+        156,
+        361,
+        221,
+        460
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 16,
+      "bbox": [
+        184,
+        370,
+        215,
+        416
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 17,
+      "bbox": [
+        655,
+        303,
+        779,
+        386
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Packet delay: four sources dproc: nodal processing ▪check bit errors ▪determine output link ▪typically < microsecs dqueue: queueing delay ▪time waiting at output link for transmission ▪depends on congestion level of router propagation nodal processing queueing dnodal = dproc + dqueue + dtrans + dprop A B transmission Introduction: 1-48"
+}

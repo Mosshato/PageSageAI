@@ -1,0 +1,82 @@
+{
+  "page_number": 44,
+  "png_path": "poze_output\\page_0044.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Lecture 2: roadmap",
+      "order": 1,
+      "bbox": [
+        73,
+        69,
+        427,
+        150
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-46",
+      "order": 2,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪What is the Internet? ▪What is a protocol? ▪Network edge: hosts, access network,",
+      "order": 3,
+      "bbox": [
+        82,
+        208,
+        591,
+        422
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "physical media ▪Network core: packet/circuit",
+      "order": 4,
+      "bbox": [
+        82,
+        426,
+        474,
+        557
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "switching, internet structure ▪Performance: loss, delay, throughput ▪Security ▪Protocol layers, service models ▪History",
+      "order": 5,
+      "bbox": [
+        82,
+        561,
+        572,
+        917
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        662,
+        206,
+        934,
+        562
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Lecture 2: roadmap Introduction: 1-46 ▪What is the Internet? ▪What is a protocol? ▪Network edge: hosts, access network, physical media ▪Network core: packet/circuit switching, internet structure ▪Performance: loss, delay, throughput ▪Security ▪Protocol layers, service models ▪History"
+}

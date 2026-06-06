@@ -1,0 +1,10 @@
+{
+  "page_number": 28,
+  "narration_text": "Now we'll see how packet-switching works in a store-and-forward approach. Notice that the entire packet must arrive at a router before it can be transmitted on the next link. Let's think about this together, it's like sending a package, you need to receive the whole package before you can forward it to the next destination. Look at the diagram on your slide, notice how the packets are being transmitted and stored at each router, this process introduces a delay, which is determined by the packet length and the transmission rate. I want you to focus on how this delay affects the overall transmission time, and we'll explore this further in the next slide.",
+  "word_count": 113,
+  "estimated_seconds": 52.2,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 15,
+  "has_visual_candidate": true
+}

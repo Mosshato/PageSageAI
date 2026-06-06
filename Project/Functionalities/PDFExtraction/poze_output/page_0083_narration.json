@@ -1,0 +1,10 @@
+{
+  "page_number": 83,
+  "narration_text": "Now we'll see how the Internet has evolved over time. Notice that the aggressive deployment of broadband home access in the 2000s, with speeds of 10 to 100's of megabits per second, marked a significant turning point. This was followed by the introduction of software-defined networking, or SDN, in 2008. With SDN, networks became more flexible and programmable.\n\nIncreasingly, high-speed wireless access became ubiquitous, with 4G and 5G networks, as well as WiFi, providing users with faster and more reliable connections. Large service providers like Google, Facebook, and Microsoft began creating their own networks to bypass the commercial Internet and deliver instant access to services like social media, search, and video content.",
+  "word_count": 112,
+  "estimated_seconds": 51.7,
+  "target_seconds": 60,
+  "model_used": "llama-3.1-8b-instant",
+  "blocks_used": 6,
+  "has_visual_candidate": false
+}

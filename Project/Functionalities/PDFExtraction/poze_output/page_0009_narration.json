@@ -1,0 +1,10 @@
+{
+  "page_number": 9,
+  "narration_text": "Now we'll see how the various components of the internet come together to form a complex system. Notice that we have the network edge, where hosts and access networks reside, and the network core, which is responsible for switching and routing data. Let's think about this together, the internet is like a large transportation system, with physical media serving as the roads, and packet switching acting as the traffic management system. I want you to focus on how these different parts work together to enable communication between devices. As we delve deeper, we'll explore the performance and security aspects of the internet, and how protocol layers and service models fit into the overall structure, which will lead us to a better understanding of the internet's underlying architecture.",
+  "word_count": 127,
+  "estimated_seconds": 58.6,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 5,
+  "has_visual_candidate": false
+}

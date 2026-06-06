@@ -1,0 +1,10 @@
+{
+  "page_number": 73,
+  "narration_text": "Now we'll see how the different layers of a network interact with each other. Look at the diagram on your slide — notice how the nodes at each level are connected, illustrating the flow of data from the physical layer up to the application layer. I want you to focus on the transport layer, where data is packaged into segments and assigned sequence numbers for reliable transmission. Notice the various images on the slide, each representing a different aspect of network communication, such as routing, switching, and protocol stacks. Let's think about this together, considering how these components work in tandem to enable efficient data transfer. As we examine these interactions, we'll gain a deeper understanding of network architecture, which will be crucial for our next topic.",
+  "word_count": 127,
+  "estimated_seconds": 58.6,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 33,
+  "has_visual_candidate": true
+}

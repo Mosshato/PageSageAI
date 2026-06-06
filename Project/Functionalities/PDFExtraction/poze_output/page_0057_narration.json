@@ -1,0 +1,10 @@
+{
+  "page_number": 57,
+  "narration_text": "Now we'll see how all these concepts fit together, let's think about this together, considering the network edge and the network core. Notice that the network edge consists of hosts and access networks, while the core is all about packet and circuit switching. Look at the diagram on your slide — notice how the different components are interconnected, and observe the physical media that enable communication between them. I want you to focus on how these elements work in harmony to provide the services we use every day. As we explore these concepts further, we'll delve into the intricacies of internet structure and performance, setting the stage for our next topic.",
+  "word_count": 111,
+  "estimated_seconds": 51.2,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 6,
+  "has_visual_candidate": true
+}

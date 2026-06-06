@@ -1,0 +1,10 @@
+{
+  "page_number": 37,
+  "narration_text": "Now we'll see how the internet's structure as a network of networks poses a challenge. With millions of access ISPs, connecting each one directly to every other doesn't scale, as this would require an enormous number of connections. Think of it like trying to connect every city in the world with a direct road to every other city - it's just not feasible. This is represented by a growth rate that's proportional to the square of the number of networks, which tells us how quickly the number of connections would balloon. Let's think about this together, and consider how we can simplify this problem, which leads us to the concept of network hierarchy.",
+  "word_count": 113,
+  "estimated_seconds": 52.2,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 36,
+  "has_visual_candidate": true
+}

@@ -1,0 +1,202 @@
+{
+  "page_number": 65,
+  "png_path": "poze_output\\page_0065.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Example: organization of air travel",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        687,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪ a series of steps, involving many services",
+      "order": 2,
+      "bbox": [
+        199,
+        890,
+        717,
+        950
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "ticket (purchase)",
+      "order": 3,
+      "bbox": [
+        98,
+        311,
+        296,
+        363
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "baggage (check)",
+      "order": 4,
+      "bbox": [
+        98,
+        391,
+        288,
+        443
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "gates (load)",
+      "order": 5,
+      "bbox": [
+        98,
+        473,
+        236,
+        525
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "runway takeoff",
+      "order": 6,
+      "bbox": [
+        98,
+        554,
+        276,
+        606
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "airplane routing",
+      "order": 7,
+      "bbox": [
+        98,
+        634,
+        287,
+        687
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "ticket (complain)",
+      "order": 8,
+      "bbox": [
+        635,
+        312,
+        833,
+        364
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "baggage (claim)",
+      "order": 9,
+      "bbox": [
+        648,
+        392,
+        833,
+        444
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "gates (unload)",
+      "order": 10,
+      "bbox": [
+        665,
+        474,
+        833,
+        526
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "runway landing",
+      "order": 11,
+      "bbox": [
+        652,
+        555,
+        834,
+        607
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "airplane routing",
+      "order": 12,
+      "bbox": [
+        644,
+        635,
+        834,
+        687
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "airplane routing",
+      "order": 13,
+      "bbox": [
+        367,
+        721,
+        557,
+        773
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "How would you define/discuss the system of airline travel?",
+      "order": 14,
+      "bbox": [
+        162,
+        832,
+        902,
+        888
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "end-to-end transfer of person plus baggage",
+      "order": 15,
+      "bbox": [
+        210,
+        242,
+        650,
+        286
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-67",
+      "order": 16,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": false,
+  "raw_text": "Example: organization of air travel ▪ a series of steps, involving many services ticket (purchase) baggage (check) gates (load) runway takeoff airplane routing ticket (complain) baggage (claim) gates (unload) runway landing airplane routing airplane routing How would you define/discuss the system of airline travel? end-to-end transfer of person plus baggage Introduction: 1-67"
+}

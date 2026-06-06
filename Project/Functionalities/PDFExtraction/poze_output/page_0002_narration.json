@@ -1,0 +1,10 @@
+{
+  "page_number": 2,
+  "narration_text": "Now we'll see the big picture of what this course is about, getting a feel for the key concepts. Notice that we're just scratching the surface here, with more depth and detail to come later. Let's think about this together, looking at the diagram on your slide, notice how it outlines the different components of the internet, from the edge to the core. Look at the image on the slide, observe how it illustrates the relationship between hosts, access networks, and physical media. As we explore these concepts, we'll see how they all fit together, and now let's move on to understanding what the internet is and how it works.",
+  "word_count": 110,
+  "estimated_seconds": 50.8,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 10,
+  "has_visual_candidate": true
+}

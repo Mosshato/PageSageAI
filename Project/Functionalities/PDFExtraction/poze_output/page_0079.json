@@ -1,0 +1,118 @@
+{
+  "page_number": 79,
+  "png_path": "poze_output\\page_0079.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "figure",
+      "text": "",
+      "order": 1,
+      "bbox": [
+        761,
+        622,
+        961,
+        968
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "▪1961: Kleinrock - queueing",
+      "order": 2,
+      "bbox": [
+        75,
+        69,
+        355,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "theory shows effectiveness of packet-switching ▪1964: Baran - packet-switching",
+      "order": 3,
+      "bbox": [
+        71,
+        308,
+        417,
+        368
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "in military nets ▪1967: ARPAnet conceived by",
+      "order": 4,
+      "bbox": [
+        71,
+        372,
+        465,
+        555
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Advanced Research Projects Agency ▪1969: first ARPAnet node",
+      "order": 5,
+      "bbox": [
+        71,
+        559,
+        437,
+        686
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "operational",
+      "order": 6,
+      "bbox": [
+        71,
+        690,
+        433,
+        871
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "▪1972:",
+      "order": 7,
+      "bbox": [
+        94,
+        875,
+        231,
+        928
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• ARPAnet public demo • NCP (Network Control Protocol) first host-host protocol • first e-mail program • ARPAnet has 15 nodes",
+      "order": 8,
+      "bbox": [
+        512,
+        307,
+        602,
+        367
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "1961-1972: Early packet-switching principles",
+      "order": 9,
+      "bbox": [
+        535,
+        372,
+        937,
+        685
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Internet history ▪1961: Kleinrock - queueing theory shows effectiveness of packet-switching ▪1964: Baran - packet-switching in military nets ▪1967: ARPAnet conceived by Advanced Research Projects Agency ▪1969: first ARPAnet node operational ▪1972: • ARPAnet public demo • NCP (Network Control Protocol) first host-host protocol • first e-mail program • ARPAnet has 15 nodes 1961-1972: Early packet-switching principles"
+}

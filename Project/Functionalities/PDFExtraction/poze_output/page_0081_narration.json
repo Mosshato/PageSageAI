@@ -1,0 +1,10 @@
+{
+  "page_number": 81,
+  "narration_text": "Now we'll see how the internet evolved over the next few years. In 1983, TCP/IP became the standard protocol for communication between different networks. This was also the year the smtp email protocol was developed, enabling email communication between users. Notice that this was a crucial period for the internet's growth, as it laid the foundation for the network's infrastructure.\n\nLet's take a look at the figure on your slide – you should see a graph showing the rapid growth of the internet during this period. Observe how the number of hosts connected to the network increased exponentially between 1983 and 1990. This indicates a significant proliferation of networks and the emergence of new protocols.\n\nBy the late 1980s, we had a confederation of networks, including CSnet, BITnet, NSFnet, and Minitel, with over 100,000 hosts connected. This marked a turning point in the internet's development, as it became a global network with a wide range of applications and users.",
+  "word_count": 159,
+  "estimated_seconds": 73.4,
+  "target_seconds": 60,
+  "model_used": "llama-3.1-8b-instant",
+  "blocks_used": 9,
+  "has_visual_candidate": true
+}

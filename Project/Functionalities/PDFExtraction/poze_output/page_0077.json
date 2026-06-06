@@ -1,0 +1,94 @@
+{
+  "page_number": 77,
+  "png_path": "poze_output\\page_0077.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Lectures 1-2: summary",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        489,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-79",
+      "order": 2,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "We’ve covered a “ton” of material! ▪Internet overview ▪what’s a protocol? ▪network edge, access network, core",
+      "order": 3,
+      "bbox": [
+        72,
+        204,
+        542,
+        469
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• packet-switching versus circuit- switching • Internet structure ▪performance: loss, delay, throughput ▪layering, service models ▪security ▪history (optional)",
+      "order": 4,
+      "bbox": [
+        68,
+        469,
+        538,
+        911
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "You now have: ▪context, overview,",
+      "order": 5,
+      "bbox": [
+        642,
+        351,
+        925,
+        493
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "vocabulary, “feel” of networking ▪more depth,",
+      "order": 6,
+      "bbox": [
+        642,
+        498,
+        925,
+        704
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "detail, and fun to follow!",
+      "order": 7,
+      "bbox": [
+        671,
+        709,
+        910,
+        832
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": false,
+  "raw_text": "Lectures 1-2: summary Introduction: 1-79 We’ve covered a “ton” of material! ▪Internet overview ▪what’s a protocol? ▪network edge, access network, core • packet-switching versus circuit- switching • Internet structure ▪performance: loss, delay, throughput ▪layering, service models ▪security ▪history (optional) You now have: ▪context, overview, vocabulary, “feel” of networking ▪more depth, detail, and fun to follow!"
+}

@@ -1,0 +1,10 @@
+{
+  "page_number": 72,
+  "narration_text": "Now we'll see how encapsulation works in a more visual sense. Look at the image on the slide, it's a set of Matryoshka dolls, also known as stacking dolls. Notice how each doll fits inside the other, with the smallest one at the center. This is a great analogy for encapsulation, where we hide the internal details of an object and only expose the necessary information to the outside world. I want you to focus on how each doll is self-contained, yet still part of the larger whole. As we explore this concept further, let's think about how this idea of containment applies to our programming principles, and we'll see how it helps us write more organized and efficient code.",
+  "word_count": 120,
+  "estimated_seconds": 55.4,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 9,
+  "has_visual_candidate": true
+}

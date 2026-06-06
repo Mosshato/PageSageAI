@@ -1,0 +1,10 @@
+{
+  "page_number": 16,
+  "narration_text": "Now we'll see how wireless access networks connect end systems to routers via a base station, also known as an access point. Notice that wireless local area networks, or WLANs, typically operate within or around a building, with a range of about 100 feet. Let's take a look at the diagram on your slide, notice how the access point acts as a central hub, allowing devices to connect to the network. I want you to focus on the different transmission rates, such as 11, 54, and 450 megabits per second, and think about how these rates impact network performance. As we move forward, we'll explore how these concepts apply to real-world scenarios.",
+  "word_count": 112,
+  "estimated_seconds": 51.7,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 33,
+  "has_visual_candidate": true
+}

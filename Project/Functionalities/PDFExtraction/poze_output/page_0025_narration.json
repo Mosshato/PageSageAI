@@ -1,0 +1,10 @@
+{
+  "page_number": 25,
+  "narration_text": "Now we'll see how two key network-core functions work together. Notice that when a packet arrives, its header contains a destination address. Let's think about this together, as it's crucial for routing. Look at the diagram on your slide — notice how the nodes at each level are connected, and observe the flow of packets through the network. You should see how each node uses the destination address to forward the packet to the next hop. I want you to focus on how this process enables efficient data transfer. As we analyze this diagram, we can see the importance of these network-core functions in ensuring reliable communication, which will lead us to explore more advanced routing techniques in the next section.",
+  "word_count": 121,
+  "estimated_seconds": 55.8,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 16,
+  "has_visual_candidate": true
+}

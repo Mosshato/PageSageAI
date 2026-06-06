@@ -1,0 +1,70 @@
+{
+  "page_number": 1,
+  "png_path": "poze_output\\page_0001.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Introducere: 1-1",
+      "order": 1,
+      "bbox": [
+        898,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Computer Network",
+      "order": 2,
+      "bbox": [
+        234,
+        286,
+        661,
+        386
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Introductory course",
+      "order": 3,
+      "bbox": [
+        371,
+        535,
+        571,
+        579
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Mario Reja",
+      "order": 4,
+      "bbox": [
+        416,
+        602,
+        527,
+        646
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "mario.reja@e-uvt.ro",
+      "order": 5,
+      "bbox": [
+        367,
+        669,
+        575,
+        713
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": false,
+  "raw_text": "Introducere: 1-1 Computer Network Introductory course Mario Reja mario.reja@e-uvt.ro"
+}

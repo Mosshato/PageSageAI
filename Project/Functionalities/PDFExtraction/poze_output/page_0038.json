@@ -1,0 +1,442 @@
+{
+  "page_number": 38,
+  "png_path": "poze_output\\page_0038.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Internet structure: a “network of networks”",
+      "order": 1,
+      "bbox": [
+        75,
+        76,
+        860,
+        157
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Option: connect each access ISP to one global transit ISP? Customer and provider ISPs have economic agreement.",
+      "order": 2,
+      "bbox": [
+        192,
+        173,
+        777,
+        273
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "global",
+      "order": 3,
+      "bbox": [
+        337,
+        547,
+        400,
+        591
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "ISP",
+      "order": 4,
+      "bbox": [
+        354,
+        600,
+        384,
+        644
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 5,
+      "bbox": [
+        351,
+        666,
+        402,
+        699
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        520,
+        535,
+        572,
+        567
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 7,
+      "bbox": [
+        552,
+        644,
+        603,
+        678
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 8,
+      "bbox": [
+        478,
+        608,
+        530,
+        642
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 9,
+      "bbox": [
+        455,
+        687,
+        506,
+        719
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 10,
+      "bbox": [
+        407,
+        622,
+        458,
+        654
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 11,
+      "bbox": [
+        430,
+        562,
+        481,
+        595
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 12,
+      "bbox": [
+        375,
+        508,
+        426,
+        540
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 13,
+      "bbox": [
+        258,
+        344,
+        291,
+        365
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 14,
+      "bbox": [
+        267,
+        363,
+        282,
+        384
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 15,
+      "bbox": [
+        164,
+        461,
+        196,
+        482
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 16,
+      "bbox": [
+        173,
+        480,
+        187,
+        501
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 17,
+      "bbox": [
+        629,
+        381,
+        661,
+        402
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 18,
+      "bbox": [
+        638,
+        400,
+        652,
+        421
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 19,
+      "bbox": [
+        210,
+        799,
+        243,
+        819
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 20,
+      "bbox": [
+        219,
+        817,
+        234,
+        838
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 21,
+      "bbox": [
+        176,
+        708,
+        208,
+        728
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 22,
+      "bbox": [
+        185,
+        726,
+        199,
+        747
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 23,
+      "bbox": [
+        157,
+        611,
+        190,
+        632
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 24,
+      "bbox": [
+        166,
+        630,
+        180,
+        651
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 25,
+      "bbox": [
+        690,
+        444,
+        722,
+        465
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 26,
+      "bbox": [
+        699,
+        463,
+        713,
+        484
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 27,
+      "bbox": [
+        390,
+        309,
+        422,
+        330
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 28,
+      "bbox": [
+        399,
+        328,
+        413,
+        348
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 29,
+      "bbox": [
+        195,
+        403,
+        227,
+        424
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 30,
+      "bbox": [
+        204,
+        422,
+        218,
+        443
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 31,
+      "bbox": [
+        465,
+        305,
+        497,
+        326
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net access",
+      "order": 32,
+      "bbox": [
+        474,
+        324,
+        488,
+        345
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 33,
+      "bbox": [
+        716,
+        836,
+        748,
+        856
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "access",
+      "order": 34,
+      "bbox": [
+        725,
+        854,
+        739,
+        875
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "net",
+      "order": 35,
+      "bbox": [
+        785,
+        741,
+        817,
+        762
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-40",
+      "order": 36,
+      "bbox": [
+        794,
+        760,
+        808,
+        781
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Internet structure: a “network of networks” Option: connect each access ISP to one global transit ISP? Customer and provider ISPs have economic agreement. global ISP access net access net access net access net access net access net access net access net access net access net access net access net access net access net access net access net Introduction: 1-40"
+}

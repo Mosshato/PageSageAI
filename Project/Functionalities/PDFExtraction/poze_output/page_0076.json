@@ -1,0 +1,46 @@
+{
+  "page_number": 76,
+  "png_path": "poze_output\\page_0076.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "More than seven OSI layers",
+      "order": 1,
+      "bbox": [
+        76,
+        92,
+        567,
+        174
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-78",
+      "order": 2,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 3,
+      "bbox": [
+        102,
+        248,
+        410,
+        888
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "More than seven OSI layers Introduction: 1-78"
+}

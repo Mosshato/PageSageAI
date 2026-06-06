@@ -1,0 +1,10 @@
+{
+  "page_number": 46,
+  "narration_text": "Now we'll see how nodal processing works in the context of network delays. Notice that the time it takes for a packet to be processed at a node is typically very short, less than a microsecond. This processing involves checking for bit errors and determining the output link. Look at the diagram on your slide — notice how the queueing delay is represented, which is the time a packet waits at the output link for transmission. This expression essentially tells us how the total delay at a node is calculated, taking into account processing, queueing, transmission, and propagation delays. I want you to focus on how these components interact to affect overall network performance, which we'll explore further in the next section.",
+  "word_count": 122,
+  "estimated_seconds": 56.3,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 17,
+  "has_visual_candidate": true
+}

@@ -1,0 +1,238 @@
+{
+  "page_number": 66,
+  "png_path": "poze_output\\page_0066.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Example: organization of air travel",
+      "order": 1,
+      "bbox": [
+        75,
+        69,
+        687,
+        151
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "ticket (purchase)",
+      "order": 2,
+      "bbox": [
+        98,
+        311,
+        296,
+        363
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "baggage (check)",
+      "order": 3,
+      "bbox": [
+        98,
+        391,
+        288,
+        443
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "gates (load)",
+      "order": 4,
+      "bbox": [
+        98,
+        473,
+        236,
+        525
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "runway takeoff",
+      "order": 5,
+      "bbox": [
+        98,
+        554,
+        276,
+        606
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "airplane routing",
+      "order": 6,
+      "bbox": [
+        98,
+        634,
+        287,
+        687
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "ticket (complain)",
+      "order": 7,
+      "bbox": [
+        635,
+        312,
+        833,
+        364
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "baggage (claim)",
+      "order": 8,
+      "bbox": [
+        648,
+        392,
+        833,
+        444
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "gates (unload)",
+      "order": 9,
+      "bbox": [
+        665,
+        474,
+        833,
+        526
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "runway landing",
+      "order": 10,
+      "bbox": [
+        652,
+        555,
+        834,
+        607
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "airplane routing airplane routing",
+      "order": 11,
+      "bbox": [
+        373,
+        635,
+        834,
+        695
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "ticketing service",
+      "order": 12,
+      "bbox": [
+        368,
+        307,
+        557,
+        359
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "baggage service",
+      "order": 13,
+      "bbox": [
+        367,
+        394,
+        559,
+        446
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "gate service",
+      "order": 14,
+      "bbox": [
+        392,
+        478,
+        532,
+        531
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "runway service",
+      "order": 15,
+      "bbox": [
+        375,
+        563,
+        552,
+        615
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "routing service",
+      "order": 16,
+      "bbox": [
+        375,
+        641,
+        548,
+        693
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "layers: each layer implements a service",
+      "order": 17,
+      "bbox": [
+        214,
+        754,
+        743,
+        813
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "▪via its own internal-layer actions ▪relying on services provided by layer below",
+      "order": 18,
+      "bbox": [
+        242,
+        820,
+        769,
+        945
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-68",
+      "order": 19,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": false,
+  "raw_text": "Example: organization of air travel ticket (purchase) baggage (check) gates (load) runway takeoff airplane routing ticket (complain) baggage (claim) gates (unload) runway landing airplane routing airplane routing ticketing service baggage service gate service runway service routing service layers: each layer implements a service ▪via its own internal-layer actions ▪relying on services provided by layer below Introduction: 1-68"
+}

@@ -1,0 +1,94 @@
+{
+  "page_number": 84,
+  "png_path": "poze_output\\page_0084.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-86",
+      "order": 1,
+      "bbox": [
+        889,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Credit and thanks",
+      "order": 2,
+      "bbox": [
+        116,
+        106,
+        358,
+        309
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• These slides have been made available for this course by prof. Kurose and Ross, authors of the book “Computer Networking: A Top-Down Approach and are the copyright holders of the material within. • Edits and/or additions by Mario Reja, PhD for the Computer Networking course at the Faculty of Informatics, UVT",
+      "order": 3,
+      "bbox": [
+        118,
+        394,
+        534,
+        579
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "All material copyright 1996-2025 J.F Kurose and K.W. Ross, All Rights Reserved",
+      "order": 4,
+      "bbox": [
+        119,
+        805,
+        381,
+        857
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Computer Networking: A Top-Down Approach 9th edition Jim Kurose, Keith Ross Pearson, 2025",
+      "order": 5,
+      "bbox": [
+        662,
+        732,
+        961,
+        938
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 6,
+      "bbox": [
+        651,
+        75,
+        922,
+        669
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 7,
+      "bbox": [
+        654,
+        81,
+        915,
+        657
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Introduction: 1-86 Credit and thanks • These slides have been made available for this course by prof. Kurose and Ross, authors of the book “Computer Networking: A Top-Down Approach and are the copyright holders of the material within. • Edits and/or additions by Mario Reja, PhD for the Computer Networking course at the Faculty of Informatics, UVT All material copyright 1996-2025 J.F Kurose and K.W. Ross, All Rights Reserved Computer Networking: A Top-Down Approach 9th edition Jim Kurose, Keith Ross Pearson, 2025"
+}

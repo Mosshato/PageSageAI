@@ -1,0 +1,10 @@
+{
+  "page_number": 67,
+  "narration_text": "Now we'll see why layering is essential in designing complex systems. Notice that having an explicit structure allows us to identify and understand the relationship between different components. This is similar to how we organize our daily tasks into categories, making it easier to manage and maintain them. Let's think about this together, when we have a layered system, changing one component's implementation is transparent to the rest of the system, much like changing a gate procedure in an airport doesn't affect the entire airport operation. I want you to focus on how this concept simplifies system maintenance and updates, which will be crucial as we move forward to the next topic.",
+  "word_count": 112,
+  "estimated_seconds": 51.7,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 8,
+  "has_visual_candidate": false
+}

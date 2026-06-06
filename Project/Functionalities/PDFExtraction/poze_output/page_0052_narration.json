@@ -1,0 +1,10 @@
+{
+  "page_number": 52,
+  "narration_text": "Now we'll see the results of a traceroute from gaia.cs.umass.edu to www.eurecom.fr. Notice that the delays vary significantly as the packets travel across different networks. Let's think about this together, what could be causing these variations in delay? I want you to focus on the trans-oceanic link, where the delay increases substantially. This is likely due to the longer distance the signal has to travel, as well as potential congestion on the link. As we analyze these results, we can start to understand the complexities of internet routing and how it affects network performance, which will be important for our next topic.",
+  "word_count": 102,
+  "estimated_seconds": 47.1,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 10,
+  "has_visual_candidate": false
+}

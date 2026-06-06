@@ -1,0 +1,10 @@
+{
+  "page_number": 42,
+  "narration_text": "Now we'll see how content provider networks play a crucial role in bringing services and content close to end users. Look at the diagrams on your slide — notice how they illustrate the connections between different networks. You should observe how content providers like Google or Microsoft have their own networks, which interact with access networks and internet exchange points. Let's think about this together, considering how these interactions enable efficient data transfer. I want you to focus on the complexity of these interactions and how they ultimately affect our online experience. As we move forward, we'll explore regional ISP networks and their role in this ecosystem.",
+  "word_count": 107,
+  "estimated_seconds": 49.4,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 58,
+  "has_visual_candidate": true
+}

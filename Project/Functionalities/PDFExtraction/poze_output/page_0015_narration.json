@@ -1,0 +1,10 @@
+{
+  "page_number": 15,
+  "narration_text": "Now we'll see how home networks connect to the headend or central office. Notice that these connections can be wired or wireless. Look at the diagram on your slide — notice how the wireless and wired devices are often combined in a single box, such as a WiFi wireless access point or a wired Ethernet router. I want you to focus on the different devices and how they interact with each other. You'll see various images on the slide, each showing a different aspect of home networks, so take a moment to observe the different components and how they fit together. As we move forward, let's keep in mind how these connections enable our online activities.",
+  "word_count": 116,
+  "estimated_seconds": 53.5,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 28,
+  "has_visual_candidate": true
+}

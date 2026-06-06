@@ -1,0 +1,10 @@
+{
+  "page_number": 34,
+  "narration_text": "Now we'll see how packet switching handles different types of data. Notice that it's particularly great for bursty data, where we sometimes have a lot to send, but at other times not so much. This is because packet switching allows for resource sharing and is simpler, with no call setup required. However, this can also lead to congestion and packet loss. Let's think about this together, how can we provide a more reliable and circuit-like experience with packet switching. I want you to focus on the trade-offs here, as we'll be exploring various techniques to address these challenges in the next part of our discussion.",
+  "word_count": 105,
+  "estimated_seconds": 48.5,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 10,
+  "has_visual_candidate": false
+}

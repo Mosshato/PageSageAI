@@ -1,0 +1,130 @@
+{
+  "page_number": 2,
+  "png_path": "poze_output\\page_0002.png",
+  "width_px": 2666,
+  "height_px": 1500,
+  "blocks": [
+    {
+      "type": "title",
+      "text": "Lecture 1: introduction",
+      "order": 1,
+      "bbox": [
+        73,
+        69,
+        487,
+        150
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Lecture goal: ▪Get “feel,” “big picture,”",
+      "order": 2,
+      "bbox": [
+        81,
+        211,
+        392,
+        338
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "introduction to terminology",
+      "order": 3,
+      "bbox": [
+        100,
+        342,
+        428,
+        394
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "• more depth, detail later in course",
+      "order": 4,
+      "bbox": [
+        119,
+        400,
+        454,
+        517
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "Overview/roadmap: ▪What is the Internet? What is a",
+      "order": 5,
+      "bbox": [
+        507,
+        213,
+        878,
+        333
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "protocol? ▪Network edge: hosts, access network,",
+      "order": 6,
+      "bbox": [
+        507,
+        330,
+        952,
+        440
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "physical media ▪Network core: packet/circuit switching,",
+      "order": 7,
+      "bbox": [
+        507,
+        438,
+        966,
+        548
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "title",
+      "text": "internet structure ▪Performance: loss, delay, throughput ▪Protocol layers, service models ▪Security ▪History",
+      "order": 8,
+      "bbox": [
+        507,
+        545,
+        934,
+        838
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "paragraph",
+      "text": "Introduction: 1-2",
+      "order": 9,
+      "bbox": [
+        895,
+        959,
+        974,
+        979
+      ],
+      "confidence": 1.0
+    },
+    {
+      "type": "figure",
+      "text": "",
+      "order": 10,
+      "bbox": [
+        86,
+        550,
+        358,
+        906
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "has_visual_candidate": true,
+  "raw_text": "Lecture 1: introduction Lecture goal: ▪Get “feel,” “big picture,” introduction to terminology • more depth, detail later in course Overview/roadmap: ▪What is the Internet? What is a protocol? ▪Network edge: hosts, access network, physical media ▪Network core: packet/circuit switching, internet structure ▪Performance: loss, delay, throughput ▪Protocol layers, service models ▪Security ▪History Introduction: 1-2"
+}

@@ -1,0 +1,10 @@
+{
+  "page_number": 74,
+  "narration_text": "Now we'll see how encapsulation works from an end-to-end perspective. Look at the diagram on your slide — notice how the nodes at each level encapsulate the data, adding their own headers as they move through the network. This process allows data to be transmitted efficiently, with each layer understanding its specific role. I want you to focus on the routers and switches, observing how they interact with the encapsulated data. Think about this as a package being shipped, with each stop adding its own label, and consider how this analogy applies to our network. As we examine this process, let's think about how it enables reliable communication across the network, which we'll explore further in the next section.",
+  "word_count": 119,
+  "estimated_seconds": 54.9,
+  "target_seconds": 60,
+  "model_used": "llama-3.3-70b-versatile",
+  "blocks_used": 33,
+  "has_visual_candidate": true
+}
