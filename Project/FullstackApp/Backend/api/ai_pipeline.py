@@ -12,21 +12,16 @@ Required packages in Django venv (pip install):
 """
 
 import json
-import os
 import sys
 import threading
 from pathlib import Path
 
 from django.conf import settings
-from dotenv import load_dotenv
-
-load_dotenv(Path(settings.BASE_DIR) / '.env')
 
 # ── Add Functionalities scripts to path ─────────────────────────────────────
 
-_FUNC_ROOT = Path(settings.BASE_DIR).parent.parent / "Functionalities"
 for _sub in ("PDFExtraction", "RAG"):
-    _p = str(_FUNC_ROOT / _sub)
+    _p = str(settings.FUNCTIONALITIES_ROOT / _sub)
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -51,10 +46,10 @@ def _import_rag_modules():
             StrOutputParser, RunnablePassthrough, RunnableParallel,
             PromptTemplate, RecursiveCharacterTextSplitter)
 
-# ── API Keys ──────────────────────────────────────────────────────────────────
+# ── API Keys (citite din settings, populate o singura data in core/settings/) ─
 
-GEMINI_API_KEY   = os.environ['GEMINI_API_KEY']
-DEEPGRAM_API_KEY = os.environ['DEEPGRAM_API_KEY']
+GEMINI_API_KEY   = settings.GEMINI_API_KEY
+DEEPGRAM_API_KEY = settings.DEEPGRAM_API_KEY
 
 # ── Shared embeddings instance (loaded once per process) ─────────────────────
 
@@ -67,14 +62,42 @@ def _get_embeddings():
     with _embeddings_lock:
         if _embeddings_instance is None:
             _, HuggingFaceEmbeddings, *_ = _import_rag_modules()
-            _embeddings_instance = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+            _embeddings_instance = HuggingFaceEmbeddings(model_name=settings.EMBEDDINGS_MODEL)
     return _embeddings_instance
 
 
 # ── ChromaDB builder ─────────────────────────────────────────────────────────
 
+def _ossu_db_exists() -> bool:
+    """True daca baza ChromaDB OSSU a fost deja initializata (are fisierul sqlite)."""
+    return (Path(settings.OSSU_CHROMA_DIR) / "chroma.sqlite3").exists()
+
+
+def _ensure_ossu_db_seeded():
+    """
+    Daca cineva nu a rulat niciodata RAG/createDB.py, instantierea Chroma(...)
+    ar crea automat o baza GOALA (fara programa OSSU). Verificam explicit si,
+    daca lipseste, o construim chiar acum, in acelasi mod in care o face
+    createDB.py — folosind exact aceiasi parametri din settings, ca cei doi
+    drumuri de creare (manual din CLI vs automat din pipeline) sa fie identice.
+    """
+    if _ossu_db_exists():
+        return
+    print("[AI Pipeline] ChromaDB OSSU nu exista — se construieste acum...", flush=True)
+    from createDB import creaza_baza_de_date
+    creaza_baza_de_date(
+        persist_directory=settings.OSSU_CHROMA_DIR,
+        embedding_model=settings.EMBEDDINGS_MODEL,
+        chunk_size=settings.RAG_CHUNK_SIZE,
+        chunk_overlap=settings.RAG_CHUNK_OVERLAP,
+    )
+    print("[AI Pipeline] ChromaDB OSSU construita.", flush=True)
+
+
 def build_course_chroma(output_dir: Path, course_id: int):
     """Read narration JSONs from output_dir and add them to the shared OSSU ChromaDB."""
+    _ensure_ossu_db_seeded()
+
     (_, _, _, _, _, _, _, RecursiveCharacterTextSplitter) = _import_rag_modules()
     _, _, Chroma, *_ = _import_rag_modules()
 
@@ -95,12 +118,15 @@ def build_course_chroma(output_dir: Path, course_id: int):
         return
 
     (_, _, _, _, _, _, _, RecursiveCharacterTextSplitter) = _import_rag_modules()
-    splitter = RecursiveCharacterTextSplitter(chunk_size=700, chunk_overlap=100)
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=settings.RAG_CHUNK_SIZE,
+        chunk_overlap=settings.RAG_CHUNK_OVERLAP,
+    )
     docs = splitter.create_documents(texts)
 
     (_, _, Chroma, *_) = _import_rag_modules()
     db = Chroma(
-        persist_directory=OSSU_CHROMA_DIR,
+        persist_directory=settings.OSSU_CHROMA_DIR,
         embedding_function=_get_embeddings(),
     )
     db.add_documents(docs)
@@ -108,24 +134,24 @@ def build_course_chroma(output_dir: Path, course_id: int):
 
 # ── RAG query — folosește baza OSSU existentă ────────────────────────────────
 
-OSSU_CHROMA_DIR = str(_FUNC_ROOT / "RAG" / "chroma_ossu_db")
-
 
 def query_rag(output_dir: Path, course_id: int, question: str,
               reformulate: bool = False, previous_answer: str = "") -> str:
+    _ensure_ossu_db_seeded()
+
     (ChatGoogleGenerativeAI, _, Chroma, StrOutputParser,
      RunnablePassthrough, RunnableParallel, PromptTemplate, _) = _import_rag_modules()
 
     db = Chroma(
-        persist_directory=OSSU_CHROMA_DIR,
+        persist_directory=settings.OSSU_CHROMA_DIR,
         embedding_function=_get_embeddings(),
     )
-    retriever = db.as_retriever(search_kwargs={"k": 4})
+    retriever = db.as_retriever(search_kwargs={"k": settings.RAG_TOP_K})
 
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model=settings.RAG_LLM_MODEL,
         google_api_key=GEMINI_API_KEY,
-        temperature=0.3,
+        temperature=settings.RAG_LLM_TEMPERATURE,
     )
 
     def format_docs(docs):

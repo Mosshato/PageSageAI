@@ -1,16 +1,14 @@
 import json
-import os
 import threading
 from pathlib import Path
 
 from django.conf import settings
-from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-load_dotenv(Path(settings.BASE_DIR) / '.env')
+from .constants import QUIZ_QUESTION_COUNT, QUIZ_OPTION_COUNT
 
-client = genai.Client(api_key=os.environ['GEMINI_API_KEY'])
+client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
 MAX_NARRATION_CHARS = 40_000
 
@@ -56,7 +54,7 @@ def generate_quiz(quiz_id: int):
         print(f"[Quiz Pipeline] Quiz {quiz_id} — collected {len(narration_text)} chars of narration", flush=True)
 
         prompt = f"""You are an expert educator creating a quiz.
-Based on the lecture content below, generate exactly 20 multiple-choice questions
+Based on the lecture content below, generate exactly {QUIZ_QUESTION_COUNT} multiple-choice questions
 that test understanding of the key concepts.
 
 Return ONLY a valid JSON array — no markdown fences, no preamble, no explanation.
@@ -68,8 +66,8 @@ Each element of the array must have exactly this structure:
 }}
 
 Rules:
-- correct_index is 0-based (0 = first option, 3 = fourth option).
-- All 4 options must be plausible; only one is correct.
+- correct_index is 0-based (0 = first option, {QUIZ_OPTION_COUNT - 1} = last option).
+- All {QUIZ_OPTION_COUNT} options must be plausible; only one is correct.
 - Questions must be specific to the lecture content, not generic.
 - Do not number the questions.
 - Output the JSON array and nothing else.
@@ -80,9 +78,9 @@ Lecture content:
 
         print(f"[Quiz Pipeline] Quiz {quiz_id} — calling Gemini...", flush=True)
         response = client.models.generate_content(
-            model="gemini-3.5-flash",
+            model=settings.QUIZ_LLM_MODEL,
             contents=prompt,
-            config=types.GenerateContentConfig(temperature=0.3),
+            config=types.GenerateContentConfig(temperature=settings.QUIZ_LLM_TEMPERATURE),
         )
 
         raw = response.text.strip()
@@ -99,15 +97,16 @@ Lecture content:
 
         if not isinstance(questions, list) or len(questions) < 10:
             raise ValueError(
-                f"Gemini returned {len(questions) if isinstance(questions, list) else 'non-list'} questions, expected 20."
+                f"Gemini returned {len(questions) if isinstance(questions, list) else 'non-list'} "
+                f"questions, expected {QUIZ_QUESTION_COUNT}."
             )
 
-        questions = questions[:20]
+        questions = questions[:QUIZ_QUESTION_COUNT]
 
         for i, q in enumerate(questions):
-            if not isinstance(q.get("options"), list) or len(q["options"]) != 4:
-                raise ValueError(f"Question {i} does not have exactly 4 options.")
-            if not isinstance(q.get("correct_index"), int) or q["correct_index"] not in range(4):
+            if not isinstance(q.get("options"), list) or len(q["options"]) != QUIZ_OPTION_COUNT:
+                raise ValueError(f"Question {i} does not have exactly {QUIZ_OPTION_COUNT} options.")
+            if not isinstance(q.get("correct_index"), int) or q["correct_index"] not in range(QUIZ_OPTION_COUNT):
                 raise ValueError(f"Question {i} has invalid correct_index.")
 
         quiz.questions = questions

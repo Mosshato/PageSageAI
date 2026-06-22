@@ -5,14 +5,26 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
-def creaza_baza_de_date():
+def creaza_baza_de_date(
+    persist_directory="./chroma_ossu_db",
+    embedding_model="all-MiniLM-L6-v2",
+    chunk_size=700,
+    chunk_overlap=100,
+):
+    """
+    Parametrii au default-uri identice cu cele folosite la rularea standalone
+    (`python createDB.py`), ca sa nu se schimbe comportamentul CLI.
+    api/ai_pipeline.py apeleaza aceasta functie cu valorile din Django
+    settings (OSSU_CHROMA_DIR, EMBEDDINGS_MODEL, RAG_CHUNK_SIZE/OVERLAP),
+    ca sa nu existe doua surse de adevar pentru aceleasi valori.
+    """
     print("1. Se descarcă programa OSSU...")
     url = "https://raw.githubusercontent.com/ossu/computer-science/master/README.md"
     response = requests.get(url)
     if response.status_code != 200:
         print("Eroare la descărcarea fișierului de pe GitHub.")
         return
-    
+
     text_complet = response.text
 
     print("2. Se izolează cursurile principale (Core Computer Science)...")
@@ -28,8 +40,8 @@ def creaza_baza_de_date():
 
     print("3. Se împarte textul în chunk-uri...")
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=700, 
-        chunk_overlap=100,
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
         separators=["\n\n", "\n", " ", ""]
     )
     chunks = text_splitter.create_documents([text_util])
@@ -37,18 +49,17 @@ def creaza_baza_de_date():
 
     print("4. Se încarcă modelul de embeddings (Open-Source)...")
     # Folosim un model excelent și lightweight de la HuggingFace (rulează local, e gratuit)
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name=embedding_model)
 
     print("5. Se inițializează și se salvează ChromaDB local...")
-    persist_directory = "./chroma_ossu_db"
-    
+
     # Creăm baza de date și salvăm chunk-urile
     db = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,
         persist_directory=persist_directory
     )
-    
+
     print(f"Succes! Baza de date a fost salvată în folderul: '{persist_directory}'")
 
 if __name__ == "__main__":

@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 import random
 import string
 
+from .constants import CLASS_CODE_LENGTH
+
 
 # ─── AUTH MODELS ────────────────────────────────────────────────────────────
 
@@ -60,7 +62,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 # ─── ACADEMIC MODELS ────────────────────────────────────────────────────────
 
 def generate_code():
-    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=CLASS_CODE_LENGTH))
 
 
 class Class(models.Model):

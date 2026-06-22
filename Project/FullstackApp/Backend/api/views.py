@@ -13,6 +13,7 @@ from .models import Class, Enrollment, Assignment, Submission, SubmissionFile, A
 from .serializers import (ClassSerializer, ClassDetailSerializer, AssignmentSerializer,
                           SubmissionSerializer, TeacherClassSerializer,
                           TeacherClassDetailSerializer, TeacherSubmissionSerializer)
+from .constants import MIN_GRADE, MAX_GRADE, QUIZ_QUESTION_COUNT, QUIZ_OPTION_COUNT
 
 
 @api_view(['GET'])
@@ -420,10 +421,10 @@ def teacher_grade_submission(request, class_id, submission_id):
     if grade is not None:
         try:
             grade = int(grade)
-            if not 0 <= grade <= 100:
+            if not MIN_GRADE <= grade <= MAX_GRADE:
                 raise ValueError
         except (ValueError, TypeError):
-            return Response({'error': 'Grade must be 0–100.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': f'Grade must be {MIN_GRADE}–{MAX_GRADE}.'}, status=status.HTTP_400_BAD_REQUEST)
         submission.grade = grade
         submission.assignment.status = 'graded'
         submission.assignment.save()
@@ -815,11 +816,11 @@ def submit_quiz_attempt(request, course_id):
     answers = request.data.get('answers', [])
     if (
         not isinstance(answers, list)
-        or len(answers) != 20
-        or not all(isinstance(a, int) and a in range(4) for a in answers)
+        or len(answers) != QUIZ_QUESTION_COUNT
+        or not all(isinstance(a, int) and a in range(QUIZ_OPTION_COUNT) for a in answers)
     ):
         return Response(
-            {'error': 'answers must be a list of 20 integers (0–3).'},
+            {'error': f'answers must be a list of {QUIZ_QUESTION_COUNT} integers (0–{QUIZ_OPTION_COUNT - 1}).'},
             status=status.HTTP_400_BAD_REQUEST,
         )
 
@@ -827,7 +828,7 @@ def submit_quiz_attempt(request, course_id):
         1 for i, ans in enumerate(answers)
         if i < len(quiz.questions) and ans == quiz.questions[i]['correct_index']
     )
-    score = round(correct_count / 20 * 100)
+    score = round(correct_count / QUIZ_QUESTION_COUNT * 100)
 
     attempt = QuizAttempt.objects.create(
         quiz=quiz,
@@ -845,14 +846,14 @@ def submit_quiz_attempt(request, course_id):
             'correct_index':  quiz.questions[i]['correct_index'],
             'is_correct':     answers[i] == quiz.questions[i]['correct_index'],
         }
-        for i in range(20)
+        for i in range(QUIZ_QUESTION_COUNT)
     ]
 
     return Response({
         'attempt_id':    attempt.id,
         'score':         score,
         'correct_count': correct_count,
-        'total':         20,
+        'total':         QUIZ_QUESTION_COUNT,
         'results':       results,
     })
 
@@ -883,7 +884,7 @@ def get_quiz_results_for_teacher(request, class_id, course_id):
                 'student_email': a.student.email,
                 'score':         a.score,
                 'correct_count': a.correct_count,
-                'total':         20,
+                'total':         QUIZ_QUESTION_COUNT,
                 'completed_at':  a.completed_at.isoformat(),
             }
             for a in attempts

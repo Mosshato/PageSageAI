@@ -1,16 +1,14 @@
 import os
 import subprocess
 import threading
-from pathlib import Path
 
 from django.conf import settings
-from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-load_dotenv(Path(settings.BASE_DIR) / '.env')
+from .constants import MANIM_RENDER_TIMEOUT_SECONDS
 
-client = genai.Client(api_key=os.environ['GEMINI_API_KEY_MANIM'])
+client = genai.Client(api_key=settings.GEMINI_API_KEY_MANIM)
 
 MAX_RETRIES = 3
 
@@ -87,9 +85,9 @@ def generate_and_render_animation(animation_id: int):
 
             prompt = _build_prompt(concept)
             response = client.models.generate_content(
-                model="gemini-3.5-flash",
+                model=settings.MANIM_LLM_MODEL,
                 contents=prompt,
-                config=types.GenerateContentConfig(temperature=0.2),
+                config=types.GenerateContentConfig(temperature=settings.MANIM_LLM_TEMPERATURE),
             )
             raw = response.text.strip()
 
@@ -120,7 +118,7 @@ def generate_and_render_animation(animation_id: int):
                 cwd=work_dir,
                 capture_output=True,
                 text=True,
-                timeout=180,
+                timeout=MANIM_RENDER_TIMEOUT_SECONDS,
             )
             if result.returncode != 0:
                 err = result.stderr[-2000:] if result.stderr else "Manim exited with error"
