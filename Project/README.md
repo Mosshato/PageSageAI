@@ -62,8 +62,8 @@ Open a class to access all management tabs:
 - Add a student manually by email or remove them from the class
 
 #### 5. AI Teaching — Upload a PDF Course
-- Inside a class, go to the **AI Teach** section
-- Drag and drop a PDF lecture file or click to browse
+- Inside a class, go to the **Lectures** section
+- Upload a PDF lecture file from disk
 - Enter a course title and click **Upload**
 - The backend processes the PDF automatically through 4 stages:
   - **EXTRACTING** — PDF pages → PNG images + structured JSON
@@ -73,13 +73,14 @@ Open a class to access all management tabs:
 - A progress indicator shows the current step; when complete the course shows **READY**
 
 #### 6. Generate a Quiz
-- Open an AI course that is **READY**
+- Open the **QUIZ** section of a classroom
 - Click **Generate Quiz**
 - Gemini AI reads all narrations and generates 20 multiple-choice questions (4 options each)
-- Once generated, students can take the quiz; you can view per-student results from the **Quiz Results** tab
+- Once generated, students can take the quiz; you can view per-student results
+- Each course has the option to **Regenerate**
 
 #### 7. View Statistics
-- From the main dashboard click **Stats** to see total classes, students, assignments and submission rates
+- click **Profile Icon** to see total classes, students, assignments and submission rates and some information about the account
 
 ---
 
@@ -100,47 +101,53 @@ Open a class to access all management tabs:
 
 #### 4. View Class Content
 Inside a class you can browse:
-- **Announcements** — messages posted by the teacher
+- **Dashboard** — you can see messages posted by the teacher, upcoming work
 - **Assignments** — tasks with due dates and attached files
-- **Lectures** — lecture materials uploaded by the teacher
-- **AI Course** — if the teacher uploaded a PDF, you can access the AI-processed course here
+- **Lectures** — lecture materials uploaded by the teacher if the teacher uploaded a PDF, you can access the AI-processed course here
+- **Classmates** — you can see your classmates enrolled to this course
 
 #### 5. Submit an Assignment
-- Open an assignment and click **Submit**
+- Open an assignment and click **Submit work**
 - Upload your file(s) and confirm
-- You can **Resubmit** (replaces previous submission) or **Unsubmit** (retract) at any time before grading
+- You can **Change** (replaces previous submission) or **Unsubmit** (retract) at any time before grading
 - Once graded, you see your score and any feedback
 
 #### 6. Learn with AI — AI Course Viewer
-- Open an AI course from your class → click **Launch AI Course**
-- Use the **◉ Lecture** tab to browse narrated slides:
+- Open an AI course from your class → click **Teach Using AI**
+- You can see the PDF lecture on each page, u can navigate through page narrations from the arrows in the right:
   - Each page shows the slide image with an audio player (MP3 narration)
   - Read along or listen to the AI professor explain the content
 
 #### 7. Ask the AI (RAG Q&A)
-- In the Lecture tab, type any question in the **Ask a question** box
+- In the Teach using AI tab, type any question in the **Ask a question** box
 - The RAG engine searches the course content + OSSU curriculum and answers in context
 - If the answer is unclear, click **Explain differently** — the AI rephrases with simpler language and analogies
 
 #### 8. Generate a Concept Animation
-- While viewing a slide, click the **⊕ Animate** button next to any concept
+- While viewing a slide, click the **Animate** button next to any concept
 - Type the concept you want animated (e.g. "bubble sort", "binary search tree")
 - The backend generates a Manim Python animation and renders it as an MP4 video
 - When ready (status turns **READY**), the video plays inline
 - Already-generated animations are cached — the same concept won't be re-generated
+- If there were other animations generated for that course, u will be able to see them, they remain saved
 
 #### 9. Take a Quiz
 - If the teacher generated a quiz for the course, you see a **Take Quiz** button
 - Answer all 20 multiple-choice questions and click **Submit**
 - Your score and correct answers are shown immediately
-- Multiple attempts are allowed — each submission is recorded separately
+- Multiple attempts are allowed
 
 #### 10. View Your Progress
 - From the sidebar go to **Assignments** to see all tasks across all classes with their status (pending / submitted / graded)
 - Go to **Account → Stats** to see your submission rate and grades summary
 - The **Calendar** view shows upcoming assignment due dates
+#### 10. Calendar
+- In the **Calendar** section of header u have a calendar with all upcoming work or already submitted work in your calendar
+ #### 10. Classes
+- In the **Classes** section of header you can see all your classes that you are enrolled in
 
----
+ 
+ ---
 
 ## Technical Setup
 
@@ -337,6 +344,12 @@ These values live in `FullstackApp/Backend/api/constants.py` and can be changed 
 | `MAX_GRADE` | `100` | Maximum grade for assignment submissions |
 | `CLASS_CODE_LENGTH` | `6` | Length of the auto-generated class enrollment code |
 | `MANIM_RENDER_TIMEOUT_SECONDS` | `180` | Seconds before a Manim render is killed (3 min) |
+| `MANIM_MAX_RETRIES` | `3` | Retry attempts if Manim rendering fails |
+| `NARRATION_WORDS_PER_MINUTE` | `130` | Speaking pace used to estimate narration length per slide |
+| `NARRATION_MIN_SECONDS_PER_SLIDE` | `20` | Minimum narration duration per slide |
+| `NARRATION_MAX_SECONDS_PER_SLIDE` | `110` | Maximum narration duration per slide |
+| `TTS_RATE_LIMIT_DELAY` | `6.5` | Seconds between Deepgram TTS requests (free tier limit) |
+| `TTS_MAX_RETRIES` | `5` | Retry attempts on Deepgram network/rate-limit errors |
 
 ---
 
@@ -362,18 +375,11 @@ These live in `FullstackApp/Backend/core/settings/base.py` and apply across all 
 - Access token: **5 minutes** — short-lived for security
 - Refresh token: **1 day**
 
-**Narration model** (in `api/services/narration.py`):
-- `DEFAULT_MODEL = "llama-3.1-8b-instant"` — Groq model for lecture narration
-- `WORDS_PER_MINUTE = 130` — used to calculate target narration length per slide
-- `MIN_SECONDS_PER_SLIDE = 20` / `MAX_SECONDS_PER_SLIDE = 110` — bounds for auto narration duration
+**Narration & TTS model names** (in `core/settings/base.py`, same pattern as RAG/Quiz/Manim models):
+- `NARRATION_LLM_MODEL = "llama-3.1-8b-instant"` — Groq model for lecture narration
+- `TTS_VOICE = "aura-2-orpheus-en"` — Deepgram voice; alternatives: `aura-2-zeus-en`, `aura-2-hermes-en`, `aura-2-jupiter-en`
 
-**TTS settings** (in `api/services/tts.py`):
-- `DEFAULT_VOICE = "aura-2-orpheus-en"` — Deepgram voice; alternatives: `aura-2-zeus-en`, `aura-2-hermes-en`, `aura-2-jupiter-en`
-- `RATE_LIMIT_DELAY = 6.5` — seconds between TTS requests (Deepgram free tier limit)
-- `MAX_RETRIES = 5` — retry attempts on network/rate-limit errors
-
-**Manim animation** (in `api/services/manim_pipeline.py`):
-- `MAX_RETRIES = 3` — retries if Manim rendering fails
+**Manim animation:**
 - Scene class must always be named `ConceptScene`
 - Renders at `-ql` (low quality) for speed; change to `-qh` for high quality (much slower)
 
