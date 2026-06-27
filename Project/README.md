@@ -133,7 +133,7 @@ Inside a class you can browse:
 - If the teacher generated a quiz for the course, you see a **Take Quiz** button
 - Answer all 20 multiple-choice questions and click **Submit**
 - Your score and correct answers are shown immediately
-- One attempt per student per quiz
+- Multiple attempts are allowed — each submission is recorded separately
 
 #### 10. View Your Progress
 - From the sidebar go to **Assignments** to see all tasks across all classes with their status (pending / submitted / graded)
@@ -186,32 +186,6 @@ venv\Scripts\activate
 source venv/bin/activate
 
 # 4. Install all dependencies
-pip install Django==5.2.14
-pip install djangorestframework==3.17.1
-pip install djangorestframework-simplejwt==5.5.1
-pip install django-cors-headers==4.9.0
-pip install psycopg2-binary==2.9.12
-pip install python-dotenv==1.2.2
-pip install PyMuPDF==1.27.2.3
-pip install pillow==12.2.0
-pip install torch==2.12.0
-pip install transformers==5.9.0
-pip install groq==1.2.0
-pip install google-genai==1.75.0
-pip install requests==2.34.2
-pip install langchain-core==1.4.0
-pip install langchain-text-splitters==1.1.2
-pip install langchain-huggingface==1.2.2
-pip install langchain-chroma==1.1.0
-pip install langchain-google-genai==4.2.3
-pip install chromadb==1.5.9
-pip install sentence-transformers==5.5.1
-pip install scikit-learn==1.8.0
-pip install numpy==2.4.6
-pip install locust==2.44.4
-pip install matplotlib==3.11.0
-
-# Alternatively, if a requirements.txt is available:
 pip install -r requirements.txt
 ```
 
