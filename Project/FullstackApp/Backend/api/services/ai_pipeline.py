@@ -282,7 +282,7 @@ def _step4_done(output_dir: Path) -> bool:
 
 
 def _run_pipeline(course_id: int, pdf_path: Path, output_dir: Path):
-    from .models import AICourse
+    from ..models import AICourse
 
     def _update(status=None, step=None, total_pages=None, error_msg=None):
         course = AICourse.objects.get(id=course_id)

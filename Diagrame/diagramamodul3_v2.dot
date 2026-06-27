@@ -1,0 +1,73 @@
+// ============================================================
+//  Modul 3 — PDF Ingestion + Narration Generation (corectat)
+//  Corectii fata de original:
+//   - ADAUGAT pasul real de captioning al figurilor cu Gemini Vision
+//     (crop figura -> describe_figure, max 3 retries, backoff exponential)
+//   - Narrare: "Exponential backoff (max 3 retries)" -> wait din mesajul
+//     Groq retry-after, max 5 retries
+// ============================================================
+digraph Modul3 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=11, nodesep=0.40, ranksep=0.5, compound=true];
+  node  [fontname="Helvetica", fontsize=10];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555"];
+
+  subgraph cluster_ingest {
+    label="PDF Ingestion (Step 1)";
+    fontsize=13; fontname="Helvetica-Bold"; style="rounded,filled"; fillcolor="#eef4fb"; color="#9bbbdd";
+
+    i_recv  [label="Receive pdf_path, output_dir", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+    i_load  [label="Load LayoutLMv3 model\n(cached in memory)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_each  [label="For each page in PDF", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    i_rend  [label="Render to RGB 200 DPI\nSave page_XXXX.png", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_spans [label="Extract text spans\n(x0,y0,x1,y1, font_size, bold)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_norm  [label="Normalize bboxes to 0-1000", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_inf   [label="Run LayoutLMv3 inference\n(token limit: 512)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_vote  [label="Majority vote to semantic type\n(title|paragraph|formula|table|...)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_isfig [label="Block is figure?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    i_vis   [label="Crop figure → Gemini Vision\ndescribe_figure (max 3 retries, backoff)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_heur  [label="Fallback heuristics\n(font size, bold, position)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    i_save  [label="Save page_XXXX.json", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    i_idx   [label="Save course_index.json", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    i_done  [label="Step 1 complete", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+
+    i_recv -> i_load -> i_each;
+    i_each -> i_rend [label="page"];
+    i_rend -> i_spans -> i_norm -> i_inf -> i_vote -> i_isfig;
+    i_isfig -> i_vis  [label="Yes"];
+    i_isfig -> i_heur [label="No"];
+    i_vis -> i_heur;
+    i_heur -> i_save;
+    i_save -> i_each [label="next page", constraint=false];
+    i_each -> i_idx  [label="all done"];
+    i_idx -> i_done;
+  }
+
+  subgraph cluster_narr {
+    label="Narration Generation (Step 2)";
+    fontsize=13; fontname="Helvetica-Bold"; style="rounded,filled"; fillcolor="#eef7ee"; color="#a8d3a8";
+
+    n_each  [label="For each page_XXXX.json (sorted)", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    n_exist [label="Narration file\nalready exists?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    n_skip  [label="Skip", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+    n_read  [label="Read classified blocks", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    n_prompt[label="Build professor-style prompt\n(target: seconds_per_slide)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    n_call  [label="Call Groq API\n(llama-3.1-8b-instant)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    n_rate  [label="Rate limit error?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    n_wait  [label="Wait per Groq retry-after\n(max 5 retries)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    n_save  [label="Save page_XXXX_narration.json", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    n_done  [label="Step 2 complete", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+
+    n_each -> n_exist [label="Yes"];
+    n_exist -> n_skip [label="Yes"];
+    n_exist -> n_read [label="No"];
+    n_read -> n_prompt -> n_call -> n_rate;
+    n_rate -> n_wait [label="Yes"];
+    n_wait -> n_call [constraint=false];
+    n_rate -> n_save [label="No"];
+    n_save -> n_each [label="next page", constraint=false];
+    n_each -> n_done [label="all done"];
+  }
+
+  i_done -> n_each [style=dashed, label="Step 2 starts after Step 1", lhead=cluster_narr];
+}

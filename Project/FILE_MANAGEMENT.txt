@@ -1,0 +1,515 @@
+================================================================================
+                    PROJECT FILE MANAGEMENT STRUCTURE
+                    PageSage AI Educational Platform
+================================================================================
+
+Project Root: C:\Facultate\ANUL3_SEM2\LICENTA\Project
+================================================================================
+
+ROOT LEVEL DIRECTORIES & FILES
+================================================================================
+
+.claude/
+  └─ settings.local.json          Claude Code workspace settings
+
+.gitignore                        Git ignore rules
+.pdf                              (hidden file)
+
+CLAUDE.md                          Project guidance for Claude Code (IMPORTANT)
+                                   Contains: architecture, setup, commands, models,
+                                   endpoints, file paths
+
+BACKEND_FILE_SCHEMA.txt            Backend file structure documentation
+BACKEND_STRUCTURE.txt              Backend structure reference
+
+AICourse_10_E2E_Timing_Report.md   Performance/timing report
+arhitecturasistem.png              System architecture diagram
+chromadb_rag_diagram.png           RAG system diagram
+
+================================================================================
+DIAGRAME/ (Diagrams Directory)
+================================================================================
+
+diagramamodul1.png                 Module 1 diagram
+diagramamodul2.png                 Module 2 diagram
+diagramamodul3.png                 Module 3 diagram
+diagramamodul4.png                 Module 4 diagram
+diagramamodul5.png                 Module 5 diagram
+diagramamodul6.png                 Module 6 diagram
+chromadb_rag_diagram.png           ChromaDB RAG system diagram
+postgres_er_diagram.png            PostgreSQL Entity-Relationship diagram
+
+================================================================================
+FULLSTACKAPP/ (Main Web Application)
+================================================================================
+
+FullstackApp/
+├── Backend/                       Django REST API (Python 3.11)
+│   ├── venv/                      Virtual environment (NOT tracked in git)
+│   ├── media/                     Uploaded files directory (NOT tracked)
+│   │   ├── submissions/           Student submission files
+│   │   ├── attachments/           Assignment/lecture attachments
+│   │   ├── ai_courses/            AICourse output (PNGs, JSONs, audio)
+│   │   │   └── <course_id>/
+│   │   │       ├── page_XXXX.png
+│   │   │       ├── page_XXXX_narration.json
+│   │   │       └── audio/page_XXXX.mp3
+│   │   └── animations/            Manim animation outputs
+│   │       └── anim_<id>/
+│   │           ├── scene.py
+│   │           └── media/
+│   │
+│   ├── .env                       Environment secrets (NOT tracked, LOCAL ONLY)
+│   ├── .env.example               Environment template (tracked)
+│   ├── db.sqlite3                 SQLite database (LOCAL DEV ONLY)
+│   ├── manage.py                  Django management script
+│   │
+│   ├── core/                      Django project settings & URL root
+│   │   ├── settings/              Settings package (env-dependent)
+│   │   │   ├── base.py            Common settings (models, installed apps, timeouts)
+│   │   │   ├── local.py           Development settings (debug=True, secrets from .env)
+│   │   │   ├── production.py       Production settings (secrets from ENV_NAME)
+│   │   │   └── __init__.py        Picks settings based on ENV_NAME var
+│   │   ├── urls.py                Root URL router
+│   │   │   └── Routes: /api/ → api.urls
+│   │   │                 /api/auth/ → apps.authentication.urls
+│   │   │                 /admin/
+│   │   ├── views.py               Core views (ping health check)
+│   │   ├── asgi.py                ASGI config (for async servers)
+│   │   └── wsgi.py                WSGI config (for production servers)
+│   │
+│   ├── apps/                      Reusable Django apps
+│   │   └── authentication/        Auth app (JWT signup/login)
+│   │       ├── models.py          (Empty - User model lives in api/models/auth.py)
+│   │       ├── serializers.py     UserSerializer, LoginSerializer
+│   │       ├── views.py           signup, login, me endpoints
+│   │       ├── urls.py            Route: /api/auth/
+│   │       ├── permissions.py     Permission classes
+│   │       ├── apps.py            App config
+│   │       └── admin.py           Django admin config
+│   │
+│   ├── api/                       Main API app
+│   │   ├── models/                Domain models (package)
+│   │   │   ├── auth.py            User, UserManager
+│   │   │   ├── classroom.py        Class, Enrollment, Announcement
+│   │   │   ├── assignment.py       Assignment, AssignmentAttachment, Submission, SubmissionFile
+│   │   │   ├── lecture.py          Lecture, LectureFile
+│   │   │   ├── ai.py              AICourse, ConceptAnimation, Quiz, QuizAttempt
+│   │   │   └── __init__.py         Re-exports all models
+│   │   │
+│   │   ├── services/              Background pipelines (package)
+│   │   │   ├── ai_pipeline.py      AICourse processing (4-step: extract, narrate, TTS, chroma)
+│   │   │   ├── manim_pipeline.py   ConceptAnimation generation (generate code → render)
+│   │   │   ├── quiz_pipeline.py    Quiz generation (extract text → LLM → validate)
+│   │   │   └── __init__.py         (Empty)
+│   │   │
+│   │   ├── views/                 API endpoints (package, organized by domain)
+│   │   │   ├── auth_views.py       Re-export of apps.authentication.views
+│   │   │   ├── student_views.py    Student endpoints (classes, assignments)
+│   │   │   ├── teacher_views.py    Teacher endpoints (create class, grade, etc)
+│   │   │   ├── ai_views.py         AI endpoints (courses, animations, quiz)
+│   │   │   └── __init__.py         Re-exports all view functions
+│   │   │
+│   │   ├── migrations/             Database migrations
+│   │   │   ├── 0001_initial.py     Initial schema
+│   │   │   ├── 0002_...N.py        Incremental migrations
+│   │   │   └── __init__.py
+│   │   │
+│   │   ├── management/             Django management commands
+│   │   │   └── commands/
+│   │   │       ├── seed.py         Seed database with demo data
+│   │   │       ├── seed_load_test.py  Create load test data
+│   │   │       └── __init__.py
+│   │   │
+│   │   ├── tests/                  Unit & integration tests
+│   │   │   ├── test_module1_auth.py        Auth tests
+│   │   │   ├── test_module2_classroom.py   Classroom/class tests
+│   │   │   ├── test_module3_pdf.py         AICourse extraction tests
+│   │   │   ├── test_module4_rag.py         RAG query tests
+│   │   │   ├── test_module5_animation.py   Animation generation tests
+│   │   │   ├── test_module6_quiz.py        Quiz generation tests
+│   │   │   │
+│   │   │   ├── load/                Load/performance tests (Locust)
+│   │   │   │   ├── locustfile.py    Load test runner
+│   │   │   │   ├── base.py          Load test base classes
+│   │   │   │   ├── tasks/           Task definitions per module
+│   │   │   │   │   ├── module1_auth.py
+│   │   │   │   │   ├── module2_classroom.py
+│   │   │   │   │   ├── module3_pdf.py
+│   │   │   │   │   ├── module4_rag.py
+│   │   │   │   │   ├── module5_animation.py
+│   │   │   │   │   ├── module6_quiz.py
+│   │   │   │   │   └── __init__.py
+│   │   │   │   │
+│   │   │   │   └── reports/        Load test reports (generated)
+│   │   │   │       └── load_report_TIMESTAMP.md
+│   │   │   │
+│   │   │   ├── perf_report.txt     Performance summary
+│   │   │   ├── perf_chart.png      Performance visualization
+│   │   │   ├── plot_perf.py        Performance plotting script
+│   │   │   ├── base.py             Test base classes
+│   │   │   └── __init__.py
+│   │   │
+│   │   ├── serializers.py          DRF serializers (student, teacher variants)
+│   │   ├── constants.py            Business logic constants (quiz questions, grade bounds, timeouts)
+│   │   ├── urls.py                 API routes (/api/ prefix)
+│   │   ├── apps.py                 App config (ApiConfig.ready resumes processing)
+│   │   ├── admin.py                Django admin configuration
+│   │   └── __init__.py
+│   │
+│   ├── load_tests/                 Load testing directory (alternative structure)
+│   │   ├── locustfile.py
+│   │   ├── reports/
+│   │   │   └── load_report_TIMESTAMP.md
+│   │   └── run_load_test.ps1       PowerShell script to run load tests
+│   │
+│   └── BACKEND_STRUCTURE.txt       Backend structure reference
+
+├── Frontend/                       React + Vite (JavaScript/JSX)
+│   └── frontend-app/
+│       ├── node_modules/           Dependencies (NOT tracked in git)
+│       ├── dist/                   Build output (NOT tracked)
+│       ├── public/                 Static assets
+│       │   ├── favicon.svg
+│       │   └── icons.svg           Icon sprite
+│       │
+│       ├── src/
+│       │   ├── main.jsx            Entry point (AuthProvider + Router)
+│       │   ├── App.jsx             Main router component
+│       │   ├── App.css
+│       │   ├── index.css           Global styles
+│       │   │
+│       │   ├── assets/             Images & static assets
+│       │   │   ├── hero.png
+│       │   │   ├── react.svg
+│       │   │   └── vite.svg
+│       │   │
+│       │   ├── context/            Global state (React Context)
+│       │   │   └── AuthContext.jsx  Auth state (token, user, role)
+│       │   │
+│       │   ├── components/         Shared components
+│       │   │   └── ProtectedRoute.jsx  Route guard
+│       │   │
+│       │   ├── pages/              Public pages (no sidebar)
+│       │   │   ├── Welcome.jsx     Landing page
+│       │   │   ├── Login.jsx       Login form
+│       │   │   └── SignUp.jsx      Signup form
+│       │   │
+│       │   ├── student/            Student pages (with StudentLayout sidebar)
+│       │   │   ├── StudentLayout.jsx       Shared sidebar layout
+│       │   │   ├── StudentDashboard.jsx    Dashboard
+│       │   │   ├── StudentClasses.jsx      Enrolled classes list
+│       │   │   ├── ClassDashboard.jsx      Class detail (announcements, assignments, lectures tab)
+│       │   │   ├── StudentAssignments.jsx  All assignments across classes
+│       │   │   ├── StudentLectures.jsx     Tab inside ClassDashboard
+│       │   │   ├── StudentCalendar.jsx     Calendar
+│       │   │   ├── StudentAccount.jsx      Account settings
+│       │   │   ├── AITeachDashboard.jsx    AI courses (NO sidebar, tabs: Lecture + Animations)
+│       │   │   ├── SubmitModal.jsx         Reusable modal for assignment submission
+│       │   │   ├── AssignmentsContext.jsx  Cache context for assignments
+│       │   │   └── mockData.js             Mock data for development
+│       │   │
+│       │   └── teacher/            Teacher pages (no shared layout)
+│       │       ├── TeacherDashboard.jsx      Dashboard
+│       │       ├── TeacherClasses.jsx        List/create classes
+│       │       ├── TeacherClassDashboard.jsx Manage class (PDF upload, announcements, assignments)
+│       │       ├── TeacherStudents.jsx       Student management
+│       │       └── TeacherAccount.jsx        Account settings
+│       │
+│       ├── index.html              HTML entry point
+│       ├── pagesageai.html         Alternative HTML template
+│       ├── package.json            Frontend dependencies
+│       ├── package-lock.json       Dependency lock file
+│       ├── vite.config.js          Vite build config
+│       ├── eslint.config.js        ESLint configuration
+│       ├── README.md               Frontend README
+│       └── .gitignore              Git ignore rules
+
+================================================================================
+FUNCTIONALITIES/ (Standalone Utilities)
+================================================================================
+
+Functionalities/
+├── venv/                          Virtual environment (NOT tracked in git)
+├── .env                           Env secrets (Claude/OpenAI API keys, NOT tracked)
+│
+├── PDFExtraction/                 PDF processing utilities
+│   ├── textAndImageExtraction.py  ingest_pdf() - extract text, images, save JSONs
+│   ├── tableExtraction.py         narrate_course() - generate narration from extracted text
+│   └── TTS.py                     generate_audio_for_course() - text-to-speech (MP3 output)
+│
+├── RAG/                           Retrieval-Augmented Generation
+│   ├── chroma_ossu_db/            ChromaDB instance (generated by createDB.py)
+│   ├── createDB.py                Seed ChromaDB from OSSU curriculum
+│   ├── testRAG.py                 Manual RAG query testing
+│   └── verifica_db.py             ChromaDB inspection utility
+
+├── CodeGenarationModel/           Code generation ML model
+│   └── Data/Processed/            Processed training data
+│       ├── file1.py
+│       └── notebook1_cont1_llama5_qwen4b2.py
+
+└── .txt                           (hidden file)
+
+================================================================================
+DATABASE STRUCTURE
+================================================================================
+
+DEVELOPMENT: SQLite (FullstackApp/Backend/db.sqlite3)
+PRODUCTION: PostgreSQL (configured in core/settings/production.py)
+
+Tables by Domain:
+  - Users: authentication_user (email, role, password_hash)
+  - Classes: api_class (name, code, teacher_id)
+  - Enrollments: api_enrollment (class, student_email, student_name)
+  - Announcements: api_announcement (class_id, title, content)
+  - Assignments: api_assignment (class_id, title, status, due_date)
+  - Assignment Files: api_assignmentattachment, api_assignmentfile
+  - Submissions: api_submission (assignment, student_email, status, grade)
+  - Submission Files: api_submissionfile
+  - Lectures: api_lecture (class_id, title)
+  - Lecture Files: api_lecturefile
+  - AI Courses: api_aicourse (class_id, title, status, current_step)
+  - Animations: api_conceptanimation (ai_course, concept, status)
+  - Quizzes: api_quiz (ai_course, questions JSON, status)
+  - Quiz Attempts: api_quizattempt (quiz, student, answers, score)
+
+================================================================================
+FILE ORGANIZATION BY PURPOSE
+================================================================================
+
+CONFIGURATION & SECRETS:
+  ├─ FullstackApp/Backend/.env           (LOCAL - NOT tracked)
+  ├─ FullstackApp/Backend/.env.example   (Tracked template)
+  ├─ Functionalities/.env                (LOCAL - NOT tracked)
+  ├─ core/settings/base.py               (Common config)
+  ├─ core/settings/local.py              (Dev config)
+  ├─ core/settings/production.py         (Prod config)
+  └─ .claude/settings.local.json         (Claude Code settings)
+
+DATABASE MODELS:
+  ├─ api/models/auth.py                  (User authentication)
+  ├─ api/models/classroom.py             (Class, Enrollment, Announcement)
+  ├─ api/models/assignment.py            (Assignments, Submissions)
+  ├─ api/models/lecture.py               (Lectures, Files)
+  └─ api/models/ai.py                    (AI courses, animations, quizzes)
+
+API ENDPOINTS:
+  ├─ api/views/auth_views.py             (Login, signup, me)
+  ├─ api/views/student_views.py          (Student classes, assignments)
+  ├─ api/views/teacher_views.py          (Teacher management endpoints)
+  ├─ api/views/ai_views.py               (AI courses, animations, quizzes)
+  └─ api/urls.py                         (Route definitions)
+
+BACKGROUND PIPELINES:
+  ├─ api/services/ai_pipeline.py         (4-step PDF → course processing)
+  ├─ api/services/manim_pipeline.py      (Concept animation generation)
+  └─ api/services/quiz_pipeline.py       (Quiz generation from PDF)
+
+TESTING:
+  ├─ api/tests/test_module1_auth.py      (Authentication tests)
+  ├─ api/tests/test_module2_classroom.py (Classroom tests)
+  ├─ api/tests/test_module3_pdf.py       (PDF extraction tests)
+  ├─ api/tests/test_module4_rag.py       (RAG tests)
+  ├─ api/tests/test_module5_animation.py (Animation tests)
+  ├─ api/tests/test_module6_quiz.py      (Quiz tests)
+  └─ api/tests/load/                     (Load/performance tests)
+
+FRONTEND PAGES:
+  ├─ src/pages/                          (Public pages: Welcome, Login, SignUp)
+  ├─ src/student/                        (Student dashboard pages)
+  ├─ src/teacher/                        (Teacher management pages)
+  └─ src/components/                     (Shared components)
+
+UTILITIES:
+  ├─ Functionalities/PDFExtraction/      (PDF parsing, narration, TTS)
+  ├─ Functionalities/RAG/                (ChromaDB setup and querying)
+  └─ api/management/commands/            (Django CLI commands)
+
+DOCUMENTATION:
+  ├─ CLAUDE.md                           (Project guidance - IMPORTANT)
+  ├─ BACKEND_FILE_SCHEMA.txt             (Backend structure docs)
+  ├─ README files in subdirectories
+  └─ Diagrams/ folder                    (Architecture diagrams)
+
+================================================================================
+FILE NAMING CONVENTIONS
+================================================================================
+
+Models:           Singular (User, Class, Assignment)
+Serializers:      ModelSerializer suffixed (UserSerializer)
+Views:            Function or class-based, described verb (login, grade_submission)
+URLs:             api/auth/, /api/, /api/classes/, /api/teacher/
+Database files:   db.sqlite3 (local), PostgreSQL (production)
+Media storage:    media/submissions/, media/attachments/, media/ai_courses/
+Migrations:       0001_initial.py, 0002_add_field.py (auto-numbered)
+Tests:            test_moduleN_domain.py
+Commands:         management/commands/seed.py (Django convention)
+Frontend pages:   PascalCase (StudentDashboard.jsx)
+Frontend context: camelCase (AuthContext.jsx)
+
+================================================================================
+CRITICAL PATHS & MUST-READ FILES
+================================================================================
+
+1. CLAUDE.md                        Project guidance (read first!)
+2. core/settings/__init__.py        Environment-dependent settings loading
+3. core/urls.py                     Root URL routing
+4. api/urls.py                      API endpoint routing
+5. api/models/__init__.py           All models defined and exported here
+6. api/views/__init__.py            All views must be exported here
+7. api/serializers.py               API data serialization
+8. api/services/                    Background pipelines (async processing)
+9. apps/authentication/views.py     Auth logic (JWT token generation)
+10. src/context/AuthContext.jsx     Frontend global auth state
+11. src/App.jsx                     Frontend routing and layouts
+12. .env.example                    Required environment variables template
+13. package.json (both dirs)        Dependencies
+
+================================================================================
+ENVIRONMENT SETUP
+================================================================================
+
+BACKEND:
+  Required .env keys: SECRET_KEY, DEBUG, DB_NAME, DB_USER, DB_PASSWORD, DB_HOST,
+                      DB_PORT, GEMINI_API_KEY, GEMINI_API_KEY_MANIM,
+                      DEEPGRAM_API_KEY, GROQ_API_KEY
+  Template: .env.example
+
+FRONTEND:
+  API base: http://localhost:8000/api/ (hardcoded in fetch calls)
+  Dev server: http://localhost:5173/
+
+UTILITIES:
+  Required .env keys: CLAUDE_API_KEY (or OPENAI_API_KEY for alternative model)
+  ChromaDB location: Functionalities/RAG/chroma_ossu_db/
+
+================================================================================
+DEPLOYMENT STRUCTURE
+================================================================================
+
+Development:
+  - Backend: Django runserver on http://localhost:8000/
+  - Frontend: Vite dev server on http://localhost:5173/
+  - Database: SQLite (FullstackApp/Backend/db.sqlite3)
+  - Environment: core/settings/local.py picks local.py
+
+Production:
+  - Backend: WSGI/ASGI server (Gunicorn/etc)
+  - Frontend: npm run build → dist/ → served by CDN or backend
+  - Database: PostgreSQL
+  - Environment: ENV_NAME=production → core/settings/production.py picks production.py
+  - Media: cloud storage or persistent volume
+
+================================================================================
+DIRECTORY IGNORE PATTERNS (.gitignore)
+================================================================================
+
+NOT TRACKED (in git):
+  - venv/                   Virtual environments
+  - node_modules/           Node dependencies
+  - __pycache__/            Python compiled cache
+  - .pytest_cache/          Pytest cache
+  - dist/                   Frontend build output
+  - media/                  User uploads (media files)
+  - staticfiles/            Collected static files
+  - .env                    Secrets (use .env.example)
+  - db.sqlite3              Local database
+  - .DS_Store               macOS files
+  - *.pyc                   Python bytecode
+
+================================================================================
+KEY CONCEPTS IN FILE ORGANIZATION
+================================================================================
+
+1. SEPARATION OF CONCERNS
+   - models/ → data layer
+   - views/ → API endpoints
+   - services/ → business logic (pipelines)
+   - serializers.py → data transformation
+   - urls.py → routing
+
+2. ENVIRONMENT-SPECIFIC CONFIG
+   - base.py → shared settings
+   - local.py → development (debug=True)
+   - production.py → production (debug=False)
+   - __init__.py → conditional loader
+
+3. PACKAGE STRUCTURE (not flat)
+   - models/ is a package (can import any model)
+   - views/ is a package (all views must be exported in __init__.py)
+   - services/ is a package (import directly by module)
+
+4. MEDIA ORGANIZATION
+   - AI courses: media/ai_courses/{course_id}/page_{n}.png
+   - Audio: media/ai_courses/{course_id}/audio/page_{n}.mp3
+   - Animations: media/animations/anim_{id}/
+   - Submissions: media/submissions/{submission_id}/
+
+5. FRONTEND ROUTING
+   - /student/* → StudentLayout (with sidebar)
+   - /student/ai-teach/* → NO sidebar (special case)
+   - /teacher/* → flat routes
+   - / → public pages
+
+================================================================================
+QUICK REFERENCE: FIND THINGS
+================================================================================
+
+Where to add...
+  New API endpoint?          → api/views/{domain}_views.py + export in __init__.py + route in api/urls.py
+  New database model?        → api/models/{domain}.py + export in __init__.py
+  New serializer?            → api/serializers.py
+  New student page?          → src/student/{PageName}.jsx
+  New teacher page?          → src/teacher/{PageName}.jsx
+  New background pipeline?   → api/services/{pipeline}_pipeline.py
+  Business constant?         → api/constants.py
+  Environment variable?      → .env.example + core/settings/{local,production}.py
+  Test?                      → api/tests/test_moduleN_{domain}.py
+  Management command?        → api/management/commands/{command}.py
+
+Where to find...
+  User model?                → api/models/auth.py
+  Class/Assignment models?   → api/models/classroom.py, assignment.py
+  Authentication logic?      → apps/authentication/views.py
+  Student class view?        → api/views/student_views.py
+  Teacher endpoints?         → api/views/teacher_views.py
+  AI pipeline logic?         → api/services/ai_pipeline.py
+  PDF extraction?            → Functionalities/PDFExtraction/textAndImageExtraction.py
+  RAG queries?               → Functionalities/RAG/testRAG.py or api/services/ai_pipeline.py
+  Frontend auth state?       → src/context/AuthContext.jsx
+  Student dashboard?         → src/student/StudentDashboard.jsx
+  API base URL?              → hardcoded in frontend fetch calls
+  Routing?                   → api/urls.py (backend), src/App.jsx (frontend)
+
+================================================================================
+FILE STAT SUMMARY
+================================================================================
+
+Backend Python files:     ~30+ (.py)
+Frontend React files:     ~20+ (.jsx)
+Test files:              ~10+ (test_*.py)
+Configuration files:     ~5 (settings/*.py, .env.example, vite.config.js, eslint.config.js)
+Documentation files:     ~5 (.md, .txt files)
+Database migrations:     ~10 (0001_initial.py to 0010_quiz.py)
+Utility scripts:         ~5 (seed.py, plot_perf.py, etc)
+
+Total tracked files:     ~85-100 files
+Total project size:      Depends on media/ (uploads, videos, PDFs)
+
+================================================================================
+NOTES
+================================================================================
+
+1. Some backend comments are in Romanian (author's native language) - intentional
+2. Frontend has NO test suite configured
+3. Database: SQLite for dev, PostgreSQL for prod
+4. Media files are NOT version-controlled (media/ in .gitignore)
+5. Both backend and frontend have separate venvs/node_modules
+6. Manim scene class must be named "ConceptScene"
+7. ChromaDB must be seeded once before RAG queries work
+8. Static files are collected into staticfiles/ in production
+
+================================================================================
+                            END OF FILE MANAGEMENT
+================================================================================

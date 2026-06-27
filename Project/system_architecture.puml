@@ -1,0 +1,122 @@
+@startuml PageSageAI_System_Architecture
+
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 12
+skinparam componentStyle rectangle
+skinparam nodesep 40
+skinparam ranksep 60
+skinparam padding 10
+skinparam roundcorner 12
+
+skinparam title {
+    FontSize 20
+    FontStyle bold
+    FontColor #1F2937
+}
+
+skinparam component {
+    BackgroundColor<<fe>>  #DBEAFE
+    BorderColor<<fe>>      #2563EB
+    FontColor<<fe>>        #1E3A8A
+    RoundCorner<<fe>>      10
+    FontStyle<<fe>>        bold
+
+    BackgroundColor<<be>>  #FEF3C7
+    BorderColor<<be>>      #D97706
+    FontColor<<be>>        #92400E
+    RoundCorner<<be>>      10
+    FontStyle<<be>>        bold
+
+    BackgroundColor<<dl>>  #DCFCE7
+    BorderColor<<dl>>      #16A34A
+    FontColor<<dl>>        #14532D
+    RoundCorner<<dl>>      10
+    FontStyle<<dl>>        bold
+
+    BackgroundColor<<ex>>  #F3E8FF
+    BorderColor<<ex>>      #9333EA
+    FontColor<<ex>>        #581C87
+    RoundCorner<<ex>>      10
+    FontStyle<<ex>>        bold
+
+    BackgroundColor<<lc>>  #FFEDD5
+    BorderColor<<lc>>      #EA580C
+    FontColor<<lc>>        #7C2D12
+    RoundCorner<<lc>>      10
+    FontStyle<<lc>>        bold
+}
+
+skinparam actor {
+    BackgroundColor #F8FAFC
+    BorderColor     #94A3B8
+    FontColor       #1E293B
+    FontStyle       bold
+}
+
+skinparam arrow {
+    Color     #6B7280
+    FontColor #6B7280
+    FontSize  10
+    Thickness 2
+}
+
+title "PageSageAI — System Architecture"
+
+' ACTORS
+actor "Student" as SB
+actor "Teacher" as TB
+
+' FRONTEND
+component "Frontend\nReact 18 + Vite" <<fe>> as FE
+
+' BACKEND
+component "Backend\nDjango 5.2 + DRF" <<be>> as BE
+
+' DATA
+component "PostgreSQL\nDjango ORM" <<dl>> as PG
+component "ChromaDB\nVector Store" <<dl>> as VDB
+component "Media Storage\nFiles & Videos" <<dl>> as FS
+
+' 3RD PARTY
+component "Google Gemini\ngemini-2.5-flash" <<ex>> as Gemini
+component "Deepgram TTS\naura-2-orpheus-en" <<ex>> as Deepgram
+component "Groq\nllama-3.1-8b-instant" <<ex>> as Groq
+
+' LOCAL TOOLS
+component "LayoutLMv3\nDocument Layout AI" <<lc>> as LayoutLM
+component "Sentence Embeddings\nall-MiniLM-L6-v2" <<lc>> as Emb
+component "Manim CE\nAnimation Renderer" <<lc>> as Manim
+
+' CONNECTIONS
+SB -[#2563EB]-> FE : "HTTPS"
+TB -[#2563EB]-> FE : "HTTPS"
+
+FE -[#2563EB]--> BE : "REST API\nBearer JWT"
+
+BE -[#16A34A]--> PG      : "ORM"
+BE -[#16A34A]--> VDB     : "index / search"
+BE -[#16A34A]--> FS      : "read / write"
+
+BE -[#9333EA]--> Gemini  : "Vision · RAG\nCode Gen · Quiz"
+BE -[#9333EA]--> Deepgram : "Text → MP3"
+BE -[#9333EA]--> Groq    : "Narration"
+
+BE -[#EA580C]--> LayoutLM : "Layout classify"
+BE -[#EA580C]--> Emb      : "Embed + retrieve"
+BE -[#EA580C]--> Manim    : "Render MP4"
+
+Emb -[#16A34A]-> VDB : "vectors"
+
+legend top left
+|= |= |
+|<#DBEAFE> | Frontend |
+|<#FEF3C7> | Backend |
+|<#DCFCE7> | Data Layer |
+|<#F3E8FF> | 3rd Party APIs |
+|<#FFEDD5> | Local Tools |
+end legend
+
+@enduml

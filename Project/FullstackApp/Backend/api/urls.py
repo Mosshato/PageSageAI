@@ -1,12 +1,12 @@
 from django.urls import path
-from . import views, auth_views
+from . import views
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
     # ── Auth ────────────────────────────────────────────────────────────────
-    path('auth/signup/',        auth_views.signup),
-    path('auth/login/',         auth_views.login),
-    path('auth/me/',            auth_views.me),
+    # signup/login/me sunt mutate in apps/authentication/urls.py, incluse
+    # in core/urls.py la prefixul api/auth/. token/refresh ramane aici —
+    # e o ruta DRF simplejwt generica, nu logica specifica de auth a app-ului.
     path('auth/token/refresh/', TokenRefreshView.as_view()),
 
     # ── Classes ──────────────────────────────────────────────────────────────

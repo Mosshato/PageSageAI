@@ -1,0 +1,54 @@
+// ============================================================
+//  Modul 2 — Class & Enrollment + Assignment & Submission (corectat)
+//  Corectii fata de original:
+//   - body creare clasa: { name, description } -> { name, color }
+//   - statusul "submitted"/"graded" e pe Assignment (nu pe submission);
+//     resubmit reseteaza graded -> submitted
+// ============================================================
+digraph Modul2 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=11, nodesep=0.40, ranksep=0.5, compound=true];
+  node  [fontname="Helvetica", fontsize=10];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555"];
+
+  subgraph cluster_class {
+    label="Class & Enrollment";
+    fontsize=13; fontname="Helvetica-Bold"; style="rounded,filled"; fillcolor="#eef4fb"; color="#9bbbdd";
+
+    c_start  [label="Teacher creates class", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+    c_post   [label="POST /api/teacher/classes/\n{ name, color }", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    c_code   [label="Generate unique\n6-char enrollment code", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    c_save   [label="Class saved to PostgreSQL", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    c_share  [label="Teacher shares code\nwith students", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    c_enroll [label="POST /api/classes/enroll/\n{ code }", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    c_valid  [label="Code valid?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    c_404    [label="HTTP 404\nClass not found", shape=box, style="rounded,filled", fillcolor="#f6c1c1", color="#d05757"];
+    c_rec    [label="Enrollment record created\n(student to class)", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    c_dash   [label="Class appears in\nstudent dashboard", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+
+    c_start -> c_post -> c_code -> c_save -> c_share -> c_enroll -> c_valid;
+    c_valid -> c_404 [label="No"];
+    c_valid -> c_rec [label="Yes"];
+    c_rec -> c_dash;
+  }
+
+  subgraph cluster_assign {
+    label="Assignment & Submission";
+    fontsize=13; fontname="Helvetica-Bold"; style="rounded,filled"; fillcolor="#eef7ee"; color="#a8d3a8";
+
+    a_start  [label="Teacher creates assignment", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+    a_post   [label="POST .../assignments/\n{ title, description, due_date, points }", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    a_pend   [label="Assignment saved\nstatus: pending", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    a_see    [label="Students see assignment\nin dashboard", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    a_sub    [label="Student submits files\nPOST .../submit/", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    a_subrec [label="SubmissionFile records created\nassignment status: submitted", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    a_grade  [label="Teacher reviews\nPOST .../grade/ { grade, feedback }", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+    a_graded [label="status: graded", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+    a_resub  [label="Student resubmits?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+    a_end    [label="End", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+
+    a_start -> a_post -> a_pend -> a_see -> a_sub -> a_subrec -> a_grade -> a_graded -> a_resub;
+    a_resub -> a_sub [label="Yes (resubmit →\nstatus back to submitted)", constraint=false];
+    a_resub -> a_end [label="No"];
+  }
+}

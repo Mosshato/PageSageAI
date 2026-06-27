@@ -6,7 +6,7 @@ from django.conf import settings
 from google import genai
 from google.genai import types
 
-from .constants import QUIZ_QUESTION_COUNT, QUIZ_OPTION_COUNT
+from ..constants import QUIZ_QUESTION_COUNT, QUIZ_OPTION_COUNT
 
 client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
@@ -37,7 +37,7 @@ def collect_narration_text(ai_course) -> str:
 
 
 def generate_quiz(quiz_id: int):
-    from .models import Quiz
+    from ..models import Quiz
 
     quiz = Quiz.objects.select_related("ai_course").get(id=quiz_id)
 
@@ -95,13 +95,11 @@ Lecture content:
 
         questions = json.loads(raw)
 
-        if not isinstance(questions, list) or len(questions) < 10:
+        if not isinstance(questions, list) or len(questions) != QUIZ_QUESTION_COUNT:
             raise ValueError(
                 f"Gemini returned {len(questions) if isinstance(questions, list) else 'non-list'} "
                 f"questions, expected {QUIZ_QUESTION_COUNT}."
             )
-
-        questions = questions[:QUIZ_QUESTION_COUNT]
 
         for i, q in enumerate(questions):
             if not isinstance(q.get("options"), list) or len(q["options"]) != QUIZ_OPTION_COUNT:

@@ -6,7 +6,7 @@ from django.conf import settings
 from google import genai
 from google.genai import types
 
-from .constants import MANIM_RENDER_TIMEOUT_SECONDS
+from ..constants import MANIM_RENDER_TIMEOUT_SECONDS
 
 client = genai.Client(api_key=settings.GEMINI_API_KEY_MANIM)
 
@@ -67,7 +67,7 @@ Now write the complete Manim script for: **{concept}**
 
 
 def generate_and_render_animation(animation_id: int):
-    from .models import ConceptAnimation
+    from ..models import ConceptAnimation
 
     animation = ConceptAnimation.objects.get(id=animation_id)
     concept = animation.concept

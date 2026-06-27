@@ -1,0 +1,225 @@
+FullstackApp/Backend — structura completa de fisiere
+======================================================
+(exclude: venv/, media/, __pycache__/, staticfiles/, db.sqlite3 — generate/ignorate)
+
+Backend/
+│
+├── manage.py
+│       Punctul de intrare CLI al Django. Toate comenzile trec prin el:
+│       runserver, makemigrations, migrate, test, seed (comanda custom de mai jos).
+│
+├── .env
+│       Secrete reale (SECRET_KEY, DB_*, GEMINI/DEEPGRAM keys). NU e in git.
+│
+├── .env.example
+│       Template fara valori reale — arata ce variabile trebuie completate
+│       intr-un .env nou, la setup pe alta masina.
+│
+├── core/                                   ← proiectul Django (configurare globala)
+│   │
+│   ├── __init__.py
+│   │       Marcheaza core/ ca package Python. Gol.
+│   │
+│   ├── settings/                           ← settings modular (base/local/production)
+│   │   ├── __init__.py
+│   │   │       Punctul de incarcare: citeste ENV_NAME din mediu si decide
+│   │   │       ce fisier de settings se foloseste:
+│   │   │         ENV_NAME=production  → production.py
+│   │   │         orice altceva/lipsa  → local.py (default pt. dev)
+│   │   │
+│   │   ├── base.py
+│   │   │       Setari identice in orice mediu: INSTALLED_APPS, AUTH_USER_MODEL,
+│   │   │       REST_FRAMEWORK (JWT auth by default), SIMPLE_JWT (5 min access /
+│   │   │       1 zi refresh), MIDDLEWARE, ROOT_URLCONF, TEMPLATES, MEDIA_ROOT,
+│   │   │       DEFAULT_AUTO_FIELD. Tot aici config-ul AI/RAG care nu e secret:
+│   │   │       RAG_LLM_MODEL, QUIZ_LLM_MODEL, MANIM_LLM_MODEL + temperaturi,
+│   │   │       EMBEDDINGS_MODEL, RAG_CHUNK_SIZE/OVERLAP, RAG_TOP_K,
+│   │   │       FUNCTIONALITIES_ROOT si OSSU_CHROMA_DIR (calea catre ChromaDB
+│   │   │       partajata din proiectul Functionalities/).
+│   │   │
+│   │   ├── local.py
+│   │   │       Activ implicit (dev pe masina ta). Face load_dotenv(.env),
+│   │   │       SECRET_KEY cu fallback insecure, DEBUG=True, DATABASES din
+│   │   │       variabile de mediu cu fallback-uri (HOST=localhost etc.),
+│   │   │       CORS doar pentru localhost:5173. Citeste si cele 3 API keys
+│   │   │       AI (GEMINI_API_KEY, GEMINI_API_KEY_MANIM, DEEPGRAM_API_KEY)
+│   │   │       — singurul loc din tot proiectul unde se face load_dotenv()
+│   │   │       pentru ele.
+│   │   │
+│   │   └── production.py
+│   │           Activat cu ENV_NAME=production. Toate valorile sunt OBLIGATORII
+│   │           (os.environ['X'] fara fallback) — serverul trebuie sa crape la
+│   │           pornire daca lipseste o variabila, nu sa ruleze nesigur cu
+│   │           default-uri. DEBUG=False, cookie-uri securizate, SSL redirect.
+│   │
+│   ├── urls.py
+│   │       Radacina de rutare a intregului proiect:
+│   │         /admin/        → Django admin
+│   │         /api/ping/     → core/views.py:ping (health-check simplu)
+│   │         /api/          → include(api.urls)  (toate rutele aplicatiei)
+│   │       Plus serve static pentru MEDIA_URL in dev.
+│   │
+│   ├── views.py
+│   │       Un singur view minimal: ping — folosit ca health-check rapid
+│   │       ("Django is connected!"), separat de logica reala din api/.
+│   │
+│   ├── wsgi.py
+│   │       Entry point WSGI standard Django (folosit de servere de productie
+│   │       precum gunicorn). Nu se modifica de obicei.
+│   │
+│   └── asgi.py
+│           Entry point ASGI standard Django (pentru servere async / websockets,
+│           neutilizat activ acum, dar generat by default). Nu se modifica.
+│
+└── api/                                     ← aplicatia Django cu toata logica de business
+    │
+    ├── __init__.py
+    │       Marcheaza api/ ca package Python. Gol.
+    │
+    ├── apps.py
+    │       Config-ul aplicatiei (ApiConfig). ready() ruleaza o singura data
+    │       la pornirea serverului: cauta AICourse-uri ramase in status
+    │       PROCESSING (server crapat/restart in mijlocul pipeline-ului AI)
+    │       si reia automat pipeline-ul de unde a ramas, per course.
+    │
+    ├── constants.py
+    │       Valori de business hardcodate central (nu sunt secrete, sunt
+    │       reguli de aplicatie): QUIZ_QUESTION_COUNT=20, QUIZ_OPTION_COUNT=4,
+    │       MIN_GRADE=0, MAX_GRADE=100, CLASS_CODE_LENGTH=6,
+    │       MANIM_RENDER_TIMEOUT_SECONDS=180. Importate din models.py,
+    │       views/*.py si *_pipeline.py ca sa nu existe magic numbers duplicate.
+    │
+    ├── models.py
+    │       Toate modelele DB ale aplicatiei:
+    │         User / UserManager   — auth custom pe email (nu username)
+    │         Class, Enrollment    — clase si inscrieri studenti
+    │         Announcement         — anunturi pe clasa
+    │         Assignment, AssignmentAttachment, Submission, SubmissionFile
+    │                              — teme, fisiere atasate, predari
+    │         Lecture, LectureFile — lectii/materiale postate de profesor
+    │         AICourse             — curs generat AI dintr-un PDF (status +
+    │                                 current_step urmaresc progresul pipeline-ului)
+    │         ConceptAnimation     — animatie Manim generata pentru un concept
+    │                                 (unique_together pe ai_course+concept_key
+    │                                 = cache, nu regenerezi aceeasi animatie)
+    │         Quiz, QuizAttempt    — quiz generat AI per AICourse + incercarile
+    │                                 studentilor (un attempt per student per quiz)
+    │
+    ├── serializers.py
+    │       Traduce modelele in/din JSON pentru DRF. Variante separate
+    │       student-facing vs teacher-facing (ex: TeacherSubmissionSerializer
+    │       arata nota/nota interna, ClassSerializer e varianta "publica").
+    │       Foloseste SerializerMethodField pentru URL-uri absolute de fisiere
+    │       (au nevoie de request din context ca sa construiasca media URL).
+    │
+    ├── admin.py
+    │       Inregistreaza modelele de baza (Class, Enrollment, Announcement,
+    │       Assignment, AssignmentAttachment, Lecture, LectureFile) in Django
+    │       admin, pentru inspectie/editare manuala rapida din /admin/.
+    │
+    ├── urls.py
+    │       Toate rutele aplicatiei sub /api/ (auth, classes, assignments,
+    │       account, teacher/*, ai-courses/*, animations/*, quiz/*). Importa
+    │       doar `views` (din pachetul views/) si mapeaza fiecare path() la
+    │       o functie exportata din views/__init__.py.
+    │
+    ├── ai_pipeline.py
+    │       Pipeline-ul "AI Teaching": PDF → PNG-uri+JSON-uri → narratie →
+    │       audio TTS → indexare in ChromaDB, ruland intr-un thread daemon
+    │       (background, non-blocant pentru request-ul HTTP). Fiecare pas e
+    │       idempotent (verifica daca outputul exista deja, ca sa poata fi
+    │       reluat dupa crash/restart). Expune si query_rag() pentru
+    │       endpoint-urile ask/reformulate (RAG peste ChromaDB partajata).
+    │       Contine _ensure_ossu_db_seeded(): daca ChromaDB OSSU nu a fost
+    │       construita manual (createDB.py), o construieste automat la prima
+    │       utilizare, ca sa nu ramana goala din greseala.
+    │
+    ├── manim_pipeline.py
+    │       Pipeline-ul de animatii: Gemini genereaza cod Manim pentru un
+    │       concept → scrie scene.py → ruleaza `manim` ca subprocess
+    │       (timeout MANIM_RENDER_TIMEOUT_SECONDS) → salveaza mp4-ul rezultat.
+    │       Retry automat (MAX_RETRIES=3) daca generarea/renderul pica.
+    │       Ruleaza tot intr-un thread daemon, ca sa nu blocheze requestul.
+    │
+    ├── quiz_pipeline.py
+    │       Pipeline-ul de quiz: aduna textul narat al unui AICourse (toate
+    │       paginile, max 40k caractere) → trimite la Gemini → primeste
+    │       exact QUIZ_QUESTION_COUNT intrebari MCQ in JSON → valideaza
+    │       structura (4 optiuni, correct_index valid) → salveaza pe Quiz.
+    │       Tot in thread daemon.
+    │
+    ├── tests/
+    │   └── __init__.py
+    │           Pachet gol pregatit pentru teste unitare viitoare — inca
+    │           nu exista fisiere de test scrise (api.tests e gol).
+    │
+    ├── management/
+    │   ├── __init__.py
+    │   │       Marcheaza management/ ca package Python (cerinta Django ca
+    │   │       sa recunoasca subdirectorul commands/).
+    │   └── commands/
+    │       ├── __init__.py
+    │       │       Idem, package marker pentru commands/.
+    │       └── seed.py
+    │               Comanda `python manage.py seed`. Creeaza un cont teacher
+    │               si unul student demo (parole fixe: test1234), sterge toate
+    │               clasele existente si recreeaza 4 clase demo (Mathematics,
+    │               Computer Science, Physics, Literature) cu anunturi, teme
+    │               si lectii populate — util pentru a avea rapid date de test.
+    │
+    ├── migrations/
+    │       Istoricul schimbarilor de schema DB, generat automat de Django
+    │       (`makemigrations`). Fiecare fisier = un pas incremental:
+    │       0001_initial → modelele de baza; 0002...0006 → adaugari succesive
+    │       (grade, submission/submissionfile, teacher pe Class, note,
+    │       fisiere atasate); 0007_aicourse, 0008_conceptanimation,
+    │       0009_aicourse_current_step, 0010_quiz_quizattempt → modelele AI.
+    │       NU se editeaza manual — se genereaza cu makemigrations si se
+    │       aplica cu migrate.
+    │
+    └── views/                                   ← tot codul de business logic HTTP
+        │
+        ├── __init__.py
+        │       Re-exporta explicit toate functiile din cele 4 fisiere de mai
+        │       jos, ca `views.<nume_functie>` sa continue sa functioneze
+        │       exact ca inainte de split (api/urls.py nu s-a schimbat
+        │       structural — doar a renuntat la importul separat auth_views).
+        │
+        ├── auth_views.py
+        │       Autentificare JWT: signup (creeaza user + valideaza rol),
+        │       login (verifica parola + rol, refuza daca rolul nu corespunde
+        │       contului), me (returneaza userul curent, pe baza tokenului
+        │       deja validat de middleware). Helper-e: user_payload()
+        │       (formateaza userul pentru response), tokens_for_user()
+        │       (genereaza access+refresh, injecteaza role/firstName in JWT).
+        │
+        ├── student_views.py
+        │       Tot ce vede/face un student: class_list, enroll, class_detail,
+        │       quit_class, all_assignments, submit_assignment (+ resubmit),
+        │       unsubmit_assignment, account_stats (statistici personale:
+        │       medie, teme completate/pending per clasa).
+        │
+        ├── teacher_views.py
+        │       Tot ce administreaza un profesor pentru clasele proprii:
+        │       teacher_students, teacher_class_list (GET+POST), teacher_stats,
+        │       teacher_class_detail (GET/PATCH/DELETE), teacher_add/remove_student,
+        │       teacher_add/delete_announcement, teacher_add/edit/delete_assignment,
+        │       teacher_add/delete_lecture, teacher_grade_submission. Verificarea
+        │       de proprietate (`teacher=request.user`) se face manual la fiecare
+        │       query, nu prin permission classes DRF.
+        │
+        └── ai_views.py
+                Tot fluxul de AI — Curs AI, Animatii, Quiz:
+                  AICourse:    teacher_upload_ai_course (upload PDF + start
+                               pipeline in background), teacher_delete_ai_course,
+                               ai_course_status, ai_courses_for_class, ai_course_page
+                               (imagine+audio per pagina), ai_course_ask,
+                               ai_course_reformulate (RAG)
+                  Animatii:    request_concept_animation (cu cache pe concept_key),
+                               get_animation_status, list_course_animations
+                  Quiz:        generate_quiz_view, get_quiz_status, get_quiz_questions
+                               (fara correct_index — nu se scurge raspunsul corect),
+                               submit_quiz_attempt (calculeaza scorul server-side),
+                               get_quiz_results_for_teacher (rezultate per student)
+                Helper-e private: _ai_course_data() si _anim_data() formateaza
+                obiectele AICourse/ConceptAnimation pentru JSON response.

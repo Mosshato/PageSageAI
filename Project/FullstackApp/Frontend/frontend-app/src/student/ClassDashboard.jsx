@@ -297,6 +297,17 @@ function LecturesTab({ color, classId, token }) {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
 
+  async function downloadPdf(url, filename) {
+    const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+    if (!res.ok) return;
+    const blob = await res.blob();
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename || "course.pdf";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
   useEffect(() => {
     function load() {
       fetch(`${API}/ai-courses/class/${classId}/`, {
@@ -345,12 +356,11 @@ function LecturesTab({ color, classId, token }) {
           <div style={{ display: "flex", gap: "8px", flexShrink: 0, alignItems: "center" }}>
             {/* Download PDF — mereu disponibil */}
             {course.pdf_url && (
-              <a href={course.pdf_url} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
-                <button style={{ padding: "7px 14px", background: "transparent", color: "rgba(255,255,255,0.5)", border: "1px solid rgba(255,255,255,0.15)", fontSize: "10px", fontFamily: "monospace", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", borderRadius: "5px" }}
-                  onMouseEnter={e => { e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
-                >↓ PDF</button>
-              </a>
+              <button onClick={() => downloadPdf(course.pdf_url, course.title + ".pdf")}
+                style={{ padding: "7px 14px", background: "transparent", color: "rgba(255,255,255,0.5)", border: "1px solid rgba(255,255,255,0.15)", fontSize: "10px", fontFamily: "monospace", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", borderRadius: "5px" }}
+                onMouseEnter={e => { e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)"; }}
+                onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
+              >↓ PDF</button>
             )}
 
             {/* Teach using AI — apare doar când READY */}

@@ -238,7 +238,6 @@ export default function AITeachDashboard() {
     setAnimError(null);
     setAnimPollStatus(null);
     clearInterval(animPollRef.current);
-    console.log("Token curent la poll:", token);
     try {
       const res = await fetch(`${API}/ai-courses/${courseId}/animations/`, {
         method: "POST",
@@ -265,7 +264,7 @@ export default function AITeachDashboard() {
         animPollRef.current = setInterval(async () => {
           try {
             const pr = await fetch(`${API}/animations/${animId}/status/`, {
-              headers: { Authorization: `Bearer ${token}` },
+              headers: { Authorization: `Bearer ${localStorage.getItem("pagesage_token")}` },
             });
             const pd = await pr.json();
             if (pd.status === "READY") {

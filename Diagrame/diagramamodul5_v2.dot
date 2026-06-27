@@ -1,0 +1,39 @@
+// ============================================================
+//  Modul 5 — Visual Generation (Manim)  (verificat — fidel codului)
+//  Fara corectii de fond; precizat ca input-ul e deja trimmed inainte
+//  de concept_key = concept.lower().
+// ============================================================
+digraph Modul5 {
+  rankdir=TB;
+  graph [fontname="Helvetica", fontsize=11, nodesep=0.40, ranksep=0.5];
+  node  [fontname="Helvetica", fontsize=10];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555"];
+
+  m_start  [label="Student clicks Animate", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+  m_post   [label="POST /api/ai-courses/<id>/animations/\n{ concept }", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_key    [label="concept_key = concept.lower()\n(concept already stripped)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_cache  [label="READY animation exists\nfor same course + key?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+  m_cached [label="Return cached video_url", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+  m_create [label="Create ConceptAnimation record\nstatus: PENDING — start daemon thread", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+  m_gen    [label="STEP 1: GENERATING\nBuild Gemini prompt for ConceptScene", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_llm    [label="Call gemini-2.5-flash", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_strip  [label="Strip markdown fences\nWrite scene.py to anim_<id>/", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_render [label="STEP 2: RENDERING\nsubprocess: manim -ql (timeout 180s)", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_succ   [label="Success?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+  m_ready  [label="Find .mp4, save path to DB\nstatus: READY", shape=box, style="rounded,filled", fillcolor="#d9b8e6", color="#9c4fc4"];
+  m_poll   [label="Frontend polls every 4s\ndetects READY → plays video", shape=ellipse, style=filled, fillcolor="#bfe6cf", color="#4caf50"];
+  m_inc    [label="retry_count += 1", shape=box, style="rounded,filled", fillcolor="#bcdcf0", color="#3b82c4"];
+  m_retry  [label="retry_count < 3?", shape=diamond, style=filled, fillcolor="#f5d97a", color="#d6a829"];
+  m_err    [label="status: ERROR", shape=box, style="rounded,filled", fillcolor="#f6c1c1", color="#d05757"];
+
+  m_start -> m_post -> m_key -> m_cache;
+  m_cache -> m_cached [label="Yes (cached)"];
+  m_cache -> m_create [label="No"];
+  m_create -> m_gen -> m_llm -> m_strip -> m_render -> m_succ;
+  m_succ -> m_ready [label="Yes"];
+  m_ready -> m_poll;
+  m_succ -> m_inc  [label="error / timeout"];
+  m_inc -> m_retry;
+  m_retry -> m_gen [label="Yes (retry)", constraint=false];
+  m_retry -> m_err [label="No"];
+}

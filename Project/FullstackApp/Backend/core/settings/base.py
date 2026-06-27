@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'apps.authentication',
     'api',
 ]
 
@@ -134,10 +135,10 @@ RAG_LLM_MODEL = "gemini-2.5-flash"
 RAG_LLM_TEMPERATURE = 0.3
 RAG_TOP_K = 4
 
-QUIZ_LLM_MODEL = "gemini-3.5-flash"
+QUIZ_LLM_MODEL = "gemini-2.5-flash"
 QUIZ_LLM_TEMPERATURE = 0.3
 
-MANIM_LLM_MODEL = "gemini-3.5-flash"
+MANIM_LLM_MODEL = "gemini-2.5-flash"
 MANIM_LLM_TEMPERATURE = 0.2
 
 EMBEDDINGS_MODEL = "all-MiniLM-L6-v2"
@@ -149,3 +150,6 @@ RAG_CHUNK_OVERLAP = 100
 # Centralizat aici ca MEDIA_ROOT — un singur loc de adevar pentru cale.
 FUNCTIONALITIES_ROOT = BASE_DIR.parent.parent / "Functionalities"
 OSSU_CHROMA_DIR = str(FUNCTIONALITIES_ROOT / "RAG" / "chroma_ossu_db")
+
+# AI courses storage — per-course PDFs, images, narration, audio, CHROMA chunks
+AI_COURSES_ROOT = BASE_DIR / 'media' / 'ai_courses'

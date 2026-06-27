@@ -7,21 +7,26 @@ Subpasi:
   1.4 - Structurare JSON per pagina
 
 Dependente:
-    pip install pymupdf pillow transformers torch torchvision
+    pip install pymupdf pillow transformers torch torchvision google-genai python-dotenv
 
 Modelul LayoutLMv3 se descarca automat din HuggingFace la primul run.
 """
 
 import json
 import os
+import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Optional
 
 import fitz  # pymupdf
 import torch
+from dotenv import load_dotenv
+from google import genai
 from PIL import Image
 from transformers import LayoutLMv3Processor, LayoutLMv3ForTokenClassification
+
+load_dotenv(Path(__file__).resolve().parent.parent / '.env', encoding='utf-8-sig')
 
 # ---------------------------------------------------------------------------
 # Configuratie
@@ -30,6 +35,12 @@ from transformers import LayoutLMv3Processor, LayoutLMv3ForTokenClassification
 DPI = 200
 OUTPUT_DIR = Path("poze_output")
 MODEL_NAME = "microsoft/layoutlmv3-base"
+
+# Model Gemini folosit pentru a descrie figurile/diagramele (vision captioning),
+# inainte ca textul sa ajunga la narrator (Groq nu vede imaginea, doar text).
+VISION_MODEL = "gemini-2.5-flash"
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+_vision_client: Optional["genai.Client"] = None
 
 # Mapare etichete model -> tipuri semantice folosite de noi downstream
 # LayoutLMv3 fine-tuned pe FUNSD/CORD foloseste etichete B-/I- prefix
@@ -139,6 +150,68 @@ def load_layoutlmv3(model_name: str = MODEL_NAME):
     model.eval()
     print("  Model incarcat.")
     return processor, model
+
+
+def _get_vision_client() -> "genai.Client":
+    global _vision_client
+    if _vision_client is None:
+        _vision_client = genai.Client(api_key=GEMINI_API_KEY)
+    return _vision_client
+
+
+def _crop_figure(image: Image.Image, bbox_pts, page_width_pt: float, page_height_pt: float) -> Optional[Image.Image]:
+    """
+    Decupeaza regiunea unei figuri din pagina randata.
+    bbox_pts e in puncte PDF (sistemul de coordonate al paginii, nu al PNG-ului),
+    deci il scalam la pixeli folosind dimensiunea reala a imaginii randate.
+    """
+    x0, y0, x1, y1 = bbox_pts
+    scale_x = image.width / page_width_pt
+    scale_y = image.height / page_height_pt
+    box = (
+        max(0, int(x0 * scale_x)),
+        max(0, int(y0 * scale_y)),
+        min(image.width, int(x1 * scale_x)),
+        min(image.height, int(y1 * scale_y)),
+    )
+    if box[2] <= box[0] or box[3] <= box[1]:
+        return None
+    return image.crop(box)
+
+
+def describe_figure(image: Image.Image, nearby_text: str = "", max_retries: int = 3) -> str:
+    """
+    Trimite figura decupata la Gemini (vision) ca sa obtinem o descriere
+    factuala a ce se vede de fapt — grafic, formula desenata, schema etc.
+    Fara asta, narratorul (Groq, text-only) nu are nicio idee ce e in imagine
+    si "inventeaza" o descriere generica. Retry pe erori tranzitorii (503/429);
+    esueaza silentios la "" dupa toate retry-urile sau daca lipseste cheia —
+    restul pipeline-ului ramane neschimbat (nu blocheaza extragerea paginii).
+    """
+    if not GEMINI_API_KEY:
+        return ""
+    prompt = (
+        "This image is a figure/diagram cropped from a university lecture slide. "
+        "In 1-3 concise sentences, describe factually what it actually shows "
+        "(chart type, axes/labels if visible, what process or relationship it illustrates). "
+        "Be specific and concrete — do not write generic filler like 'this image shows a diagram'.\n\n"
+        f"Surrounding slide text for context:\n{nearby_text[:500]}"
+    )
+    for attempt in range(1, max_retries + 1):
+        try:
+            client = _get_vision_client()
+            response = client.models.generate_content(
+                model=VISION_MODEL,
+                contents=[image, prompt],
+            )
+            return (response.text or "").strip()
+        except Exception as e:
+            wait = 5.0 * (2 ** (attempt - 1))
+            print(f"  [Vision] Figure description failed (attempt {attempt}/{max_retries}): {e}")
+            if attempt < max_retries:
+                print(f"  [Vision] Retrying in {wait:.0f}s...")
+                time.sleep(wait)
+    return ""
 
 
 def _normalize_bbox(bbox, page_width_pt, page_height_pt) -> list[int]:
@@ -287,9 +360,11 @@ def classify_page_with_layoutlmv3(
         # Tip figura (imagine embedded)
         if block_raw.get("type") == 1:
             bbox_raw = block_raw.get("bbox", [0, 0, 0, 0])
+            crop = _crop_figure(image, bbox_raw, pw, ph)
+            description = describe_figure(crop, page_meta.get("raw_text", "")) if crop else ""
             blocks.append(Block(
                 type="figure",
-                text="",
+                text=description,
                 order=order,
                 bbox=_normalize_bbox(bbox_raw, pw, ph),
             ))

@@ -9,7 +9,15 @@ Dependencies:
 
 Usage:
     python lecture_narrator.py page_0001.json
-    python lecture_narrator.py poze_output/ --seconds 60
+    python lecture_narrator.py poze_output/
+    python lecture_narrator.py poze_output/ --seconds 60   # forteaza un timp fix pe toate paginile
+
+Timpul de vorbire NU mai e fix pe toate paginile (vechi: 60s/slide peste tot).
+Implicit (fara --seconds), fiecare pagina primeste un timp orientativ calculat
+din cat de mult/relevant continut are (vezi estimate_target_seconds) — o pagina
+de tranzitie sau cu un singur titlu nu trebuie umpluta artificial la 60s, iar
+o pagina densa cu o formula importanta merita mai mult timp ca sa fie explicata
+bine. --seconds ramane disponibil cand vrei un timp fix, identic pe toate paginile.
 """
 
 import argparse
@@ -25,15 +33,19 @@ from typing import Optional
 from dotenv import load_dotenv
 from groq import Groq, RateLimitError
 
-load_dotenv(Path(__file__).resolve().parent.parent / '.env')
+load_dotenv(Path(__file__).resolve().parent.parent / '.env', encoding='utf-8-sig')
 
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
 
 DEFAULT_MODEL = "llama-3.1-8b-instant"
-DEFAULT_SECONDS_PER_SLIDE = 60
 WORDS_PER_MINUTE = 130
+
+# Limite pentru timpul ESTIMAT dinamic (vezi estimate_target_seconds) — nu mai
+# folosim un singur numar fix pentru toate paginile.
+MIN_SECONDS_PER_SLIDE = 20
+MAX_SECONDS_PER_SLIDE = 110
 
 # ---------------------------------------------------------------------------
 # Data structures
@@ -41,8 +53,37 @@ WORDS_PER_MINUTE = 130
 
 @dataclass
 class NarratorConfig:
-    seconds_per_slide: int = DEFAULT_SECONDS_PER_SLIDE
+    # None = timpul se calculeaza per pagina din continut (vezi estimate_target_seconds).
+    # Un numar fix forteaza acelasi timp pe toate paginile (comportamentul vechi, util pt teste).
+    seconds_per_slide: Optional[int] = None
     model: str = DEFAULT_MODEL
+
+# ---------------------------------------------------------------------------
+# Estimare timp orientativ per pagina, pe baza continutului real
+# ---------------------------------------------------------------------------
+
+def estimate_target_seconds(blocks: list[dict]) -> int:
+    """
+    Calculeaza un timp de vorbire orientativ pentru o pagina, in functie de
+    cat continut relevant are — nu un numar fix identic pentru toate paginile.
+
+    Logica: ~1 secunda de vorbire la fiecare ~14 caractere de text explicativ
+    (aprox ritmul natural de vorbire), plus bonus pentru formule/figuri care
+    au nevoie de explicatie suplimentara fata de cat text au efectiv pe slide.
+    O pagina cu un singur titlu sau foarte put continut nu va fi umpluta
+    artificial; o pagina densa, cu o formula importanta, primeste mai mult timp.
+    """
+    text_chars = sum(len(b.get("text", "")) for b in blocks if b.get("type") != "figure")
+    has_formula = any(b.get("type") == "formula" for b in blocks)
+    has_figure = any(b.get("type") == "figure" and b.get("text") for b in blocks)
+
+    estimated = text_chars / 14.0
+    if has_formula:
+        estimated += 15  # formulele cer explicatie verbala suplimentara, nu doar citire
+    if has_figure:
+        estimated += 10  # idem pentru o figura cu descriere reala de explicat
+
+    return int(min(MAX_SECONDS_PER_SLIDE, max(MIN_SECONDS_PER_SLIDE, estimated)))
 
 # ---------------------------------------------------------------------------
 # Prompt builder
@@ -65,7 +106,10 @@ def _describe_blocks(blocks: list[dict]) -> str:
         text = block.get("text", "").strip()
         label = BLOCK_TYPE_DESCRIPTIONS.get(btype, btype)
         if btype == "figure":
-            lines.append(f"[{label.upper()}] — embedded image with no extracted text (describe contextually)")
+            if text:
+                lines.append(f"[{label.upper()}] What the image actually shows: {text}")
+            else:
+                lines.append(f"[{label.upper()}] — embedded image, no description available (describe contextually)")
         elif text:
             lines.append(f"[{label.upper()}] {text}")
     return "\n".join(lines)
@@ -74,8 +118,13 @@ def _describe_blocks(blocks: list[dict]) -> str:
 def build_prompt(page_data: dict, config: NarratorConfig) -> str:
     page_number = page_data.get("page_number", "?")
     blocks = page_data.get("blocks", [])
-    target_words = int((config.seconds_per_slide / 60) * WORDS_PER_MINUTE)
-    target_words_range = f"{int(target_words * 0.85)}–{int(target_words * 1.1)}"
+    # Daca config forteaza un timp fix il respectam (ex: CLI --seconds); altfel
+    # timpul e calculat per pagina din cat continut relevant are (vezi functia).
+    target_seconds = config.seconds_per_slide if config.seconds_per_slide is not None else estimate_target_seconds(blocks)
+    target_words = int((target_seconds / 60) * WORDS_PER_MINUTE)
+    # Range mai larg (±30%) decat inainte (±15%) — vrem ca modelul sa aleaga
+    # lungimea potrivita continutului, nu sa nimereasca exact un numar fix.
+    target_words_range = f"{int(target_words * 0.7)}–{int(target_words * 1.3)}"
     blocks_text = _describe_blocks(blocks)
     has_formula = any(b.get("type") == "formula" for b in blocks)
     has_figure = any(b.get("type") == "figure" for b in blocks)
@@ -114,7 +163,11 @@ You have in front of you the content from SLIDE {page_number} of the course pres
 
 YOUR TASK:
 Generate the exact words you will speak aloud during class for this slide.
-The text must be between {target_words_range} words (corresponding to ~{config.seconds_per_slide} seconds of speaking).
+As a rough guide, aim for around {target_words_range} words (~{target_seconds}s of speaking) —
+but this is a GUIDELINE based on how much this specific slide actually contains, not a fixed
+quota every slide must hit. Use your judgment:
+- If the slide is a short transition, a section title, or has very little to explain, speak briefly and move on — do NOT pad it with filler just to reach a word count.
+- If the slide contains a dense, important, or hard-to-grasp concept (a key formula, a subtle distinction, a result everything else builds on), take the time it actually needs, even if that means going longer than the guide.
 
 MANDATORY RULES:
 - Address students directly or use first-person plural: "Now we'll see...", "Notice that...", "Let's think about this together...", "I want you to focus on..."
@@ -161,8 +214,10 @@ def generate_narration(
     client = Groq(api_key=key)
     prompt = build_prompt(page_data, config)
 
-    print(f"  [LLM] Model: {config.model} | Target: ~{config.seconds_per_slide}s "
-          f"(~{int(config.seconds_per_slide / 60 * WORDS_PER_MINUTE)} words)")
+    target_seconds = config.seconds_per_slide if config.seconds_per_slide is not None else estimate_target_seconds(page_data.get("blocks", []))
+    print(f"  [LLM] Model: {config.model} | Target: ~{target_seconds}s "
+          f"(~{int(target_seconds / 60 * WORDS_PER_MINUTE)} words, "
+          f"{'fixed' if config.seconds_per_slide is not None else 'auto'})")
 
     for attempt in range(1, max_retries + 1):
         try:
@@ -206,7 +261,7 @@ def estimate_duration(text: str) -> float:
 
 def narrate_page(
     json_path: str | Path,
-    seconds_per_slide: int = DEFAULT_SECONDS_PER_SLIDE,
+    seconds_per_slide: Optional[int] = None,
     model: str = DEFAULT_MODEL,
     api_key: Optional[str] = None,
     save_output: bool = True,
@@ -236,13 +291,15 @@ def narrate_page(
     narration = generate_narration(page_data, config, api_key)
     word_count = len(narration.split())
     estimated_seconds = estimate_duration(narration)
+    target_seconds_used = seconds_per_slide if seconds_per_slide is not None else estimate_target_seconds(page_data.get("blocks", []))
 
     result = {
         "page_number": page_data.get("page_number"),
         "narration_text": narration,
         "word_count": word_count,
         "estimated_seconds": estimated_seconds,
-        "target_seconds": seconds_per_slide,
+        "target_seconds": target_seconds_used,
+        "target_mode": "fixed" if seconds_per_slide is not None else "auto",
         "model_used": model,
         "blocks_used": len(page_data.get("blocks", [])),
         "has_visual_candidate": page_data.get("has_visual_candidate", False),
@@ -261,7 +318,7 @@ def narrate_page(
 
 def narrate_course(
     course_dir: str | Path,
-    seconds_per_slide: int = DEFAULT_SECONDS_PER_SLIDE,
+    seconds_per_slide: Optional[int] = None,
     model: str = DEFAULT_MODEL,
     api_key: Optional[str] = None,
 ) -> list[dict]:
@@ -275,8 +332,8 @@ def narrate_course(
         index = json.load(f)
 
     total_pages = index["total_pages"]
-    print(f"[Narrator] Course with {total_pages} pages | {seconds_per_slide}s/slide | Model: {model}")
-    print(f"  Estimated total duration: ~{total_pages * seconds_per_slide // 60} minutes\n")
+    mode = f"fixed {seconds_per_slide}s/slide" if seconds_per_slide is not None else "auto (per-page, based on content)"
+    print(f"[Narrator] Course with {total_pages} pages | {mode} | Model: {model}\n")
 
     results = []
     for page_info in index["pages"]:
@@ -308,8 +365,8 @@ def narrate_course(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate course narration from page JSON files")
     parser.add_argument("input", help="Path to page_XXXX.json or a directory with course_index.json")
-    parser.add_argument("--seconds", "-s", type=int, default=DEFAULT_SECONDS_PER_SLIDE,
-                        help=f"Seconds per slide (default: {DEFAULT_SECONDS_PER_SLIDE})")
+    parser.add_argument("--seconds", "-s", type=int, default=None,
+                        help="Force a fixed seconds/slide for all pages (default: auto, computed per page from content)")
     parser.add_argument("--model", "-m", type=str, default=DEFAULT_MODEL,
                         help=f"Groq model (default: {DEFAULT_MODEL})")
     parser.add_argument("--api-key", type=str, default=None)

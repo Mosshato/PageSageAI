@@ -11,7 +11,7 @@ class ApiConfig(AppConfig):
 
         try:
             from .models import AICourse
-            from .ai_pipeline import run_pipeline_in_background
+            from .services.ai_pipeline import run_pipeline_in_background
 
             stuck = AICourse.objects.filter(status='PROCESSING')
             if not stuck.exists():
