@@ -6,7 +6,7 @@ from django.conf import settings
 
 from ..constants import CLASS_CODE_LENGTH
 
-
+#generate code for classroom enrllment
 def generate_code():
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=CLASS_CODE_LENGTH))
 
