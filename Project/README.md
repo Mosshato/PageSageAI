@@ -387,14 +387,25 @@ These live in `FullstackApp/Backend/core/settings/base.py` and apply across all 
 
 ### Running Tests
 
-**Unit + Performance Tests (78 tests, ~2 min):**
+**Unit + Performance Tests (78 tests total, ~2 min):**
 ```bash
 cd FullstackApp/Backend
 venv\Scripts\activate
 python manage.py test api.tests.unit -v 2
-# Or use the runner script:
-.\api\tests\unit\run_unit_tests.ps1
 ```
+
+Tests are split into 6 modules, each with functional tests (correctness) and performance tests (response time benchmarks):
+
+| Module | File | What it covers |
+|--------|------|----------------|
+| 1 — Auth | `test_module1_auth.py` | Signup, login, role mismatch, `/me`, token refresh |
+| 2 — Classroom | `test_module2_classroom.py` | Class list/detail, enroll/quit, assignments, account stats |
+| 3 — PDF Pipeline | `test_module3_pdf.py` | PDF upload, pipeline status, page serving, course delete |
+| 4 — RAG | `test_module4_rag.py` | AI course list, RAG Q&A (`/ask`), reformulation (`/reformulate`) |
+| 5 — Animation | `test_module5_animation.py` | Animation request, cache hit, status polling, library list |
+| 6 — Quiz | `test_module6_quiz.py` | Quiz generation, status, fetch questions, submit attempt, teacher results |
+
+> AI calls (Gemini, Groq, Deepgram) are mocked in all tests — no API keys or GPU needed to run the suite.
 
 **Load Tests (Locust, requires running server + seed_load_test):**
 ```bash
