@@ -6,11 +6,9 @@ from django.conf import settings
 from google import genai
 from google.genai import types
 
-from ..constants import MANIM_RENDER_TIMEOUT_SECONDS
+from ..constants import MANIM_RENDER_TIMEOUT_SECONDS, MANIM_MAX_RETRIES as MAX_RETRIES
 
 client = genai.Client(api_key=settings.GEMINI_API_KEY_MANIM)
-
-MAX_RETRIES = 3
 
 
 def _build_prompt(concept):

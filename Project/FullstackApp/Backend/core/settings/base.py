@@ -130,6 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # din .env — nu sunt secrete, sunt config de aplicatie).
 # Folosite de api/ai_pipeline.py, api/manim_pipeline.py, api/quiz_pipeline.py.
 
+NARRATION_LLM_MODEL = "llama-3.1-8b-instant"
+TTS_VOICE = "aura-2-orpheus-en"
+
 RAG_LLM_MODEL = "gemini-2.5-flash"
 RAG_LLM_TEMPERATURE = 0.3
 RAG_TOP_K = 4

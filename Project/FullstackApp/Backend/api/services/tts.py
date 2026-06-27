@@ -20,6 +20,12 @@ from pathlib import Path
 from typing import Optional
 
 import requests
+from django.conf import settings
+
+from ..constants import (
+    TTS_RATE_LIMIT_DELAY as RATE_LIMIT_DELAY,
+    TTS_MAX_RETRIES as MAX_RETRIES,
+)
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -28,16 +34,13 @@ import requests
 DEEPGRAM_API_KEY = os.environ.get("DEEPGRAM_API_KEY", "")
 DEEPGRAM_TTS_URL = "https://api.deepgram.com/v1/speak"
 
-DEFAULT_VOICE = "aura-2-orpheus-en"
+DEFAULT_VOICE = settings.TTS_VOICE
 
 OUTPUT_FORMAT = "mp3"
 SAMPLE_RATE   = 24000
 
 MIN_VALID_SIZE_BYTES = 1024
 
-RATE_LIMIT_DELAY = 6.5
-
-MAX_RETRIES = 5
 RETRY_BASE_DELAY = 5.0
 
 # ---------------------------------------------------------------------------

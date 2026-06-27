@@ -16,17 +16,20 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
+from django.conf import settings
 from groq import Groq, RateLimitError
+
+from ..constants import (
+    NARRATION_WORDS_PER_MINUTE as WORDS_PER_MINUTE,
+    NARRATION_MIN_SECONDS_PER_SLIDE as MIN_SECONDS_PER_SLIDE,
+    NARRATION_MAX_SECONDS_PER_SLIDE as MAX_SECONDS_PER_SLIDE,
+)
 
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
 
-DEFAULT_MODEL = "llama-3.1-8b-instant"
-WORDS_PER_MINUTE = 130
-
-MIN_SECONDS_PER_SLIDE = 20
-MAX_SECONDS_PER_SLIDE = 110
+DEFAULT_MODEL = settings.NARRATION_LLM_MODEL
 
 # ---------------------------------------------------------------------------
 # Data structures
