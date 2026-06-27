@@ -37,7 +37,7 @@ def collect_narration_text(ai_course) -> str:
 
 
 def generate_quiz(quiz_id: int):
-    from ..models import Quiz
+    from ..domain import Quiz
 
     quiz = Quiz.objects.select_related("ai_course").get(id=quiz_id)
 

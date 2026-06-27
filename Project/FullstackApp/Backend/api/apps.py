@@ -10,7 +10,7 @@ class ApiConfig(AppConfig):
         from django.db import OperationalError, ProgrammingError
 
         try:
-            from .models import AICourse
+            from .domain import AICourse
             from .services.ai_pipeline import run_pipeline_in_background
 
             stuck = AICourse.objects.filter(status='PROCESSING')

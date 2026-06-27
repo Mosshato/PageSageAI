@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-from api.models import Class, Announcement, Assignment, AssignmentAttachment, Lecture, LectureFile, Enrollment
+from api.domain import Class, Announcement, Assignment, AssignmentAttachment, Lecture, LectureFile, Enrollment
 from datetime import date, timedelta
 
 User = get_user_model()

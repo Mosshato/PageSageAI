@@ -23,7 +23,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'apps.authentication',
     'api',
 ]
 
@@ -145,11 +144,8 @@ EMBEDDINGS_MODEL = "all-MiniLM-L6-v2"
 RAG_CHUNK_SIZE = 700
 RAG_CHUNK_OVERLAP = 100
 
-# Functionalities/ e un proiect separat (alt venv), dar ai_pipeline.py ii
-# importa scripturile dinamic (sys.path) si foloseste ChromaDB-ul lui comun.
-# Centralizat aici ca MEDIA_ROOT — un singur loc de adevar pentru cale.
-FUNCTIONALITIES_ROOT = BASE_DIR.parent.parent / "Functionalities"
-OSSU_CHROMA_DIR = str(FUNCTIONALITIES_ROOT / "RAG" / "chroma_ossu_db")
+# ChromaDB OSSU — baza de date pentru RAG queries (seeded via api/services/chroma_db.py)
+OSSU_CHROMA_DIR = str(BASE_DIR / "chroma_ossu_db")
 
 # AI courses storage — per-course PDFs, images, narration, audio, CHROMA chunks
 AI_COURSES_ROOT = BASE_DIR / 'media' / 'ai_courses'

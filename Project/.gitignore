@@ -12,8 +12,11 @@ FullstackApp/Backend/db.sqlite3
 # ── Continut generat de aplicatie la runtime (media uploads/AI output) ──────
 FullstackApp/Backend/media/
 
-# ── ChromaDB generata (vezi Functionalities/RAG/createDB.py) ────────────────
-Functionalities/RAG/chroma_ossu_db/
+# ── ChromaDB generata (via api/services/chroma_db.py) ───────────────────────
+FullstackApp/Backend/chroma_ossu_db/
+
+# ── Note/documente de lucru, nu fac parte din proiect ───────────────────────
+instructions/
 
 # ── Bytecode Python ──────────────────────────────────────────────────────────
 __pycache__/
@@ -35,3 +38,5 @@ Thumbs.db
 # ── Note/tutoriale de lucru personale, nu fac parte din proiect ─────────────
 TUTORIAL_BACKEND.txt
 BACKEND_FILE_SCHEMA.txt
+BACKEND_STRUCTURE.txt
+FILE_MANAGEMENT.txt

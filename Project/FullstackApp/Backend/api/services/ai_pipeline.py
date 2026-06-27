@@ -12,25 +12,17 @@ Required packages in Django venv (pip install):
 """
 
 import json
-import sys
 import threading
 from pathlib import Path
 
 from django.conf import settings
 
-# ── Add Functionalities scripts to path ─────────────────────────────────────
-
-for _sub in ("PDFExtraction", "RAG"):
-    _p = str(settings.FUNCTIONALITIES_ROOT / _sub)
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
-
 # ── Lazy imports (avoid loading torch/transformers at Django startup) ─────────
 
 def _import_pipeline_modules():
-    from textAndImageExtraction import ingest_pdf
-    from tableExtraction import narrate_course
-    from TTS import generate_audio_for_course
+    from .pdf_extraction import ingest_pdf
+    from .narration import narrate_course
+    from .tts import generate_audio_for_course
     return ingest_pdf, narrate_course, generate_audio_for_course
 
 
@@ -84,7 +76,7 @@ def _ensure_ossu_db_seeded():
     if _ossu_db_exists():
         return
     print("[AI Pipeline] ChromaDB OSSU nu exista — se construieste acum...", flush=True)
-    from createDB import creaza_baza_de_date
+    from .chroma_db import creaza_baza_de_date
     creaza_baza_de_date(
         persist_directory=settings.OSSU_CHROMA_DIR,
         embedding_model=settings.EMBEDDINGS_MODEL,
@@ -282,7 +274,7 @@ def _step4_done(output_dir: Path) -> bool:
 
 
 def _run_pipeline(course_id: int, pdf_path: Path, output_dir: Path):
-    from ..models import AICourse
+    from ..domain import AICourse
 
     def _update(status=None, step=None, total_pages=None, error_msg=None):
         course = AICourse.objects.get(id=course_id)

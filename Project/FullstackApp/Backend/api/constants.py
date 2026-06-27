@@ -3,9 +3,6 @@ Constante de domeniu folosite in mai multe fisiere din api/.
 Scop: elimina "magic numbers" repetate (DRY) — daca o valoare se schimba,
 se schimba intr-un singur loc, nu se cauta prin toate view-urile/pipeline-urile.
 
-Nu confunda cu core/settings/ — acolo stau setarile Django/de mediu (DB,
-chei API, CORS...). Aici stau reguli FIXE de business, identice indiferent
-de mediu (local/production) si care nu vin niciodata din .env.
 """
 
 # ── Quiz ───────────────────────────────────────────────────────────────────

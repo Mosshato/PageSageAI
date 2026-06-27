@@ -67,7 +67,7 @@ Now write the complete Manim script for: **{concept}**
 
 
 def generate_and_render_animation(animation_id: int):
-    from ..models import ConceptAnimation
+    from ..domain import ConceptAnimation
 
     animation = ConceptAnimation.objects.get(id=animation_id)
     concept = animation.concept

@@ -9,7 +9,7 @@ from pathlib import Path
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from api.models import Class, AICourse, Quiz, ConceptAnimation
+from api.domain import Class, AICourse, Quiz, ConceptAnimation
 from api.constants import QUIZ_QUESTION_COUNT, QUIZ_OPTION_COUNT
 
 User = get_user_model()
