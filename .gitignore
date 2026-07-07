@@ -37,3 +37,9 @@ ScrisFinal/
 
 # Manim vendored library
 manim/
+
+# Claude Code config
+Project/CLAUDE.md
+
+# Testing docs
+Project/TESTING_OVERVIEW.txt

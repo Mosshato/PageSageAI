@@ -387,7 +387,7 @@ These live in `FullstackApp/Backend/core/settings/base.py` and apply across all 
 
 ### Running Tests
 
-**Unit + Performance Tests (78 tests total, ~2 min):**
+**Performance Tests (78 tests total, ~2 min):**
 ```bash
 cd FullstackApp/Backend
 venv\Scripts\activate

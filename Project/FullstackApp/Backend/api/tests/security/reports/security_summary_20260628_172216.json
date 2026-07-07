@@ -1,0 +1,145 @@
+﻿{
+    "generated_at":  "2026-06-28 17:22:25",
+    "total_tests":  23,
+    "duration":  "6.288s",
+    "global_result":  "OK",
+    "properties":  [
+                       {
+                           "code":  "SEC-1",
+                           "name":  "Unauthenticated access blocked"
+                       },
+                       {
+                           "code":  "SEC-2",
+                           "name":  "Invalid/malformed tokens rejected"
+                       },
+                       {
+                           "code":  "SEC-3",
+                           "name":  "Ownership isolation enforced"
+                       },
+                       {
+                           "code":  "SEC-4",
+                           "name":  "Role separation enforced"
+                       },
+                       {
+                           "code":  "SEC-5",
+                           "name":  "Passwords stored as hashes"
+                       }
+                   ],
+    "results":  [
+                    {
+                        "id":  "SEC-1",
+                        "status":  "PASS",
+                        "detail":  "all 30 protected endpoints return 401 when no token is provided."
+                    },
+                    {
+                        "id":  "SEC-2c",
+                        "status":  "PASS",
+                        "detail":  "empty Bearer token -\u003e401"
+                    },
+                    {
+                        "id":  "SEC-2a",
+                        "status":  "PASS",
+                        "detail":  "garbage Bearer token -\u003e401"
+                    },
+                    {
+                        "id":  "SEC-2e",
+                        "status":  "PASS",
+                        "detail":  "JWT with tampered signature -\u003e401"
+                    },
+                    {
+                        "id":  "SEC-2d",
+                        "status":  "PASS",
+                        "detail":  "truncated JWT (missing signature segment) -\u003e401"
+                    },
+                    {
+                        "id":  "SEC-2b",
+                        "status":  "PASS",
+                        "detail":  "wrong auth scheme (\"Token\" prefix) -\u003e401"
+                    },
+                    {
+                        "id":  "SEC-3e",
+                        "status":  "PASS",
+                        "detail":  "Student B sees no assignments from Student A\u0027s class"
+                    },
+                    {
+                        "id":  "SEC-3f",
+                        "status":  "PASS",
+                        "detail":  "Student B cannot submit to Student A\u0027s assignment -\u003e403"
+                    },
+                    {
+                        "id":  "SEC-3d",
+                        "status":  "PASS",
+                        "detail":  "Teacher B cannot add students to Teacher A\u0027s class -\u003e404"
+                    },
+                    {
+                        "id":  "SEC-3c",
+                        "status":  "PASS",
+                        "detail":  "Teacher B cannot delete Teacher A\u0027s class -\u003e404 + class still exists"
+                    },
+                    {
+                        "id":  "SEC-3a",
+                        "status":  "PASS",
+                        "detail":  "Teacher B cannot read Teacher A\u0027s class -\u003e404"
+                    },
+                    {
+                        "id":  "SEC-3b",
+                        "status":  "PASS",
+                        "detail":  "Teacher A\u0027s class is not visible in Teacher B\u0027s list"
+                    },
+                    {
+                        "id":  "SEC-4e",
+                        "status":  "PASS",
+                        "detail":  "student gets no teacher stats -\u003e200"
+                    },
+                    {
+                        "id":  "SEC-4d",
+                        "status":  "PASS",
+                        "detail":  "student cannot post announcement -\u003e404"
+                    },
+                    {
+                        "id":  "SEC-4a",
+                        "status":  "PASS",
+                        "detail":  "student cannot create a class -\u003e403"
+                    },
+                    {
+                        "id":  "SEC-4b",
+                        "status":  "PASS",
+                        "detail":  "student gets no teacher classes -\u003e200 (empty=0)"
+                    },
+                    {
+                        "id":  "SEC-4c",
+                        "status":  "PASS",
+                        "detail":  "student cannot read teacher class detail -\u003e404"
+                    },
+                    {
+                        "id":  "SEC-4f",
+                        "status":  "PASS",
+                        "detail":  "teacher sees no student assignments (empty list)"
+                    },
+                    {
+                        "id":  "SEC-4g",
+                        "status":  "PASS",
+                        "detail":  "teacher sees no student-enrolled classes (empty list)"
+                    },
+                    {
+                        "id":  "SEC-5a",
+                        "status":  "PASS",
+                        "detail":  "create_user stores hash: pbkdf2_sha256$1000000$ASuL5oKg..."
+                    },
+                    {
+                        "id":  "SEC-5c",
+                        "status":  "PASS",
+                        "detail":  "hashed password is verifiable at login -\u003e200"
+                    },
+                    {
+                        "id":  "SEC-5b",
+                        "status":  "PASS",
+                        "detail":  "signup endpoint stores hash: pbkdf2_sha256$1000000$ZrktRDMy..."
+                    },
+                    {
+                        "id":  "SEC-5d",
+                        "status":  "PASS",
+                        "detail":  "wrong password rejected after hashing -\u003e401"
+                    }
+                ]
+}

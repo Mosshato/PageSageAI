@@ -1,0 +1,11 @@
+﻿============================================================
+  PAGESAGE AI -- SECURITY TEST REPORT
+  Data      : 2026-06-28 17:20:47
+  Proprietati testate:
+    SEC-1  Endpoint-uri protejate cer token valid (401 fara token)
+    SEC-2  Token-uri invalide / malformate sunt respinse (401)
+    SEC-3  Izolare prin ownership (teacher/student vad doar resursele lor)
+    SEC-4  Separare roluri (student nu poate apela rute de teacher)
+    SEC-5  Parole stocate ca hash PBKDF2, nu plaintext
+============================================================
+

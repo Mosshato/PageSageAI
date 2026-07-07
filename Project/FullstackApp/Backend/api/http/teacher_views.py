@@ -39,6 +39,9 @@ def teacher_class_list(request):
         return Response(TeacherClassSerializer(classes, many=True).data)
 
     # POST — create a new class
+    if request.user.role != 'teacher':
+        return Response({'error': 'Only teachers can create classes.'}, status=status.HTTP_403_FORBIDDEN)
+
     name         = request.data.get('name', '').strip()
     teacher_name = request.data.get('teacher_name', '').strip()
     color        = request.data.get('color', '#f97316').strip()

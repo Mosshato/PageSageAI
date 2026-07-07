@@ -88,6 +88,12 @@ def submit_assignment(request, assignment_id):
     except Assignment.DoesNotExist:
         return Response({'error': 'Assignment not found.'}, status=status.HTTP_404_NOT_FOUND)
 
+    if not Enrollment.objects.filter(
+        class_obj=assignment.class_obj,
+        student_email=request.user.email,
+    ).exists():
+        return Response({'error': 'You are not enrolled in this class.'}, status=status.HTTP_403_FORBIDDEN)
+
     uploaded = request.FILES.getlist('files')
     if not uploaded:
         return Response({'error': 'At least one file is required.'}, status=status.HTTP_400_BAD_REQUEST)

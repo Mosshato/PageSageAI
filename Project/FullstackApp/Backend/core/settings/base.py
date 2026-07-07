@@ -26,10 +26,8 @@ INSTALLED_APPS = [
     'api',
 ]
 
-# Ii spunem lui Django sa foloseasca User-ul nostru custom in loc de auth.User
 AUTH_USER_MODEL = 'api.User'
 
-# Configurare Django REST Framework — toate endpoint-urile cer JWT by default
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -44,7 +42,7 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),   # token expira dupa 5 minute
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),      # refresh token (nu il folosim in frontend acum)
     'ROTATE_REFRESH_TOKENS': False,
-    'AUTH_HEADER_TYPES': ('Bearer',),                 # header: Authorization: Bearer <token>
+    'AUTH_HEADER_TYPES': ('Bearer',),                 
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
 }

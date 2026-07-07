@@ -74,7 +74,7 @@ fig, (ax1, ax2) = plt.subplots(
 )
 fig.patch.set_facecolor("#0f172a")
 fig.suptitle(
-    "PageSage AI — Performance Test Results",
+    "PageSage AI — Rezultate Teste de Performanta",
     fontsize=15, fontweight="bold", color="white", y=1.01,
 )
 
@@ -99,11 +99,11 @@ bars1 = ax1.barh(y1, avgs1, xerr=errs1, color=colors1,
                  error_kw=dict(ecolor=COLOR_ERR_BAR, lw=1.5, capsize=3),
                  height=0.55)
 ax1.axvline(THRESHOLD_BCRYPT, color="#f97316", lw=1.5, ls="--", alpha=0.8,
-            label=f"Threshold {THRESHOLD_BCRYPT}ms")
+            label=f"Prag {THRESHOLD_BCRYPT}ms")
 ax1.set_yticks(y1)
 ax1.set_yticklabels(labels1, fontsize=7.5, color="white")
-ax1.set_xlabel("Response time (ms)", fontsize=9)
-ax1.set_title("Bcrypt Operations\n(login / signup)", fontsize=10, pad=8)
+ax1.set_xlabel("Timp de raspuns (ms)", fontsize=9)
+ax1.set_title("Operatii Bcrypt\n(login / signup)", fontsize=10, pad=8)
 ax1.set_xscale("log")
 ax1.set_xlim(100, THRESHOLD_BCRYPT * 1.5)
 ax1.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{int(v)}"))
@@ -126,11 +126,11 @@ bars2 = ax2.barh(y2, avgs2, xerr=errs2, color=colors2,
                  error_kw=dict(ecolor=COLOR_ERR_BAR, lw=1.5, capsize=3),
                  height=0.55)
 ax2.axvline(THRESHOLD_REGULAR, color="#f97316", lw=1.5, ls="--", alpha=0.8,
-            label=f"Threshold {THRESHOLD_REGULAR}ms")
+            label=f"Prag {THRESHOLD_REGULAR}ms")
 ax2.set_yticks(y2)
 ax2.set_yticklabels(labels2, fontsize=7.5, color="white")
-ax2.set_xlabel("Response time (ms)", fontsize=9)
-ax2.set_title("API Endpoints\n(all modules, AI/Manim mocked)", fontsize=10, pad=8)
+ax2.set_xlabel("Timp de raspuns (ms)", fontsize=9)
+ax2.set_title("Endpoint-uri API\n(toate modulele, AI/Manim mock)", fontsize=10, pad=8)
 ax2.set_xscale("log")
 ax2.set_xlim(0.1, THRESHOLD_REGULAR * 1.5)
 ax2.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.1f}" if v < 10 else f"{int(v)}"))
@@ -144,9 +144,9 @@ for bar, val in zip(bars2, avgs2):
 # ── legenda culori ────────────────────────────────────────────────────────────
 
 legend_patches = [
-    mpatches.Patch(color=COLOR_OK,   label="< 50% threshold"),
-    mpatches.Patch(color=COLOR_WARN, label="50–85% threshold"),
-    mpatches.Patch(color=COLOR_ERR,  label="> 85% threshold"),
+    mpatches.Patch(color=COLOR_OK,   label="< 50% din prag"),
+    mpatches.Patch(color=COLOR_WARN, label="50–85% din prag"),
+    mpatches.Patch(color=COLOR_ERR,  label="> 85% din prag"),
 ]
 fig.legend(handles=legend_patches, loc="lower center", ncol=3,
            fontsize=9, facecolor="#1e293b", labelcolor="white",
@@ -159,14 +159,14 @@ all_pass = all(
     e["avg"] < (THRESHOLD_BCRYPT if e["avg"] > 100 else THRESHOLD_REGULAR)
     for e in entries
 )
-status   = "ALL PASSED ✓" if all_pass else "SOME FAILED ✗"
+status   = "TOATE TRECUTE ✓" if all_pass else "UNELE ESUATE ✗"
 fastest  = min(entries, key=lambda e: e["avg"])
 slowest  = max(entries, key=lambda e: e["avg"])
 
 summary = (
-    f"Tests: {total}/78   |   {status}   |   "
-    f"Fastest: {fastest['avg']:.1f}ms ({fastest['label'].split('/')[-1]})   |   "
-    f"Slowest: {slowest['avg']:.1f}ms ({slowest['label'].split('(')[0].strip()})"
+    f"Teste: {total}/78   |   {status}   |   "
+    f"Cel mai rapid: {fastest['avg']:.1f}ms ({fastest['label'].split('/')[-1]})   |   "
+    f"Cel mai lent: {slowest['avg']:.1f}ms ({slowest['label'].split('(')[0].strip()})"
 )
 fig.text(0.5, -0.01, summary, ha="center", fontsize=8.5,
          color="#94a3b8", style="italic")
